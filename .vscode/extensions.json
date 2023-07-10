@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"usernamehw.errorlens",
+		"shardulm94.trailing-spaces",
+		"editorconfig.editorconfig",
+		"esbenp.prettier-vscode",
+		"eamodio.gitlens"
+	]
+}
