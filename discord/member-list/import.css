@@ -1,8 +1,8 @@
 :root {
     --member-list-width: 70px;
     --member-list-hovered-width: 240px;
-    --member-list-transition: 1.5s;
-    --member-list-hovered-transition: 2s;
+    --member-list-transition: 200ms;
+    --member-list-hovered-transition: 600ms;
 }
 
 [class*="membersWrap-"] {
