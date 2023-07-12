@@ -11,7 +11,34 @@
 	transition: ease-out var(--sidebar-dm-transition);
 }
 
-[class*="sidebar-"]:has([aria-label*="Private"]):hover {
+[class*="sidebar-"]:has([aria-label*="Private"]):hover>nav>[class*="scroller-"]>ul>li:hover>div>[class*="closeButton"],
+[class*="sidebar-"]:has([aria-label*="Private"]):hover>nav>[class*="scroller-"]>ul>li:focus-within>div>[class*="closeButton"] {
+	display: none;
+}
+
+[class*="sidebar-"]:has([aria-label*="Private"]):focus-within>nav>[class*="scroller-"]>ul>li:hover>div>[class*="closeButton"],
+[class*="sidebar-"]:has([aria-label*="Private"]):focus-within>nav>[class*="scroller-"]>ul>li:focus-within>div>[class*="closeButton"] {
+	display: block;
+}
+
+[class*="sidebar-"]:has([aria-label*="Private"]):hover>nav>[class*="scroller-"]>ul {
+	cursor: pointer;
+}
+
+[class*="sidebar-"]:has([aria-label*="Private"]):focus-within>nav>[class*="scroller-"]>ul {
+	cursor: auto;
+}
+
+[class*="sidebar-"]:has([aria-label*="Private"]):hover>nav>[class*="scroller-"]>ul>* {
+	pointer-events: none;
+}
+
+[class*="sidebar-"]:has([aria-label*="Private"]):focus-within>nav>[class*="scroller-"]>ul>* {
+	pointer-events: auto;
+}
+
+[class*="sidebar-"]:has([aria-label*="Private"]):hover,
+[class*="sidebar-"]:has([aria-label*="Private"]):focus-within {
 	width: var(--sidebar-dm-hovered-width);
 	transition: ease-in var(--sidebar-dm-hovered-transition);
 }
@@ -24,7 +51,8 @@
 	display: none;
 }
 
-[class*="sidebar-"]:has([aria-label*="Private"]):hover>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
+[class*="sidebar-"]:has([aria-label*="Private"]):hover>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"],
+[class*="sidebar-"]:has([aria-label*="Private"]):focus-within>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
 	display: block;
 }
 
@@ -32,7 +60,8 @@
 	display: none;
 }
 
-[class*="sidebar-"]:has([aria-label*="Private"]):hover>nav>[class*="scroller-"]>ul>[class*="privateChannelsHeaderContainer-"] {
+[class*="sidebar-"]:has([aria-label*="Private"]):hover>nav>[class*="scroller-"]>ul>[class*="privateChannelsHeaderContainer-"],
+[class*="sidebar-"]:has([aria-label*="Private"]):focus-within>nav>[class*="scroller-"]>ul>[class*="privateChannelsHeaderContainer-"] {
 	display: var(--sidebar-dm-display-header);
 }
 
