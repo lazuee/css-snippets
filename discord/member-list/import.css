@@ -14,9 +14,26 @@
     width: var(--member-list-width);
 }
 
-[class*="membersWrap-"]:hover [class*="members-"] {
+[class*="membersWrap-"]:hover [class*="members-"],
+[class*="membersWrap-"]:focus-within [class*="members-"] {
     width: var(--member-list-hovered-width);
     transition: ease-in var(--member-list-hovered-transition);
+}
+
+[class*="membersWrap-"]:hover [class*="members-"] {
+    cursor: pointer;
+}
+
+[class*="membersWrap-"]:focus-within [class*="members-"] {
+    cursor: auto;
+}
+
+[class*="membersWrap-"]:hover [class*="members-"]>* {
+    pointer-events: none;
+}
+
+[class*="membersWrap-"]:focus-within [class*="members-"]>* {
+    pointer-events: auto;
 }
 
 [class*="membersGroup-"] {
@@ -33,14 +50,16 @@
     padding: 0px 8px 0px 16px;
 }
 
-[class*="membersWrap-"]:hover [class*="membersGroup-"]:first-of-type {
+[class*="membersWrap-"]:hover [class*="membersGroup-"]:first-of-type,
+[class*="membersWrap-"]:focus-within [class*="membersGroup-"]:first-of-type {
     opacity: 100%;
     padding: 10px 8px 0px 16px !important;
     height: 40px !important;
     transition: ease-in var(--member-list-hovered-transition);
 }
 
-[class*="membersWrap-"]:hover [class*="membersGroup-"]:not(:first-of-type) {
+[class*="membersWrap-"]:hover [class*="membersGroup-"]:not(:first-of-type),
+[class*="membersWrap-"]:focus-within [class*="membersGroup-"]:not(:first-of-type) {
     opacity: 100%;
     padding: 25px 8px 0px 16px !important;
     height: 40px !important;
@@ -60,7 +79,10 @@
 
 [class*="membersWrap-"]:hover [class*="content-"][aria-label="Members"]>[class*="private-"]~div:last-child,
 [class*="membersWrap-"]:hover [class*="content-"][aria-label="Members"]>[class*="divider-"],
-[class*="membersWrap-"]:hover [class*="content-"][aria-label="Members"]>[class*="private-"] {
+[class*="membersWrap-"]:hover [class*="content-"][aria-label="Members"]>[class*="private-"],
+[class*="membersWrap-"]:focus-within [class*="content-"][aria-label="Members"]>[class*="private-"]~div:last-child,
+[class*="membersWrap-"]:focus-within [class*="content-"][aria-label="Members"]>[class*="divider-"],
+[class*="membersWrap-"]:focus-within [class*="content-"][aria-label="Members"]>[class*="private-"] {
     opacity: 100%;
     transition: ease-in calc(var(--member-list-hovered-transition) + 2s);
 }
