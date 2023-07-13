@@ -11,6 +11,12 @@
 	transition: ease-out var(--sidebar-dm-transition);
 }
 
+[class*="sidebar-"]:has([aria-label*="Private"]):hover,
+[class*="sidebar-"]:has([aria-label*="Private"]):focus-within {
+	width: var(--sidebar-dm-hovered-width);
+	transition: ease-in var(--sidebar-dm-hovered-transition);
+}
+
 [class*="sidebar-"]:has([aria-label*="Private"]):hover>nav>[class*="scroller-"]>ul>li:hover>div>[class*="closeButton"],
 [class*="sidebar-"]:has([aria-label*="Private"]):hover>nav>[class*="scroller-"]>ul>li:focus-within>div>[class*="closeButton"] {
 	display: none;
@@ -35,12 +41,6 @@
 
 [class*="sidebar-"]:has([aria-label*="Private"]):focus-within>nav>[class*="scroller-"]>ul>* {
 	pointer-events: auto;
-}
-
-[class*="sidebar-"]:has([aria-label*="Private"]):hover,
-[class*="sidebar-"]:has([aria-label*="Private"]):focus-within {
-	width: var(--sidebar-dm-hovered-width);
-	transition: ease-in var(--sidebar-dm-hovered-transition);
 }
 
 [class*="sidebar-"]:has([aria-label*="Private"])>[class*="panels-"]>[class*="container-"] {
