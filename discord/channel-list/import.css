@@ -1,0 +1,55 @@
+:root {
+    --channel-list-width: 68px;
+    --channel-list-hovered-width: 245px;
+    --channel-list-transition: 200ms;
+    --channel-list-hovered-transition: 600ms;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]) {
+    width: var(--channel-list-width);
+    transition: ease-out var(--channel-list-transition);
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):hover,
+[class*="sidebar-"]:has([aria-label*="(server)"]):focus-within {
+    width: var(--channel-list-hovered-width);
+    transition: ease-in var(--channel-list-hovered-transition);
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):hover>nav>div:first_child()>header>div {
+    display: flex;
+    justify-content: center;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):hover>nav>div:first_child()>header>div>div {
+    margin-right: 0px;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):hover>nav>[class*="scroller-"]>ul {
+    cursor: pointer;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):focus-within>nav>[class*="scroller-"]>ul {
+    cursor: auto;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):hover>nav>[class*="scroller-"]>ul>* {
+    pointer-events: none;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):focus-within>nav>[class*="scroller-"]>ul>* {
+    pointer-events: auto;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"])>[class*="panels-"]>[class*="container-"] {
+    margin-left: 7px;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"])>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
+    display: none;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):hover>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"],
+[class*="sidebar-"]:has([aria-label*="(server)"]):focus-within>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
+    display: block;
+}
