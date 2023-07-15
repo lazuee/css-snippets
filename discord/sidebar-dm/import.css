@@ -43,19 +43,6 @@
 	pointer-events: auto;
 }
 
-[class*="sidebar-"]:has([aria-label*="Private"])>[class*="panels-"]>[class*="container-"] {
-	margin-left: 7px;
-}
-
-[class*="sidebar-"]:has([aria-label*="Private"])>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
-	display: none;
-}
-
-[class*="sidebar-"]:has([aria-label*="Private"]):hover>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"],
-[class*="sidebar-"]:has([aria-label*="Private"]):focus-within>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
-	display: block;
-}
-
 [class*="sidebar-"]:has([aria-label*="Private"])>nav>[class*="scroller-"]>ul>[class*="privateChannelsHeaderContainer-"] {
 	display: none;
 }
@@ -67,4 +54,18 @@
 
 [class*="sidebar-"]:has([aria-label*="Private"])>nav>[class*="searchBar-"] {
 	display: none;
+}
+
+/* Show only your Profile picture on Sidebar */
+[class*="sidebar-"]:has([aria-label*="Private"])>[class*="panels-"]>[class*="container-"] {
+	margin-left: 7px;
+}
+
+[class*="sidebar-"]:has([aria-label*="Private"])>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
+	display: none;
+}
+
+[class*="sidebar-"]:has([aria-label*="Private"]):hover>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"],
+[class*="sidebar-"]:has([aria-label*="Private"]):focus-within>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
+	display: block;
 }
