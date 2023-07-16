@@ -3,7 +3,6 @@
     --sidebar-channel-hovered-width: 245px;
     --sidebar-channel-transition: 200ms;
     --sidebar-channel-hovered-transition: 600ms;
-    --sidebar-channel-display-header: none;
     --sidebar-channel-icon-size: 22px;
 }
 
@@ -17,11 +16,11 @@
     transition: ease-in var(--sidebar-channel-hovered-transition);
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"]):not(nav:focus-within)>nav>[class*="scroller-"]>* {
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(focus-within)>[class*="scroller-"]>* {
     cursor: pointer;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"]):not(nav:focus-within)>nav>[class*="scroller-"]>*>* {
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>*>* {
     pointer-events: none;
 }
 
@@ -97,12 +96,19 @@
 
 /* Show only your Profile picture on Sidebar */
 [class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"] {
-    margin-left: 7px;
+    margin-left: 0px;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:focus-within)>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"] {
+    padding-left: 2px;
+    margin-left: 2px;
 }
 
 [class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"] {
     min-width: 34px;
     min-height: 37px;
+    margin-left: 0px;
+    padding-left: 0px;
 }
 
 [class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
