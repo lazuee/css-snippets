@@ -4,6 +4,7 @@
     --sidebar-channel-transition: 200ms;
     --sidebar-channel-hovered-transition: 600ms;
     --sidebar-channel-display-header: none;
+    --sidebar-channel-icon-size: 22px;
 }
 
 [class*="sidebar-"]:has([aria-label*="(server)"]) {
@@ -11,60 +12,49 @@
     transition: ease-out var(--sidebar-channel-transition);
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"]):hover,
-[class*="sidebar-"]:has([aria-label*="(server)"]):focus-within {
+[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:focus-within) {
     width: var(--sidebar-channel-hovered-width);
     transition: ease-in var(--sidebar-channel-hovered-transition);
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"]):hover>nav>div:first_child()>header>div {
-    display: flex;
-    justify-content: center;
-}
-
-[class*="sidebar-"]:has([aria-label*="(server)"]):hover>nav>div:first_child()>header>div>div {
-    margin-right: 0px;
-}
-
-[class*="sidebar-"]:has([aria-label*="(server)"]):hover>nav>[class*="scroller-"]>ul {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(nav:focus-within)>nav>[class*="scroller-"]>* {
     cursor: pointer;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"]):focus-within>nav>[class*="scroller-"]>ul {
-    cursor: auto;
-}
-
-[class*="sidebar-"]:has([aria-label*="(server)"]):hover>nav>[class*="scroller-"]>ul>* {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(nav:focus-within)>nav>[class*="scroller-"]>*>* {
     pointer-events: none;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"]):focus-within>nav>[class*="scroller-"]>ul>* {
-    pointer-events: auto;
+/* channel link icon */
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class^="link"] svg[class*="icon"] {
+    width: var(--sidebar-channel-icon-size);
+    height: var(--sidebar-channel-icon-size);
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li>div>div a>[class*="linkTop-"]>div:nth-last-child(-n + 2) {
-    opacity: 0%;
-    transition: ease-out var(--sidebar-channel-transition);
+/* channel link to only display icons by hiding other elements*/
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class^="link"] div[class*="name-"],
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class^="link"] div[class*="children-"],
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class^="link"] div[class*="textBadge-"] {
+    display: none;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"]):hover>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li>div>div a>[class*="linkTop-"]>div:nth-last-child(-n + 2),
-[class*="sidebar-"]:has([aria-label*="(server)"]):focus-within>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li>div>div a>[class*="linkTop-"]>div:nth-last-child(-n + 2) {
-    opacity: 100%;
-    transition: ease-in var(--sidebar-channel-hovered-transition);
+/* added padding-left when not focused-within to fix some channel that aren't horizontally centered */
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li:has([class^="link"]):not(:has(div[class*="children-"])) {
+    padding-left: 4px;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li>div>div a>div>div>svg {
-    width: 18px;
-    height: 18px;
+/* channel category to be hidden when not focus-within */
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li:has([aria-label*="(category)"]) svg[class*="arrow-"] {
+    display: none
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li>div div:has(a) {
-    margin-left: 8px;
+/* channel link threads to be hidden when not focus-within  */
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li:has(div[class*="spineBorder-"]):has(div[aria-label*="(thread)"]) {
+    display: none
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"]):hover>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li>div>div div a,
-[class*="sidebar-"]:has([aria-label*="(server)"]):focus-within>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li>div div a {
-    margin-left: 0px;
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>div:has(div[class*="progressBarContainer-"])>div[class*="textArea-"] {
+    display: none
 }
 
 [class*=unread-] {
@@ -76,45 +66,49 @@
     color: var(--interactive-active);
 }
 
-/* Only show down arrow on New unread */
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav>div:last-child>div>div>div {
+/* Remove channels icon when there's channel emoji */
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li>div>div a:has(> :nth-child(n + 2))>[class*="linkTop-"]:has([class*="channelEmoji-"])>[class*="iconContainer-"] {
     display: none;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"]):focus-within>nav>div:last-child>div>div>div {
-    display: block;
+/* Only show down arrow on New unread */
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>div div[class*="bar-"]:has([class*="barText-"]):has(svg)>div {
+    display: none;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav>div:last-child>div>div>svg {
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>div div[class*="bar-"]:has([class*="barText-"])>svg {
     margin-right: 0px;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"]):focus-within>nav>div:last-child>div>div>svg {
-    margin-right: 4px;
-    transition: ease-in var(--sidebar-channel-transition);
+/* Only show "NEW" on New mention */
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>div div[class*="bar-"]:has([class*="barText-"]):not(:has(svg))>div {
+    display: none
 }
 
-/* Remove channels icon when there's channel emoji */
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li>div>div a:has(>:nth-child(n + 2))>[class*="linkTop-"]:has([class*="channelEmoji-"])>[class*="iconContainer-"] {
-    display: none;
-}
-
-/* Fix channels padding */
-[data-list-item-id*="channels___"] {
-    padding-top: 6px;
-    padding-bottom: 6px;
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>div div[class*="bar-"]:has([class*="barText-"]):not(:has(svg)):before {
+    content: "new";
+    font-size: 12px;
+    line-height: 16px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--white-500);
+    text-transform: uppercase;
 }
 
 /* Show only your Profile picture on Sidebar */
-[class*="sidebar-"]:has([aria-label*="(server)"])>[class*="panels-"]>[class*="container-"] {
+[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"] {
     margin-left: 7px;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"])>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
+[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"] {
+    min-width: 34px;
+    min-height: 37px;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
     display: none;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"]):hover>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"],
-[class*="sidebar-"]:has([aria-label*="(server)"]):focus-within>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
-    display: block;
+[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"]>[class*="directionRow-"] {
+    display: none;
 }
