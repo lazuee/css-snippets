@@ -55,9 +55,24 @@
     display: none
 }
 
-/* only show channel's boost progressBar level when not focus-within */
+/* hide channel's boost progressBar level when not focus-within */
 [class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>div:has(div[class*="progressBarContainer-"])>div[class*="textArea-"] {
     display: none
+}
+
+/* hide channel's "Hide Voice Channels" and "Show All" when not focus-within */
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton-"]>div {
+    display: none
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton-"]:before {
+    margin-left: 8px;
+    font-weight: 500;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--text-normal);
+    content: "..."
 }
 
 /* remove left dot for unread channel */
@@ -100,6 +115,32 @@
     text-transform: uppercase;
 }
 
+/* only show Disconnect icon when joining on voice channel */
+[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>div>[class*="inner-"] {
+    display: none;
+}
+
+/* action buttons when joining voice channel */
+[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>[class*="actionButtons-"] {
+    display: flex;
+    flex-direction: row;
+    scroll-snap-type: x mandatory;
+    overflow: scroll hidden;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>[class*="actionButtons-"]>* {
+    scroll-snap-align: center;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>[class*="actionButtons-"]::-webkit-scrollbar {
+    display: none;
+}
+
+/* remove list on voice channel's */
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li>div[class*="list-"] {
+    display: none
+}
+
 /* show only your profile picture on sidebar */
 [class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"] {
     margin-left: 0px;
@@ -123,5 +164,9 @@
 }
 
 [class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"]>[class*="directionRow-"] {
+    display: none;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="wrapper-"] {
     display: none;
 }
