@@ -55,8 +55,8 @@
     display: none
 }
 
-/* hide channel's boost progressBar level when not focus-within */
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>div:has(div[class*="progressBarContainer-"])>div[class*="textArea-"] {
+/* remove list on voice channel's */
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li>div[class*="list-"] {
     display: none
 }
 
@@ -65,14 +65,9 @@
     display: none
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton-"]:before {
-    margin-left: 8px;
-    font-weight: 500;
-    font-family: var(--font-primary);
-    font-size: 14px;
-    line-height: 18px;
-    color: var(--text-normal);
-    content: "..."
+/* only show channel's boost progressBar level when not focus-within */
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>div:has(div[class*="progressBarContainer-"])>div[class*="textArea-"] {
+    display: none
 }
 
 /* remove left dot for unread channel */
@@ -136,9 +131,14 @@
     display: none;
 }
 
-/* remove list on voice channel's */
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li>div[class*="list-"] {
-    display: none
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton-"]:before {
+    margin-left: 8px;
+    font-weight: 500;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--text-normal);
+    content: "..."
 }
 
 /* show only your profile picture on sidebar */
@@ -164,9 +164,5 @@
 }
 
 [class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"]>[class*="directionRow-"] {
-    display: none;
-}
-
-[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="wrapper-"] {
     display: none;
 }
