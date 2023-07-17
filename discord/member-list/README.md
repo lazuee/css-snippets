@@ -11,4 +11,4 @@
 
 ### Preview
 
-![image](https://i.imgur.com/B3CxJQB.gif)
+![image](https://i.imgur.com/hGPnu7m.gif)

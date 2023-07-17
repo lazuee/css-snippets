@@ -11,4 +11,4 @@
 
 ### Preview
 
-<img src="https://http.dog/404.jpg" width="60%" height="30%">
+![image](https://i.imgur.com/WgNWyFm.gif)

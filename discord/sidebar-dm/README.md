@@ -12,4 +12,4 @@
 
 ### Preview
 
-![Image](https://i.imgur.com/AXgkWBv.gif)
+![Image](https://i.imgur.com/9cmmpYZ.gif)
