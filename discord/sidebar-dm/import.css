@@ -1,21 +1,24 @@
 :root {
 	--sidebar-dm-width: 68px;
-	--sidebar-dm-hovered-width: 245px;
+	--sidebar-dm-focused-width: 245px;
 	--sidebar-dm-transition: 200ms;
-	--sidebar-dm-hovered-transition: 600ms;
-	--sidebar-dm-display-header: none;
+	--sidebar-dm-focused-transition: 600ms;
+	--sidebar-dm-display-header: flex;
 }
 
+/* unfocused-within sidebar-dim width */
 [class*="sidebar-"]:has([aria-label*="Private"]) {
 	width: var(--sidebar-dm-width);
 	transition: ease-out var(--sidebar-dm-transition);
 }
 
+/* focused-within sidebar-dim width */
 [class*="sidebar-"]:has([aria-label*="Private"]):has(nav:focus-within) {
-	width: var(--sidebar-dm-hovered-width);
-	transition: ease-in var(--sidebar-dm-hovered-transition);
+	width: var(--sidebar-dm-focused-width);
+	transition: ease-in var(--sidebar-dm-focused-transition);
 }
 
+/* pointer events*/
 [class*="sidebar-"]:has([aria-label*="Private"])>nav:not(focus-within)>[class*="scroller-"]>* {
 	cursor: pointer;
 }
@@ -24,10 +27,12 @@
 	pointer-events: none;
 }
 
+/* don't show close dm button when hovering to avatar until it's focus-within */
 [class*="sidebar-"]:has([aria-label*="Private"])>nav:not(:focus-within)>[class*="scroller-"]>ul>li:focus-within>div>[class*="closeButton"] {
 	display: none;
 }
 
+/* hide direct message header category */
 [class*="sidebar-"]:has([aria-label*="Private"])>nav:not(:focus-within)>[class*="scroller-"]>ul>[class*="privateChannelsHeaderContainer-"] {
 	display: none;
 }
@@ -36,13 +41,15 @@
 	display: var(--sidebar-dm-display-header);
 }
 
+/* hide conversation searchBar*/
 [class*="sidebar-"]:has([aria-label*="Private"])>nav>[class*="searchBar-"] {
 	display: none;
 }
 
-/* Show only your Profile picture on Sidebar */
+/* show only your profile picture on sidebar */
 [class*="sidebar-"]:has([aria-label*="Private"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"] {
 	margin-left: 0px;
+	justify-content: center;
 }
 
 [class*="sidebar-"]:has([aria-label*="Private"]):has(nav:focus-within)>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"] {

@@ -1,21 +1,24 @@
 :root {
     --sidebar-channel-width: 68px;
-    --sidebar-channel-hovered-width: 245px;
+    --sidebar-channel-focused-width: 245px;
     --sidebar-channel-transition: 200ms;
-    --sidebar-channel-hovered-transition: 600ms;
+    --sidebar-channel-focused-transition: 600ms;
     --sidebar-channel-icon-size: 22px;
 }
 
+/* unfocused-within sidebar-dim width */
 [class*="sidebar-"]:has([aria-label*="(server)"]) {
     width: var(--sidebar-channel-width);
     transition: ease-out var(--sidebar-channel-transition);
 }
 
+/* focused-within sidebar-dim width */
 [class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:focus-within) {
-    width: var(--sidebar-channel-hovered-width);
-    transition: ease-in var(--sidebar-channel-hovered-transition);
+    width: var(--sidebar-channel-focused-width);
+    transition: ease-in var(--sidebar-channel-focused-transition);
 }
 
+/* pointer events*/
 [class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(focus-within)>[class*="scroller-"]>* {
     cursor: pointer;
 }
@@ -52,25 +55,28 @@
     display: none
 }
 
+/* only show channel's boost progressBar level when not focus-within */
 [class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>div:has(div[class*="progressBarContainer-"])>div[class*="textArea-"] {
     display: none
 }
 
+/* remove left dot for unread channel */
 [class*=unread-] {
     display: none;
 }
 
+/* changing channel icon color as replacement for dot*/
 [class*=modeUnread] [class*=icon-],
 [class*=modeSelected-] [class*=icon-] {
     color: var(--interactive-active);
 }
 
-/* Remove channels icon when there's channel emoji */
+/* remove channels icon when there's channel emoji */
 [class*="sidebar-"]:has([aria-label*="(server)"])>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li>div>div a:has(> :nth-child(n + 2))>[class*="linkTop-"]:has([class*="channelEmoji-"])>[class*="iconContainer-"] {
     display: none;
 }
 
-/* Only show down arrow on New unread */
+/* only show down arrow on New unread */
 [class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>div div[class*="bar-"]:has([class*="barText-"]):has(svg)>div {
     display: none;
 }
@@ -79,7 +85,7 @@
     margin-right: 0px;
 }
 
-/* Only show "NEW" on New mention */
+/* only show "NEW" on new mention */
 [class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>div div[class*="bar-"]:has([class*="barText-"]):not(:has(svg))>div {
     display: none
 }
@@ -94,9 +100,10 @@
     text-transform: uppercase;
 }
 
-/* Show only your Profile picture on Sidebar */
+/* show only your profile picture on sidebar */
 [class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"] {
     margin-left: 0px;
+    justify-content: center;
 }
 
 [class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:focus-within)>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"] {

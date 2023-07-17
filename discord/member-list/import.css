@@ -1,10 +1,11 @@
 :root {
     --member-list-width: 70px;
-    --member-list-hovered-width: 240px;
+    --member-list-focused-width: 240px;
     --member-list-transition: 200ms;
-    --member-list-hovered-transition: 600ms;
+    --member-list-focused-transition: 600ms;
 }
 
+/* unfocused-within membersWrap width */
 [class*="membersWrap-"] {
     min-width: var(--member-list-width);
     transition: ease-in-out var(--member-list-transition);
@@ -14,75 +15,46 @@
     width: var(--member-list-width);
 }
 
-[class*="membersWrap-"]:hover [class*="members-"],
+/* focused-within membersWrap width */
 [class*="membersWrap-"]:focus-within [class*="members-"] {
-    width: var(--member-list-hovered-width);
-    transition: ease-in var(--member-list-hovered-transition);
+    width: var(--member-list-focused-width);
+    transition: ease-in var(--member-list-focused-transition);
 }
 
-[class*="membersWrap-"]:hover [class*="members-"] {
+/* pointer eventers */
+[class*="membersWrap-"]:not(:focus-within) [class*="members-"] {
     cursor: pointer;
 }
 
-[class*="membersWrap-"]:focus-within [class*="members-"] {
-    cursor: auto;
-}
-
-[class*="membersWrap-"]:hover [class*="members-"]>* {
+[class*="membersWrap-"]:not(:focus-within) [class*="members-"]>* {
     pointer-events: none;
 }
 
-[class*="membersWrap-"]:focus-within [class*="members-"]>* {
-    pointer-events: auto;
-}
-
-[class*="membersGroup-"] {
+/* hide user role category when not focus-within */
+[class*="membersWrap-"]:not(:focus-within) [class*="membersGroup-"] {
     opacity: 0%;
     height: 0px;
     transition: ease-out var(--member-list-transition);
 }
 
-[class*="membersGroup-"]:first-of-type {
+[class*="membersWrap-"]:not(:focus-within) [class*="membersGroup-"]:first-of-type {
     padding: 10px 8px 0px 16px;
+    content: "searchhhhh"
 }
 
-[class*="membersGroup-"]:not(:first-of-type) {
+[class*="membersWrap-"]:not(:focus-within) [class*="membersGroup-"]:not(:first-of-type) {
     padding: 0px 8px 0px 16px;
 }
 
-[class*="membersWrap-"]:hover [class*="membersGroup-"]:first-of-type,
-[class*="membersWrap-"]:focus-within [class*="membersGroup-"]:first-of-type {
-    opacity: 100%;
-    padding: 10px 8px 0px 16px !important;
-    height: 40px !important;
-    transition: ease-in var(--member-list-hovered-transition);
-}
-
-[class*="membersWrap-"]:hover [class*="membersGroup-"]:not(:first-of-type),
-[class*="membersWrap-"]:focus-within [class*="membersGroup-"]:not(:first-of-type) {
-    opacity: 100%;
-    padding: 25px 8px 0px 16px !important;
-    height: 40px !important;
-    transition: ease-in var(--member-list-hovered-transition);
-}
-
-[class*="content-"][aria-label="Members"] {
+/* membersWrap height for not focus-within */
+[class*="membersWrap-"]:not(:focus-within) [class*="content-"][aria-label="Members"] {
     height: 100vh !important;
 }
 
-[class*="content-"][aria-label="Members"]>[class*="private-"]~div:last-child,
-[class*="content-"][aria-label="Members"]>[class*="divider-"],
-[class*="content-"][aria-label="Members"]>[class*="private-"] {
+/* hide notes in private threads */
+[class*="membersWrap-"]:not(:focus-within) [class*="content-"] [aria-label="Members"]>[class*="private-"]~div:last-child,
+[class*="membersWrap-"]:not(:focus-within) [class*="content-"] [aria-label="Members"]>[class*="divider-"],
+[class*="membersWrap-"]:not(:focus-within) [class*="content-"] [aria-label="Members"]>[class*="private-"] {
     opacity: 0%;
     transition: ease-out calc(var(--member-list-transition) - 0.5s);
-}
-
-[class*="membersWrap-"]:hover [class*="content-"][aria-label="Members"]>[class*="private-"]~div:last-child,
-[class*="membersWrap-"]:hover [class*="content-"][aria-label="Members"]>[class*="divider-"],
-[class*="membersWrap-"]:hover [class*="content-"][aria-label="Members"]>[class*="private-"],
-[class*="membersWrap-"]:focus-within [class*="content-"][aria-label="Members"]>[class*="private-"]~div:last-child,
-[class*="membersWrap-"]:focus-within [class*="content-"][aria-label="Members"]>[class*="divider-"],
-[class*="membersWrap-"]:focus-within [class*="content-"][aria-label="Members"]>[class*="private-"] {
-    opacity: 100%;
-    transition: ease-in calc(var(--member-list-hovered-transition) + 2s);
 }
