@@ -13,31 +13,31 @@
 }
 
 /* focused-within sidebar-dim width */
-[class*="sidebar-"]:has([aria-label*="Private"]):has(nav:focus-within) {
+[class*="sidebar-"]:has([aria-label*="Private"]):focus-within {
 	width: var(--sidebar-dm-focused-width);
 	transition: ease-in var(--sidebar-dm-focused-transition);
 }
 
 /* pointer events*/
-[class*="sidebar-"]:has([aria-label*="Private"])>nav:not(focus-within)>[class*="scroller-"]>* {
+[class*="sidebar-"]:has([aria-label*="Private"]):not(focus-within)>*>*>* {
 	cursor: pointer;
 }
 
-[class*="sidebar-"]:has([aria-label*="Private"])>nav:not(:focus-within)>[class*="scroller-"]>*>* {
+[class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>nav>*>*>* {
 	pointer-events: none;
 }
 
 /* don't show close dm button when hovering to avatar until it's focus-within */
-[class*="sidebar-"]:has([aria-label*="Private"])>nav:not(:focus-within)>[class*="scroller-"]>ul>li:focus-within>div>[class*="closeButton"] {
+[class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>nav>[class*="scroller-"]>ul>li:focus-within>div>[class*="closeButton"] {
 	display: none;
 }
 
 /* hide direct message header category */
-[class*="sidebar-"]:has([aria-label*="Private"])>nav:not(:focus-within)>[class*="scroller-"]>ul>[class*="privateChannelsHeaderContainer-"] {
+[class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>nav>[class*="scroller-"]>ul>[class*="privateChannelsHeaderContainer-"] {
 	display: none;
 }
 
-[class*="sidebar-"]:has([aria-label*="Private"])>nav:focus-within>[class*="scroller-"]>ul>[class*="privateChannelsHeaderContainer-"] {
+[class*="sidebar-"]:has([aria-label*="Private"]):focus-within>nav>[class*="scroller-"]>ul>[class*="privateChannelsHeaderContainer-"] {
 	display: var(--sidebar-dm-display-header);
 }
 
@@ -46,28 +46,49 @@
 	display: none;
 }
 
+/* only show Disconnect icon when joining on voice channel */
+[class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>div>[class*="inner-"] {
+	display: none;
+}
+
+/* action buttons when joining voice channel */
+[class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>[class*="actionButtons-"] {
+	display: flex;
+	flex-direction: row;
+	scroll-snap-type: x mandatory;
+	overflow: scroll hidden;
+}
+
+[class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>[class*="actionButtons-"]>* {
+	scroll-snap-align: center;
+}
+
+[class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>[class*="actionButtons-"]::-webkit-scrollbar {
+	display: none;
+}
+
 /* show only your profile picture on sidebar */
-[class*="sidebar-"]:has([aria-label*="Private"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"] {
+[class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels-"]>[class*="container-"] {
 	margin-left: 0px;
 	justify-content: center;
 }
 
-[class*="sidebar-"]:has([aria-label*="Private"]):has(nav:focus-within)>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"] {
+[class*="sidebar-"]:has([aria-label*="Private"]):focus-within>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"] {
 	padding-left: 2px;
 	margin-left: 2px;
 }
 
-[class*="sidebar-"]:has([aria-label*="Private"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"] {
+[class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"] {
 	min-width: 34px;
 	min-height: 37px;
 	margin-left: 0px;
 	padding-left: 0px;
 }
 
-[class*="sidebar-"]:has([aria-label*="Private"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
+[class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
 	display: none;
 }
 
-[class*="sidebar-"]:has([aria-label*="Private"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"]>[class*="directionRow-"] {
+[class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels-"]>[class*="container-"]>[class*="directionRow-"] {
 	display: none;
 }

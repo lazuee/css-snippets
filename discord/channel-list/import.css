@@ -13,17 +13,17 @@
 }
 
 /* focused-within sidebar-dim width */
-[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:focus-within) {
+[class*="sidebar-"]:has([aria-label*="(server)"]):focus-within {
     width: var(--sidebar-channel-focused-width);
     transition: ease-in var(--sidebar-channel-focused-transition);
 }
 
 /* pointer events*/
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(focus-within)>[class*="scroller-"]>* {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(focus-within)>*>*>* {
     cursor: pointer;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>*>* {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>*>*>* {
     pointer-events: none;
 }
 
@@ -34,39 +34,39 @@
 }
 
 /* channel link to only display icons by hiding other elements*/
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class^="link"] div[class*="name-"],
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class^="link"] div[class*="children-"],
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class^="link"] div[class*="textBadge-"] {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class^="link"] div[class*="name-"],
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class^="link"] div[class*="children-"],
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class^="link"] div[class*="textBadge-"] {
     display: none;
 }
 
 /* added padding-left when not focused-within to fix some channel that aren't horizontally centered */
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li:has([class^="link"]):not(:has(div[class*="children-"])) {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li:has([class^="link"]):not(:has(div[class*="children-"])) {
     padding-left: 4px;
 }
 
 /* channel category to be hidden when not focus-within */
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li:has([aria-label*="(category)"]) svg[class*="arrow-"] {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li:has([aria-label*="(category)"]) svg[class*="arrow-"] {
     display: none
 }
 
 /* channel link threads to be hidden when not focus-within  */
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li:has(div[class*="spineBorder-"]):has(div[aria-label*="(thread)"]) {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li:has(div[class*="spineBorder-"]):has(div[aria-label*="(thread)"]) {
     display: none
 }
 
 /* remove list on voice channel's */
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>li>div[class*="list-"] {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li>div[class*="list-"] {
     display: none
 }
 
 /* hide channel's "Hide Voice Channels" and "Show All" when not focus-within */
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton-"]>div {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton-"]>div {
     display: none
 }
 
 /* only show channel's boost progressBar level when not focus-within */
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>div:has(div[class*="progressBarContainer-"])>div[class*="textArea-"] {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>div:has(div[class*="progressBarContainer-"])>div[class*="textArea-"] {
     display: none
 }
 
@@ -87,20 +87,20 @@
 }
 
 /* only show down arrow on New unread */
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>div div[class*="bar-"]:has([class*="barText-"]):has(svg)>div {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>div div[class*="bar-"]:has([class*="barText-"]):has(svg)>div {
     display: none;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>div div[class*="bar-"]:has([class*="barText-"])>svg {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>div div[class*="bar-"]:has([class*="barText-"])>svg {
     margin-right: 0px;
 }
 
 /* only show "NEW" on new mention */
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>div div[class*="bar-"]:has([class*="barText-"]):not(:has(svg))>div {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>div div[class*="bar-"]:has([class*="barText-"]):not(:has(svg))>div {
     display: none
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>div div[class*="bar-"]:has([class*="barText-"]):not(:has(svg)):before {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>div div[class*="bar-"]:has([class*="barText-"]):not(:has(svg)):before {
     content: "new";
     font-size: 12px;
     line-height: 16px;
@@ -110,28 +110,8 @@
     text-transform: uppercase;
 }
 
-/* only show Disconnect icon when joining on voice channel */
-[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>div>[class*="inner-"] {
-    display: none;
-}
-
-/* action buttons when joining voice channel */
-[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>[class*="actionButtons-"] {
-    display: flex;
-    flex-direction: row;
-    scroll-snap-type: x mandatory;
-    overflow: scroll hidden;
-}
-
-[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>[class*="actionButtons-"]>* {
-    scroll-snap-align: center;
-}
-
-[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>[class*="actionButtons-"]::-webkit-scrollbar {
-    display: none;
-}
-
-[class*="sidebar-"]:has([aria-label*="(server)"])>nav:not(:focus-within)>[class*="scroller-"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton-"]:before {
+/* only show "..." on "Hide Voice Channels" and "Show All" */
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton-"]:before {
     margin-left: 8px;
     font-weight: 500;
     font-family: var(--font-primary);
@@ -141,28 +121,50 @@
     content: "..."
 }
 
+
+/* only show Disconnect icon when joining on voice channel */
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>div>[class*="inner-"] {
+    display: none;
+}
+
+/* action buttons when joining voice channel */
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>[class*="actionButtons-"] {
+    display: flex;
+    flex-direction: row;
+    scroll-snap-type: x mandatory;
+    overflow: scroll hidden;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>[class*="actionButtons-"]>* {
+    scroll-snap-align: center;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>[class*="actionButtons-"]::-webkit-scrollbar {
+    display: none;
+}
+
 /* show only your profile picture on sidebar */
-[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"] {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels-"]>[class*="container-"] {
     margin-left: 0px;
     justify-content: center;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:focus-within)>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"] {
+[class*="sidebar-"]:has([aria-label*="(server)"]):focus-within>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"] {
     padding-left: 2px;
     margin-left: 2px;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"] {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"] {
     min-width: 34px;
     min-height: 37px;
     margin-left: 0px;
     padding-left: 0px;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels-"]>[class*="container-"]>[class*="avatarWrapper-"]>[class*="nameTag-"] {
     display: none;
 }
 
-[class*="sidebar-"]:has([aria-label*="(server)"]):has(nav:not(:focus-within))>[class*="panels-"]>[class*="container-"]>[class*="directionRow-"] {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels-"]>[class*="container-"]>[class*="directionRow-"] {
     display: none;
 }
