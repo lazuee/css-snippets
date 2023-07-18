@@ -51,6 +51,28 @@
 	display: none;
 }
 
+/* fix Activity panel */
+[class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels-"]>[class*="activityPanel-"] {
+	display: flex;
+	justify-content: center;
+}
+
+[class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels-"]>[class*="activityPanel-"]>div {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+[class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels-"]>[class*="activityPanel-"]>div>div[class*="gameWrapper-"] {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+[class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels-"]>[class*="activityPanel-"]>div>div[class*="gameWrapper-"]>div[class*="info-"] {
+	display: none;
+}
+
 /* action buttons when joining voice channel */
 [class*="sidebar-"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>[class*="actionButtons-"] {
 	display: flex;
