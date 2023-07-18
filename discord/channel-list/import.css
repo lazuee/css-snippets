@@ -36,7 +36,8 @@
 /* channel link to only display icons by hiding other elements*/
 [class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class^="link"] div[class*="name-"],
 [class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class^="link"] div[class*="children-"],
-[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class^="link"] div[class*="textBadge-"] {
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class^="link"] div[class*="textBadge-"],
+[class*="sidebar-"]:has([aria-label*="(server)"])>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class*="linkBottom-"] {
     display: none;
 }
 
@@ -63,6 +64,17 @@
 /* hide channel's "Hide Voice Channels" and "Show All" when not focus-within */
 [class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton-"]>div {
     display: none
+}
+
+/* only show "..." on "Hide Voice Channels" and "Show All" when not focus-within */
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton-"]:before {
+    margin-left: 8px;
+    font-weight: 500;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--text-normal);
+    content: "..."
 }
 
 /* only show channel's boost progressBar level when not focus-within */
@@ -110,20 +122,30 @@
     text-transform: uppercase;
 }
 
-/* only show "..." on "Hide Voice Channels" and "Show All" */
-[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton-"]:before {
-    margin-left: 8px;
-    font-weight: 500;
-    font-family: var(--font-primary);
-    font-size: 14px;
-    line-height: 18px;
-    color: var(--text-normal);
-    content: "..."
-}
-
-
 /* only show Disconnect icon when joining on voice channel */
 [class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels-"]>[class*="wrapper-"]>[class*="container-"]>div>[class*="inner-"] {
+    display: none;
+}
+
+/* fix Activity panel */
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels-"]>[class*="activityPanel-"] {
+    display: flex;
+    justify-content: center;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels-"]>[class*="activityPanel-"]>div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels-"]>[class*="activityPanel-"]>div>div[class*="gameWrapper-"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels-"]>[class*="activityPanel-"]>div>div[class*="gameWrapper-"]>div[class*="info-"] {
     display: none;
 }
 
