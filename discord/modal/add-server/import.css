@@ -1,4 +1,4 @@
-[class*="root-"]:not(:has([class*="paymentModalContent"]))>[class*="container-"] div:has(button:nth-child(4))>[class*="content-"] {
+[class*="root-"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="content-"] {
     overflow: hidden overlay !important;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -6,27 +6,27 @@
     gap: 1em;
 }
 
-[class*="root-"]:not(:has([class*="paymentModalContent"]))>[class*="container-"] div:has(button:nth-child(4))>[class*="content-"]> :nth-child(1),
-[class*="root-"]:not(:has([class*="paymentModalContent"]))>[class*="container-"] div:has(button:nth-child(4))>[class*="content-"]> :nth-child(2) {
+[class*="root-"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="content-"]> :nth-child(1),
+[class*="root-"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="content-"]> :nth-child(2) {
     grid-column: span 2;
 }
 
-[class*="root-"]:not(:has([class*="paymentModalContent"]))>[class*="container-"] div:has(button:nth-child(4))>[class*="content-"] button>[class*="text-"] {
+[class*="root-"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="content-"] button>[class*="text-"] {
     text-align: left;
 }
 
-[class*="root-"]:not(:has([class*="paymentModalContent"]))>[class*="container-"] div:has(button:nth-child(4))>[class*="content-"] button> :last-child:is(img) {
+[class*="root-"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="content-"] button> :last-child:is(img) {
     display: none;
 }
 
-[class*="root-"]:not(:has([class*="paymentModalContent"]))>[class*="container-"] div:has(button:nth-child(4))>[class*="footer-"] {
+[class*="root-"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="footer-"] {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-[class*="root-"]:not(:has([class*="paymentModalContent"]))>[class*="container-"] div:has(button:nth-child(4))>[class*="footer-"]>h2 {
+[class*="root-"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="footer-"]>h2 {
     margin: 0;
     font-size: 16px;
 }
