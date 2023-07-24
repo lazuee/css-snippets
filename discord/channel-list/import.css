@@ -27,6 +27,11 @@
     pointer-events: none;
 }
 
+/* hide server name when not focused-within */
+[class*="sidebar-"]:has([aria-label*="(server)"]):not(:focus-within) header>div>[class*="name-"] {
+    display: none
+}
+
 /* channel link icon */
 [class*="sidebar-"]:has([aria-label*="(server)"])>nav>[class*="scroller-"]>ul[aria-label*="Channels"]>li [class^="link"] svg[class*="icon"] {
     width: var(--sidebar-channel-icon-size);
