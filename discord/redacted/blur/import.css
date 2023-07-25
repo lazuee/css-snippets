@@ -37,8 +37,8 @@ li[class*="option-"]>img[class*="displayAvatar-"] {
 }
 
 /* userpanel */
-[class*="panelTitleContainer-"]>div,
-[class*="nameTag-"] [class*="subtext"],
+[class*="nameTag-"] [class*="title-"],
+[class*="nameTag-"] [class*="subtext-"],
 
 /* direct message chat */
 [class*="chat-"] section[aria-label="Channel header"]:has(div[class*="avatar-"]) [class*="titleWrapper-"]>h1,
@@ -46,6 +46,7 @@ li[class*="option-"]>img[class*="displayAvatar-"] {
 [class*="chat-"]:has(section[aria-label="Channel header"] div[class*="avatar-"]) [class*="content-"] [class*="header-"],
 [class*="chat-"]:has(section[aria-label="Channel header"] div[class*="avatar-"]) [class*="content-"] [class*="description-"]>h3,
 [class*="chat-"]:has(section[aria-label="Channel header"] div[class*="avatar-"]) [class*="content-"] [class*="description-"]>strong,
+[class*="threadCreatorName-"]>span,
 
 /* friend list */
 [class*="userInfo-"] [class*="discordTag-"] span,
@@ -144,6 +145,10 @@ li[class*="option-"]>img[class*="displayAvatar-"] {
 [class*="mainTableContainer-"] input:not(:placeholder-shown),
 [class*="mainTableContainer-"] tr>td>div>div:not(:first-child)>div,
 [class*="mainTableContainer-"] tr>td>div>div:not(:first-child)>div>span,
+
+/* account switcher */
+[class*="usernameSection-"]>[class*="username-"]>[class*="textOverflow-"],
+[class*="userMenuItem-"]>[class*="userMenuUsername-"]>[class*="userMenuText-"],
 
 /* invite link */
 span[class*="guildName-"],
