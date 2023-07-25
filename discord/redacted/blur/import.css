@@ -38,7 +38,7 @@ li[class*="option-"]>img[class*="displayAvatar-"] {
 
 /* userpanel */
 [class*="panelTitleContainer-"]>div,
-[class*="hoverRoll-"]>div,
+[class*="nameTag-"] [class*="subtext"],
 
 /* direct message chat */
 [class*="chat-"] section[aria-label="Channel header"]:has(div[class*="avatar-"]) [class*="titleWrapper-"]>h1,
