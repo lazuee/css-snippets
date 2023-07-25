@@ -1,0 +1,163 @@
+/* user icon */
+img[class*="avatar-"],
+[class*="imageUploaderInner-"],
+
+/* guild icon */
+[data-list-item-id*="guildsnav_"]>img,
+[class*="closedFolderIconWrapper-"]>div,
+div[class*="guildIconImage"],
+
+/* friend list */
+[class*="userInfo-"] [class*="activity-"]>img,
+[data-list-item-id*="private-channels-uid"] [class*="activity-"]>img,
+
+/* active now */
+[class*="itemCard-"] [class*="headerFull-"]>img,
+[class*="itemCard-"] [class*="activitySection-"] img,
+
+/* userprofile */
+[class*="user"] [class*="listAvatar-"],
+[class*="user"] [class*="customStatus-"]>img,
+[class*="user"] [class*="markup-"] span:has([class*="emoji"])>img,
+[class*="user"] [class*="gameIcon-"],
+
+/* profile customization section */
+[class*="customizationSection-"] [class*="icon-"],
+
+/* authed app section */
+[class*="authedApp-"]>div>div>img,
+
+/* message replied - user avatar */
+[id*="message-reply-context-"]>img,
+
+/* search result - user avatar */
+li[class*="option-"]>img[class*="displayAvatar-"] {
+    filter: blur(12px) !important;
+    clip-path: circle(50% at center) !important;
+}
+
+/* userpanel */
+[class*="panelTitleContainer-"]>div,
+[class*="hoverRoll-"]>div,
+
+/* direct message chat */
+[class*="chat-"] section[aria-label="Channel header"]:has(div[class*="avatar-"]) [class*="titleWrapper-"]>h1,
+[class*="chat-"] section[aria-label="Channel header"]:has(div[class*="avatar-"]) [class*="nicknames-"] span,
+[class*="chat-"]:has(section[aria-label="Channel header"] div[class*="avatar-"]) [class*="content-"] [class*="header-"],
+[class*="chat-"]:has(section[aria-label="Channel header"] div[class*="avatar-"]) [class*="content-"] [class*="description-"]>h3,
+[class*="chat-"]:has(section[aria-label="Channel header"] div[class*="avatar-"]) [class*="content-"] [class*="description-"]>strong,
+
+/* friend list */
+[class*="userInfo-"] [class*="discordTag-"] span,
+[class*="userInfo-"] [class*="text-"],
+[data-list-item-id*="private-channels-uid"] [class*="name-"]>div,
+[data-list-item-id*="private-channels-uid"] [class*="activity-"]>div,
+
+/* active now */
+[class*="itemCard-"] [class*="headerFull-"]>div>div,
+[class*="itemCard-"] [class*="headerFull-"]>div>div>span,
+[class*="itemCard-"] [class*="activitySection-"] [class*="textContent-"],
+[class*="memberItem-"] span,
+
+/* userprofile modal */
+[class*="userProfileModalOverlayBackground-"] [class*="container-"]>div>div,
+[class*="userProfileModalOverlayBackground-"] [class*="container-"]>div>div>span[class*="discriminator-"],
+[class*="userProfileModalOverlayBackground-"] [aria-label="Pronouns"],
+[class*="userProfileModalOverlayBackground-"] [class*="markup-"] span:not(:has([class*="emoji"])),
+[class*="userProfileModalOverlayBackground-"] [class*="memberSinceContainer-"] div[class*="text-sm-normal"],
+[class*="userProfileModalOverlayBackground-"] [class*="connectedAccountNameText-"],
+[class*="userProfileModalOverlayBackground-"] [class*="connectedAccountNameContainer-"]> :last-child,
+[class*="userProfileModalOverlayBackground-"] [class*="connectedAccountChildren-"]>div,
+[class*="userProfileModalOverlayBackground-"] [class*="connectedAccountChildren-"]>div>strong,
+[class*="userProfileModalOverlayBackground-"] [class*="note-"]>textarea::placeholder,
+[class*="userProfileModalOverlayBackground-"] [class*="note-"]>textarea,
+[class*="userProfileModalOverlayBackground-"] [class*="listName-"],
+
+/* userprofile popout */
+[class*="userPopoutOverlayBackground-"] [class*="userText-"]>h1,
+[class*="userPopoutOverlayBackground-"] [class*="userText-"]>h2,
+[class*="userPopoutOverlayBackground-"] [class*="userText-"]>h4,
+[class*="userPopoutOverlayBackground-"] [class*="userText-"]>div>span,
+[class*="userPopoutOverlayBackground-"] [aria-label="Pronouns"],
+[class*="userPopoutOverlayBackground-"] [class*="markup-"] span:not(:has([class*="emoji"])),
+[class*="userPopoutOverlayBackground-"] [class*="note-"]>textarea::placeholder,
+[class*="userPopoutOverlayBackground-"] [class*="note-"]>textarea,
+[class*="userPopoutOverlayBackground-"] [class*="memberSinceContainer-"] div[class*="text-sm-normal"],
+[class*="userPopoutOverlayBackground-"] [class*="customStatus-"]>span,
+[class*="userPopoutOverlayBackground-"] [class*="contentGameImage"] span,
+
+/* userprofile panel */
+[class*="userPanelOverlayBackground-"] [class*="userText-"]>h2,
+[class*="userPanelOverlayBackground-"] [class*="userText-"]>div>span,
+[class*="userPanelOverlayBackground-"] [aria-label="Pronouns"],
+[class*="userPanelOverlayBackground-"] [class*="customStatus-"]>span,
+[class*="userPanelOverlayBackground-"] [class*="markup-"] span:not(:has([class*="emoji"])),
+[class*="userPanelOverlayBackground-"] [class*="note-"]>textarea::placeholder,
+[class*="userPanelOverlayBackground-"] [class*="note-"]>textarea,
+[class*="userPanelOverlayBackground-"] [class*="memberSinceContainer-"] div[class*="text-sm-normal"],
+[class*="userPanelOverlayBackground-"] [class*="contentGameImage"] span,
+[class*="userPanelOverlayBackground-"] [class*="mutualGuildsList"] [class*="listName"],
+
+/* account profile card */
+[class*="accountProfileCard-"] [class*="userTag-"]>span,
+[class*="accountProfileCard-"] [class*="field-"]>div>div>div>span,
+
+/* profile customization section */
+[class*="customizationSection-"] input:not(:focus),
+
+/* authed app section */
+[class*="authedApp-"]>div>div>h4,
+
+/* session section */
+[class*="session-"]>[class*="sessionInfo"]>div:not([class*="eyebrow-"])>span,
+
+/* connection section */
+[class*="connection-"] [class*="connectionAccountValue"]>div,
+[class*="connection-"] [class*="metadataContainer-"] strong,
+[class*="connection-"] [class*="metadataContainer-"] div[class*="connectedAccountVanityMetadataCreatedAt"],
+
+/* inventory section */
+[id="library-inventory-tab"] [class*="codeRedemptionInput-"]>input:not(:placeholder-shown),
+
+/* payment history section */
+[class*="paymentHistory-"] [class*="amount-"]>[class*="price-"],
+[class*="paymentHistory-"] [class*="paymentDetail-"]>div>div:last-child,
+
+/* sidebar channel list - guild */
+[class*="sidebar-"]:has([aria-label*="(server)"]) header>div>[class*="name-"],
+
+/* member list */
+[class*="membersWrap-"] span[class*="username-"],
+[class*="membersWrap-"] [class*="activity-"]>div,
+
+/* chatbox */
+[id*="message-username"]>[class*="username-"],
+[id*="message-content"] [class*="mention"],
+[id*="message-reply-context-"]>[class*="username-"],
+
+/* search result */
+[class*="searchBar-"] div[class^="public-DraftStyleDefault-"]>span:not([class*="searchFilter-"]),
+[class*="option-"]>span[class*="display"],
+[class*="option-"][aria-label*="Search for "]>span:not([class*="filter-"]),
+
+/* server members channel table */
+[class*="mainTableContainer-"] input:not(:placeholder-shown),
+[class*="mainTableContainer-"] tr>td>div>div:not(:first-child)>div,
+[class*="mainTableContainer-"] tr>td>div>div:not(:first-child)>div>span,
+
+/* invite link */
+span[class*="guildName-"],
+[class*="statusWrapper-"]>span {
+    transition: ease-in 200ms;
+    color: transparent !important;
+    text-shadow: 0 0 6px rgb(255 255 255 / 23%) !important;
+    padding: 0 4px;
+}
+
+[class*="customizationSection-"] input:not(:focus) {
+    text-indent: 7px
+}
+
+input:not(:placeholder-shown) {
+    caret-color: var(--text-normal);
+}
