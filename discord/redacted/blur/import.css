@@ -29,6 +29,7 @@ div[class*="guildIconImage"],
 
 /* message replied - user avatar */
 [id*="message-reply-context-"]>img,
+[id*="message-accessories-"] [class*="threadMessageAccessory-"]>[class*="threadMessageAccessoryAvatar-"],
 
 /* search result - user avatar */
 li[class*="option-"]>img[class*="displayAvatar-"] {
@@ -135,6 +136,7 @@ li[class*="option-"]>img[class*="displayAvatar-"] {
 [id*="message-username"]>[class*="username-"],
 [id*="message-content"] [class*="mention"],
 [id*="message-reply-context-"]>[class*="username-"],
+[id*="message-accessories-"] [class*="threadMessageAccessory-"]>[class*="username-"],
 
 /* search result */
 [class*="searchBar-"] div[class^="public-DraftStyleDefault-"]>span:not([class*="searchFilter-"]),
