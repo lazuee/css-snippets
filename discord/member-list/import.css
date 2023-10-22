@@ -58,3 +58,8 @@
     opacity: 0%;
     transition: ease-out calc(var(--member-list-transition) - 0.5s);
 }
+
+/* Fix new child div from memberlist that has its own width which brokes the previous commit */
+*:has([class*="membersWrap-"]:not(:focus-within)) [class*="membersListNotices-"]:not(:has(>div>div)) {
+    width: unset;
+}
