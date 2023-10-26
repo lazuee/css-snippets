@@ -1,4 +1,4 @@
-[class*="root-"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="content-"] {
+[class*="root_"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="content_"] {
     overflow: hidden overlay !important;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -6,27 +6,27 @@
     gap: 1em;
 }
 
-[class*="root-"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="content-"]> :nth-child(1),
-[class*="root-"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="content-"]> :nth-child(2) {
+[class*="root_"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="content_"]> :nth-child(1),
+[class*="root_"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="content_"]> :nth-child(2) {
     grid-column: span 2;
 }
 
-[class*="root-"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="content-"] button>[class*="text-"] {
+[class*="root_"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="content_"] button>[class*="text_"] {
     text-align: left;
 }
 
-[class*="root-"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="content-"] button> :last-child:is(img) {
+[class*="root_"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="content_"] button> :last-child:is(img) {
     display: none;
 }
 
-[class*="root-"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="footer-"] {
+[class*="root_"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="footer_"] {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-[class*="root-"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="footer-"]>h2 {
+[class*="root_"]:not(:has([class*="paymentModalContent"])) div:has(button:nth-child(4))>[class*="footer_"]>h2 {
     margin: 0;
     font-size: 16px;
 }
