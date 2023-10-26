@@ -6,60 +6,59 @@
 }
 
 /* unfocused-within membersWrap width */
-[class*="membersWrap-"] {
+[class*="membersWrap_"] {
     min-width: var(--member-list-width);
     transition: ease-in-out var(--member-list-transition);
 }
 
-[class*="membersWrap-"] [class*="members-"] {
+[class*="membersWrap_"] [class*="members_"] {
     width: var(--member-list-width);
 }
 
 /* focused-within membersWrap width */
-[class*="membersWrap-"]:focus-within [class*="members-"] {
+[class*="membersWrap_"]:focus-within [class*="members_"] {
     width: var(--member-list-focused-width);
     transition: ease-in var(--member-list-focused-transition);
 }
 
 /* pointer eventers */
-[class*="membersWrap-"]:not(:focus-within) [class*="members-"] {
+[class*="membersWrap_"]:not(:focus-within) [class*="members_"] {
     cursor: pointer;
 }
 
-[class*="membersWrap-"]:not(:focus-within) [class*="members-"]>* {
+[class*="membersWrap_"]:not(:focus-within) [class*="members_"]>* {
     pointer-events: none;
 }
 
 /* hide user role category when not focus-within */
-[class*="membersWrap-"]:not(:focus-within) [class*="membersGroup-"] {
+[class*="membersWrap_"]:not(:focus-within) [class*="membersGroup_"] {
     opacity: 0%;
     height: 0px;
     transition: ease-out var(--member-list-transition);
 }
 
-[class*="membersWrap-"]:not(:focus-within) [class*="membersGroup-"]:first-of-type {
+[class*="membersWrap_"]:not(:focus-within) [class*="membersGroup_"]:first-of-type {
     padding: 10px 8px 0px 16px;
-    content: "searchhhhh"
 }
 
-[class*="membersWrap-"]:not(:focus-within) [class*="membersGroup-"]:not(:first-of-type) {
+[class*="membersWrap_"]:not(:focus-within) [class*="membersGroup_"]:not(:first-of-type) {
     padding: 0px 8px 0px 16px;
 }
 
 /* membersWrap height for not focus-within */
-[class*="membersWrap-"]:not(:focus-within) [class*="content-"][aria-label="Members"] {
+[class*="membersWrap_"]:not(:focus-within) [class*="content_"][aria-label="Members"] {
     height: 100vh !important;
 }
 
 /* hide notes in private threads */
-[class*="membersWrap-"]:not(:focus-within) [class*="content-"] [aria-label="Members"]>[class*="private-"]~div:last-child,
-[class*="membersWrap-"]:not(:focus-within) [class*="content-"] [aria-label="Members"]>[class*="divider-"],
-[class*="membersWrap-"]:not(:focus-within) [class*="content-"] [aria-label="Members"]>[class*="private-"] {
+[class*="membersWrap_"]:not(:focus-within) [class*="content_"] [aria-label="Members"]>[class*="private_"]~div:last-child,
+[class*="membersWrap_"]:not(:focus-within) [class*="content_"] [aria-label="Members"]>[class*="divider_"],
+[class*="membersWrap_"]:not(:focus-within) [class*="content_"] [aria-label="Members"]>[class*="private_"] {
     opacity: 0%;
     transition: ease-out calc(var(--member-list-transition) - 0.5s);
 }
 
 /* Fix new child div from memberlist that has its own width which brokes the previous commit */
-*:has([class*="membersWrap-"]:not(:focus-within)) [class*="membersListNotices-"]:not(:has(>div>div)) {
+*:has([class*="membersWrap_"]:not(:focus-within)) [class*="membersListNotices_"]:not(:has(>div>div)) {
     width: unset;
 }
