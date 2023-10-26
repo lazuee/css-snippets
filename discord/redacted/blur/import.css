@@ -1,167 +1,168 @@
 /* user icon */
-img[class*="avatar-"],
-[class*="imageUploaderInner-"],
+img[class*="avatar_"],
+[class*="imageUploaderInner_"],
 
 /* guild icon */
 [data-list-item-id*="guildsnav_"]>img,
-[class*="closedFolderIconWrapper-"]>div,
+[class*="closedFolderIconWrapper_"]>div,
 div[class*="guildIconImage"],
 
 /* friend list */
-[class*="userInfo-"] [class*="activity-"]>img,
-[data-list-item-id*="private-channels-uid"] [class*="activity-"]>img,
+[class*="userInfo_"] [class*="activity_"]>img,
+[data-list-item-id*="private-channels-uid"] [class*="activity_"]>img,
 
 /* active now */
-[class*="itemCard-"] [class*="headerFull-"]>img,
-[class*="itemCard-"] [class*="activitySection-"] img,
+[class*="itemCard_"] [class*="headerFull_"]>img,
+[class*="itemCard_"] [class*="activitySection_"] img,
 
 /* userprofile */
-[class*="user"] [class*="listAvatar-"],
-[class*="user"] [class*="customStatus-"]>img,
-[class*="user"] [class*="markup-"] span:has([class*="emoji"])>img,
-[class*="user"] [class*="gameIcon-"],
+[class*="user"] [class*="listAvatar_"],
+[class*="user"] [class*="customStatus_"]>img,
+[class*="user"] [class*="markup_"] span:has([class*="emoji"])>img,
+[class*="user"] [class*="gameIcon_"],
 
 /* profile customization section */
-[class*="customizationSection-"] [class*="icon-"],
+[class*="customizationSection_"] [class*="icon_"],
 
 /* authed app section */
-[class*="authedApp-"]>div>div>img,
+[class*="authedApp_"]>div>div>img,
 
 /* message replied - user avatar */
-[id*="message-reply-context-"]>img,
-[id*="message-accessories-"] [class*="threadMessageAccessory-"]>[class*="threadMessageAccessoryAvatar-"],
+[id*="message-reply-context_"]>img,
+[id*="message-accessories_"] [class*="threadMessageAccessory_"]>[class*="threadMessageAccessoryAvatar_"],
 
 /* search result - user avatar */
-li[class*="option-"]>img[class*="displayAvatar-"] {
+li[class*="option_"]>img[class*="displayAvatar_"] {
     filter: blur(12px) !important;
     clip-path: circle(50% at center) !important;
 }
 
 /* userpanel */
-[class*="nameTag-"] [class*="title-"],
-[class*="nameTag-"] [class*="subtext-"],
+[class*="nameTag_"] [class*="title_"],
+[class*="nameTag_"] [class*="subtext_"],
 
 /* direct message chat */
-[class*="chat-"] section[aria-label="Channel header"]:has(div[class*="avatar-"]) [class*="titleWrapper-"]>h1,
-[class*="chat-"] section[aria-label="Channel header"]:has(div[class*="avatar-"]) [class*="nicknames-"] span,
-[class*="chat-"]:has(section[aria-label="Channel header"] div[class*="avatar-"]) [class*="content-"] [class*="header-"],
-[class*="chat-"]:has(section[aria-label="Channel header"] div[class*="avatar-"]) [class*="content-"] [class*="description-"]>h3,
-[class*="chat-"]:has(section[aria-label="Channel header"] div[class*="avatar-"]) [class*="content-"] [class*="description-"]>strong,
-[class*="threadCreatorName-"]>span,
+[class*="chat_"] section[aria-label="Channel header"]:has(div[class*="avatar_"]) [class*="titleWrapper_"]>h1,
+[class*="chat_"] section[aria-label="Channel header"]:has(div[class*="avatar_"]) [class*="nicknames_"] span,
+[class*="chat_"]:has(section[aria-label="Channel header"] div[class*="avatar_"]) [class*="content_"] [class*="header_"],
+[class*="chat_"]:has(section[aria-label="Channel header"] div[class*="avatar_"]) [class*="content_"] [class*="description_"]>h3,
+[class*="chat_"]:has(section[aria-label="Channel header"] div[class*="avatar_"]) [class*="content_"] [class*="description_"]>strong,
+[class*="threadCreatorName_"]>span,
 
 /* friend list */
-[class*="userInfo-"] [class*="discordTag-"] span,
-[class*="userInfo-"] [class*="text-"],
-[data-list-item-id*="private-channels-uid"] [class*="name-"]>div,
-[data-list-item-id*="private-channels-uid"] [class*="activity-"]>div,
+[class*="userInfo_"] [class*="discordTag_"] span,
+[class*="userInfo_"] [class*="text_"],
+[data-list-item-id*="private-channels-uid"] [class*="name_"]>div,
+[data-list-item-id*="private-channels-uid"] [class*="activity_"]>div,
 
 /* active now */
-[class*="itemCard-"] [class*="headerFull-"]>div>div,
-[class*="itemCard-"] [class*="headerFull-"]>div>div>span,
-[class*="itemCard-"] [class*="activitySection-"] [class*="textContent-"],
-[class*="memberItem-"] span,
+[class*="itemCard_"] [class*="headerFull_"]>div>div,
+[class*="itemCard_"] [class*="headerFull_"]>div>div>span,
+[class*="itemCard_"] [class*="activitySection_"] [class*="textContent_"],
+[class*="memberItem_"] span,
 
 /* userprofile modal */
-[class*="userProfileModalOverlayBackground-"] [class*="container-"]>div>div,
-[class*="userProfileModalOverlayBackground-"] [class*="container-"]>div>div>span[class*="discriminator-"],
-[class*="userProfileModalOverlayBackground-"] [aria-label="Pronouns"],
-[class*="userProfileModalOverlayBackground-"] [class*="markup-"] span:not(:has([class*="emoji"])),
-[class*="userProfileModalOverlayBackground-"] [class*="memberSinceContainer-"] div[class*="text-sm-normal"],
-[class*="userProfileModalOverlayBackground-"] [class*="connectedAccountNameText-"],
-[class*="userProfileModalOverlayBackground-"] [class*="connectedAccountNameContainer-"]> :last-child,
-[class*="userProfileModalOverlayBackground-"] [class*="connectedAccountChildren-"]>div,
-[class*="userProfileModalOverlayBackground-"] [class*="connectedAccountChildren-"]>div>strong,
-[class*="userProfileModalOverlayBackground-"] [class*="note-"]>textarea::placeholder,
-[class*="userProfileModalOverlayBackground-"] [class*="note-"]>textarea,
-[class*="userProfileModalOverlayBackground-"] [class*="listName-"],
+[class*="userProfileModalOverlayBackground_"] [class*="container_"]>div>div,
+[class*="userProfileModalOverlayBackground_"] [class*="container_"]>div>div>span[class*="discriminator_"],
+[class*="userProfileModalOverlayBackground_"] [aria-label="Pronouns"],
+[class*="userProfileModalOverlayBackground_"] [class*="markup_"] span:not(:has([class*="emoji"])),
+[class*="userProfileModalOverlayBackground_"] [class*="memberSinceContainer_"] div[class*="text-sm-normal"],
+[class*="userProfileModalOverlayBackground_"] [class*="connectedAccountNameText_"],
+[class*="userProfileModalOverlayBackground_"] [class*="connectedAccountNameContainer_"]> :last-child,
+[class*="userProfileModalOverlayBackground_"] [class*="connectedAccountChildren_"]>div,
+[class*="userProfileModalOverlayBackground_"] [class*="connectedAccountChildren_"]>div>strong,
+[class*="userProfileModalOverlayBackground_"] [class*="note_"]>textarea::placeholder,
+[class*="userProfileModalOverlayBackground_"] [class*="note_"]>textarea,
+[class*="userProfileModalOverlayBackground_"] [class*="listName_"],
 
 /* userprofile popout */
-[class*="userPopoutOverlayBackground-"] [class*="userText-"]>h1,
-[class*="userPopoutOverlayBackground-"] [class*="userText-"]>h2,
-[class*="userPopoutOverlayBackground-"] [class*="userText-"]>h4,
-[class*="userPopoutOverlayBackground-"] [class*="userText-"]>div>span,
-[class*="userPopoutOverlayBackground-"] [aria-label="Pronouns"],
-[class*="userPopoutOverlayBackground-"] [class*="markup-"] span:not(:has([class*="emoji"])),
-[class*="userPopoutOverlayBackground-"] [class*="note-"]>textarea::placeholder,
-[class*="userPopoutOverlayBackground-"] [class*="note-"]>textarea,
-[class*="userPopoutOverlayBackground-"] [class*="memberSinceContainer-"] div[class*="text-sm-normal"],
-[class*="userPopoutOverlayBackground-"] [class*="customStatus-"]>span,
-[class*="userPopoutOverlayBackground-"] [class*="contentGameImage"] span,
+[class*="userPopoutOverlayBackground_"] [class*="userText_"]>h1,
+[class*="userPopoutOverlayBackground_"] [class*="userText_"]>h2,
+[class*="userPopoutOverlayBackground_"] [class*="userText_"]>h4,
+[class*="userPopoutOverlayBackground_"] [class*="userText_"]>div>span,
+[class*="userPopoutOverlayBackground_"] [aria-label="Pronouns"],
+[class*="userPopoutOverlayBackground_"] [class*="markup_"] span:not(:has([class*="emoji"])),
+[class*="userPopoutOverlayBackground_"] [class*="note_"]>textarea::placeholder,
+[class*="userPopoutOverlayBackground_"] [class*="note_"]>textarea,
+[class*="userPopoutOverlayBackground_"] [class*="memberSinceContainer_"] div[class*="text-sm-normal"],
+[class*="userPopoutOverlayBackground_"] [class*="customStatus_"]>span,
+[class*="userPopoutOverlayBackground_"] [class*="contentGameImage"] span,
 
 /* userprofile panel */
-[class*="userPanelOverlayBackground-"] [class*="userText-"]>h2,
-[class*="userPanelOverlayBackground-"] [class*="userText-"]>div>span,
-[class*="userPanelOverlayBackground-"] [aria-label="Pronouns"],
-[class*="userPanelOverlayBackground-"] [class*="customStatus-"]>span,
-[class*="userPanelOverlayBackground-"] [class*="markup-"] span:not(:has([class*="emoji"])),
-[class*="userPanelOverlayBackground-"] [class*="note-"]>textarea::placeholder,
-[class*="userPanelOverlayBackground-"] [class*="note-"]>textarea,
-[class*="userPanelOverlayBackground-"] [class*="memberSinceContainer-"] div[class*="text-sm-normal"],
-[class*="userPanelOverlayBackground-"] [class*="contentGameImage"] span,
-[class*="userPanelOverlayBackground-"] [class*="mutualGuildsList"] [class*="listName"],
+[class*="userPanelOverlayBackground_"] [class*="userText_"]>h2,
+[class*="userPanelOverlayBackground_"] [class*="userText_"]>div>span,
+[class*="userPanelOverlayBackground_"] [aria-label="Pronouns"],
+[class*="userPanelOverlayBackground_"] [class*="customStatus_"]>span,
+[class*="userPanelOverlayBackground_"] [class*="markup_"] span:not(:has([class*="emoji"])),
+[class*="userPanelOverlayBackground_"] [class*="note_"]>textarea::placeholder,
+[class*="userPanelOverlayBackground_"] [class*="note_"]>textarea,
+[class*="userPanelOverlayBackground_"] [class*="memberSinceContainer_"] div[class*="text-sm-normal"],
+[class*="userPanelOverlayBackground_"] [class*="contentGameImage"] span,
+[class*="userPanelOverlayBackground_"] [class*="mutualGuildsList"] [class*="listName"],
 
 /* account profile card */
-[class*="accountProfileCard-"] [class*="userTag-"]>span,
-[class*="accountProfileCard-"] [class*="field-"]>div>div>div>span,
+[class*="accountProfileCard_"] [class*="userTag_"]>span,
+[class*="accountProfileCard_"] [class*="field_"]>div>div>div>span,
 
 /* profile customization section */
-[class*="customizationSection-"] input:not(:focus),
+[class*="customizationSection_"] input:not(:focus),
 
 /* authed app section */
-[class*="authedApp-"]>div>div>h4,
+[class*="authedApp_"]>div>div>h4,
 
 /* session section */
-[class*="session-"]>[class*="sessionInfo"]>div:not([class*="eyebrow-"])>span,
+[class*="session_"]>[class*="sessionInfo"]>div:not([class*="eyebrow_"])>span,
 
 /* connection section */
-[class*="connection-"] [class*="connectionAccountValue"]>div,
-[class*="connection-"] [class*="metadataContainer-"] strong,
-[class*="connection-"] [class*="metadataContainer-"] div[class*="connectedAccountVanityMetadataCreatedAt"],
+[class*="connection_"] [class*="connectionAccountValue"]>div,
+[class*="connection_"] [class*="metadataContainer_"] strong,
+[class*="connection_"] [class*="metadataContainer_"] div[class*="connectedAccountVanityMetadataCreatedAt"],
 
 /* inventory section */
-[id="library-inventory-tab"] [class*="codeRedemptionInput-"]>input:not(:placeholder-shown),
+[id="library-inventory-tab"] [class*="codeRedemptionInput_"]>input:not(:placeholder-shown),
 
 /* payment history section */
-[class*="paymentHistory-"] [class*="amount-"]>[class*="price-"],
-[class*="paymentHistory-"] [class*="paymentDetail-"]>div>div:last-child,
+[class*="paymentHistory_"] [class*="amount_"]>[class*="price_"],
+[class*="paymentHistory_"] [class*="paymentDetail_"]>div>div:last-child,
 
 /* sidebar channel list - guild */
-[class*="sidebar-"]:has([aria-label*="(server)"]) header>div>[class*="name-"],
+[class*="sidebar_"]:has([aria-label*="(server)"]) header>div>[class*="name_"],
 
 /* member list */
-[class*="membersWrap-"] span[class*="username-"],
-[class*="membersWrap-"] [class*="activity-"]>div,
+[class*="membersWrap_"] span[class*="username_"],
+[class*="membersWrap_"] [class*="activity_"]>div,
 
 /* chatbox */
-[id*="message-username"]>[class*="username-"],
+[id*="message-content"] a>[class*="username_"],
+[id*="message-username"]>[class*="username_"],
 [id*="message-content"] [class*="mention"],
-[id*="message-reply-context-"]>[class*="username-"],
-[id*="message-accessories-"] [class*="threadMessageAccessory-"]>[class*="username-"],
+[id*="message-reply-context_"]>[class*="username_"],
+[id*="message-accessories_"] [class*="threadMessageAccessory_"]>[class*="username_"],
 
 /* search result */
-[class*="searchBar-"] div[class^="public-DraftStyleDefault-"]>span:not([class*="searchFilter-"]),
-[class*="option-"]>span[class*="display"],
-[class*="option-"][aria-label*="Search for "]>span:not([class*="filter-"]),
+[class*="searchBar_"] div[class^="public-DraftStyleDefault_"]>span:not([class*="searchFilter_"]),
+[class*="option_"]>span[class*="display"],
+[class*="option_"][aria-label*="Search for "]>span:not([class*="filter_"]),
 
 /* server members channel table */
-[class*="mainTableContainer-"] input:not(:placeholder-shown),
-[class*="mainTableContainer-"] tr>td>div>div:not(:first-child)>div,
-[class*="mainTableContainer-"] tr>td>div>div:not(:first-child)>div>span,
+[class*="mainTableContainer_"] input:not(:placeholder-shown),
+[class*="mainTableContainer_"] tr>td>div>div:not(:first-child)>div,
+[class*="mainTableContainer_"] tr>td>div>div:not(:first-child)>div>span,
 
 /* account switcher */
-[class*="usernameSection-"]>[class*="username-"]>[class*="textOverflow-"],
-[class*="userMenuItem-"]>[class*="userMenuUsername-"]>[class*="userMenuText-"],
+[class*="usernameSection_"]>[class*="username_"]>[class*="textOverflow_"],
+[class*="userMenuItem_"]>[class*="userMenuUsername_"]>[class*="userMenuText_"],
 
 /* invite link */
-span[class*="guildName-"],
-[class*="statusWrapper-"]>span {
+span[class*="guildName_"],
+[class*="statusWrapper_"]>span {
     transition: ease-in 200ms;
     color: transparent !important;
     text-shadow: 0 0 6px rgb(255 255 255 / 23%) !important;
     padding: 0 4px;
 }
 
-[class*="customizationSection-"] input:not(:focus) {
+[class*="customizationSection_"] input:not(:focus) {
     text-indent: 7px
 }
 
