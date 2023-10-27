@@ -6,16 +6,16 @@
     --sidebar-channel-icon-size: 22px;
 }
 
-/* unfocused-within sidebar-dim width */
-[class*="sidebar_"]:has([aria-label*="(server)"]) {
-    width: var(--sidebar-channel-width);
-    transition: ease-out var(--sidebar-channel-transition);
-}
-
 /* focused-within sidebar-dim width */
-[class*="sidebar_"]:has([aria-label*="(server)"]):focus-within {
+[class*="sidebar_"]:has([aria-label*="(server)"]) {
     width: var(--sidebar-channel-focused-width);
     transition: ease-in var(--sidebar-channel-focused-transition);
+}
+
+/* unfocused-within sidebar-dim width */
+[class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) {
+    width: var(--sidebar-channel-width);
+    transition: ease-out var(--sidebar-channel-transition);
 }
 
 /* pointer events*/
@@ -88,7 +88,8 @@
 }
 
 /* only show channel's boost progressBar level when not focus-within */
-[class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div:has(div[class*="progressBarContainer_"])>div {
+[class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="divider_"],
+[class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="progressBarContainer_"] {
     display: none
 }
 
