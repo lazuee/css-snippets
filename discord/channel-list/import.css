@@ -19,11 +19,11 @@
 }
 
 /* pointer events*/
-[class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>*>*>* {
+[class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav {
     cursor: pointer;
 }
 
-[class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>*>*>* {
+[class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>*>* * {
     pointer-events: none;
 }
 
@@ -90,7 +90,7 @@
 /* only show channel's boost progressBar level when not focus-within */
 [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="divider_"],
 [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="progressBarContainer_"],
-[class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[aria-label="This server has unlocked all Boosting perks!"] {
+[class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[aria-label*="Boost"] {
     display: none
 }
 

@@ -19,11 +19,11 @@
 }
 
 /* pointer events*/
-[class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>*>*>* {
+[class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav {
     cursor: pointer;
 }
 
-[class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav>*>*>* {
+[class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav>*>* * {
     pointer-events: none;
 }
 
