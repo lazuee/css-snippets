@@ -5,20 +5,20 @@
     --member-list-focused-transition: 600ms;
 }
 
+/* focused-within membersWrap width */
+[class*="membersWrap_"] [class*="members_"] {
+    width: var(--member-list-focused-width);
+    transition: ease-in var(--member-list-focused-transition);
+}
+
 /* unfocused-within membersWrap width */
 [class*="membersWrap_"] {
     min-width: var(--member-list-width);
-    transition: ease-in-out var(--member-list-transition);
 }
 
-[class*="membersWrap_"] [class*="members_"] {
+[class*="membersWrap_"]:not(:focus-within) [class*="members_"] {
     width: var(--member-list-width);
-}
-
-/* focused-within membersWrap width */
-[class*="membersWrap_"]:focus-within [class*="members_"] {
-    width: var(--member-list-focused-width);
-    transition: ease-in var(--member-list-focused-transition);
+    transition: ease-in-out var(--member-list-transition);
 }
 
 /* pointer eventers */
@@ -26,7 +26,7 @@
     cursor: pointer;
 }
 
-[class*="membersWrap_"]:not(:focus-within) [class*="members_"]>* {
+[class*="membersWrap_"]:not(:focus-within) [class*="members_"] * {
     pointer-events: none;
 }
 
