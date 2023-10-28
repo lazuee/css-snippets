@@ -1,49 +1,49 @@
 :root {
-	--sidebar-dm-width: 68px;
-	--sidebar-dm-focused-width: 245px;
-	--sidebar-dm-transition: 200ms;
-	--sidebar-dm-focused-transition: 600ms;
-	--sidebar-dm-display-header: flex;
+    --sidebar-dm-width: 68px;
+    --sidebar-dm-focused-width: 245px;
+    --sidebar-dm-transition: 200ms;
+    --sidebar-dm-focused-transition: 600ms;
+    --sidebar-dm-display-header: flex;
 }
 
 /* unfocused-within sidebar-dim width */
 [class*="sidebar_"]:has([aria-label*="Private"]) {
-	width: var(--sidebar-dm-width);
-	transition: ease-out var(--sidebar-dm-transition);
+    width: var(--sidebar-dm-width);
+    transition: ease-out var(--sidebar-dm-transition);
 }
 
 /* focused-within sidebar-dim width */
 [class*="sidebar_"]:has([aria-label*="Private"]):focus-within {
-	width: var(--sidebar-dm-focused-width);
-	transition: ease-in var(--sidebar-dm-focused-transition);
+    width: var(--sidebar-dm-focused-width);
+    transition: ease-in var(--sidebar-dm-focused-transition);
 }
 
 /* pointer events*/
-[class*="sidebar_"]:has([aria-label*="Private"]):not(focus-within)>*>*>* {
-	cursor: pointer;
+[class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>*>*>* {
+    cursor: pointer;
 }
 
 [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav>*>*>* {
-	pointer-events: none;
+    pointer-events: none;
 }
 
 /* don't show close dm button when hovering to avatar until it's focus-within */
 [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav>[class*="scroller_"]>ul>li:focus-within>div>[class*="closeButton"] {
-	display: none;
+    display: none;
 }
 
 /* hide direct message header category */
 [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav>[class*="scroller_"]>ul>[class*="privateChannelsHeaderContainer_"] {
-	display: none;
+    display: none;
 }
 
 [class*="sidebar_"]:has([aria-label*="Private"]):focus-within>nav>[class*="scroller_"]>ul>[class*="privateChannelsHeaderContainer_"] {
-	display: var(--sidebar-dm-display-header);
+    display: var(--sidebar-dm-display-header);
 }
 
 /* hide conversation searchBar*/
 [class*="sidebar_"]:has([aria-label*="Private"])>nav>[class*="searchBar_"] {
-	display: none;
+    display: none;
 }
 
 /* only show Disconnect icon when joining on voice channel */
@@ -51,6 +51,7 @@
 [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels_"]>[class*="wrapper_"]>[class*="container_"]>div>div>[aria-label*="Noise Suppression"] {
     display: none;
 }
+
 /* fix Activity panel */
 [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels_"]>[class*="activityPanel_"] {
     display: flex;
@@ -103,6 +104,7 @@
     margin-left: 0px;
     justify-content: center;
 }
+
 [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels_"]>[class*="container_"]>[class*="avatarWrapper_"] {
     min-width: 34px;
     min-height: 37px;

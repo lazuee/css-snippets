@@ -19,7 +19,7 @@
 }
 
 /* pointer events*/
-[class*="sidebar_"]:has([aria-label*="(server)"]):not(focus-within)>*>*>* {
+[class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>*>*>* {
     cursor: pointer;
 }
 
@@ -139,6 +139,7 @@
 [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels_"]>[class*="wrapper_"]>[class*="container_"]>div>div>[aria-label*="Noise Suppression"] {
     display: none;
 }
+
 /* fix Activity panel */
 [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels_"]>[class*="activityPanel_"] {
     display: flex;
@@ -191,6 +192,7 @@
     margin-left: 0px;
     justify-content: center;
 }
+
 [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels_"]>[class*="container_"]>[class*="avatarWrapper_"] {
     min-width: 34px;
     min-height: 37px;
