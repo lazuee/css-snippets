@@ -138,6 +138,7 @@ li[class*="option_"]>img[class*="displayAvatar_"] {
 [id*="message-content"] [class*="mention"],
 [id*="message-reply-context_"]>[class*="username_"],
 [id*="message-accessories_"] [class*="threadMessageAccessory_"]>[class*="username_"],
+[id*="message-content"] [class*="channelNameChange_"] strong,
 
 /* search result */
 [class*="searchBar_"] div[class^="public-DraftStyleDefault_"]>span:not([class*="searchFilter_"]),
