@@ -1,15 +1,15 @@
 ## Members List
 
-> Show members Icon ONLY on the members list when is not focused, back to original when it's focused.
+> Displays an icon only when it is not active, and reverts to its original state when it becomes active.
 
 ### Variables
 #### Default state
-- `--member-list-type` : The type of member list either `hover` or `focus`.
-- `--member-list-width`: The default width of the member list.
-- `--member-list-transition`: The default transition duration for the member list.
+- `--member-list-type` : specifies the type of the member list, either `hover` or `focus`.
+- `--member-list-width`: sets the default width of the member list.
+- `--member-list-transition`: defines the default transition duration for the member list.
 #### Active state
-- `--member-list-active-width`: The width of the member list when it is focused.
-- `--member-list-active-transition`: The transition duration for the member list when it is focused.
+- `--member-list-active-width`: sets the width of the member list when it is active.
+- `--member-list-active-transition`: defines the transition duration for the member list when it is active.
 
 ### Preview
 
