@@ -28,8 +28,8 @@ div[class*="guildIconImage"],
 [class*="authedApp_"]>div>div>img,
 
 /* message replied - user avatar */
-[id*="message-reply-context_"]>img,
-[id*="message-accessories_"] [class*="threadMessageAccessory_"]>[class*="threadMessageAccessoryAvatar_"],
+[id*="message-reply-context"]>img,
+[id*="message-accessories"] [class*="threadMessageAccessory_"]>[class*="threadMessageAccessoryAvatar_"],
 
 /* search result - user avatar */
 li[class*="option_"]>img[class*="displayAvatar_"] {
