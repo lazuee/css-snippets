@@ -6,13 +6,13 @@
     --member-list-active-transition: 800ms;
 }
 
-/* focused-within membersWrap width */
+/* active membersWrap width */
 [class*="membersWrap_"] [class*="members_"] {
     width: var(--member-list-active-width);
     transition: var(--member-list-active-transition);
 }
 
-/* unfocused-within membersWrap width */
+/* default membersWrap width */
 [class*="membersWrap_"] {
     min-width: var(--member-list-width);
 }
