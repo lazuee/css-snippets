@@ -1,13 +1,16 @@
 ## Sidebar Channel List
 
-> Show Icon's ONLY on the sidebar when is not focused, back to original when it's focused.
+> Displays an icon only when it is not active, and reverts to its original state when it becomes active.
 
 ### Variables
-
-- `--channel-list-width`: The default width of the sidebar.
-- `--channel-list-focused-width`: The width of the sidebar when it is focused.
-- `--channel-list-transition`: The default transition duration for the sidebar.
-- `--channel-list-focused-transition`: The transition duration for the sidebar when it is focused.
+#### Default state
+- `--sidebar-channel-type` : specifies the type of the channel list, either `hover` or `focus`.
+- `--sidebar-channel-width`: sets the default width of the channel list.
+- `--sidebar-channel-transition`: defines the default transition duration for the channel list.
+- `--sidebar-channel-icon-size`: sets the default size of the channel icon.
+#### Active state
+- `--sidebar-channel-active-width`: sets the width of the channel list when it is active.
+- `--sidebar-channel-active-transition`: defines the transition duration for the channel list when it is active.
 
 ### Preview
 
