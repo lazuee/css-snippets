@@ -6,20 +6,20 @@
     --member-list-active-transition: 800ms;
 }
 
+/* unset membersWrap min-width */
+[class*="membersWrap_"] {
+    min-width: unset;
+}
+
+/* unset member container max-width */
+[class*="membersWrap_"] [class*="members_"]>[aria-label="Members"] [class*="member_"] {
+    max-width: unset
+}
+
 /* active membersWrap width */
 [class*="membersWrap_"] [class*="members_"] {
     width: var(--member-list-active-width);
     transition: var(--member-list-active-transition);
-}
-
-/* unset member container max-width */
-[class*="membersWrap_"] [class*="members_"] > * [class*="member_"] {
-    max-width: unset !important;
-}
-
-/* default membersWrap width */
-[class*="membersWrap_"] {
-    min-width: var(--member-list-width);
 }
 
 @container style(--member-list-type: "focus") {
