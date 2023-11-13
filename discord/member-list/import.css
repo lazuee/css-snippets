@@ -12,7 +12,7 @@
 }
 
 /* unset member container max-width */
-[class*="membersWrap_"] [class*="members_"]>[aria-label="Members"] [class*="member_"] {
+[class*="membersWrap_"] [class*="members_"] [class*="member_"] {
     max-width: unset
 }
 
