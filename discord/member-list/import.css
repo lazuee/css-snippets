@@ -12,6 +12,11 @@
     transition: var(--member-list-active-transition);
 }
 
+/* unset member container max-width */
+[class*="membersWrap_"] [class*="members_"] > * [class*="member_"] {
+    max-width: unset !important;
+}
+
 /* default membersWrap width */
 [class*="membersWrap_"] {
     min-width: var(--member-list-width);
