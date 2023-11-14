@@ -29,18 +29,29 @@
     display: none;
 }
 
+[class*="sidebar_"]:has([aria-label*="(server)"]) * {
+    transition: var(--sidebar-channel-active-transition);
+}
+
 /* active sidebar width */
 [class*="sidebar_"]:has([aria-label*="(server)"]) {
     width: var(--sidebar-channel-active-width);
-    transition: ease-in var(--sidebar-channel-active-transition);
+}
+
+[class*="sidebar_"]:has([aria-label*="(server)"]) header [class*="headerContent"],
+[class*="sidebar_"]:has([aria-label*="(server)"])>nav>[class*="scroller_"]>ul[aria-label*="Channels"] li[tabindex="0"] [class^="link"]>div[class^="content_"]:has(>[class^="iconContainer_"]),
+[class*="sidebar_"]:has([aria-label*="(server)"])>nav>[class*="scroller_"]>ul[aria-label*="Channels"] li[tabindex="-1"] [class^="link"]>div[class^="content_"]:has(>[class^="iconContainer_"]) {
+    justify-content: center
 }
 
 @container style(--sidebar-channel-type: "focus") {
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) * {
+        transition: var(--sidebar-channel-transition);
+    }
 
     /* default sidebar width */
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) {
         width: var(--sidebar-channel-width);
-        transition: ease-out var(--sidebar-channel-transition);
     }
 
     /* pointer events*/
@@ -75,12 +86,12 @@
         padding-left: 4px;
     }
 
-    /* channel category to be hidden when not focus-within */
+    /* channel category to be hidden when not active */
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"] li:has([aria-label*="(category)"]) svg[class*="arrow_"] {
         display: none
     }
 
-    /* channel link threads to be hidden when not focus-within  */
+    /* channel link threads to be hidden when not active  */
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"] li:has(div[class*="spineBorder_"]):has(div[aria-label*="(thread)"]) {
         display: none
     }
@@ -90,15 +101,17 @@
         display: none
     }
 
-    /* hide channel's "Hide Voice Channels" and "Show All" when not focus-within */
+    /* hide channel's "Hide Voice Channels" and "Show All" when not active */
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton_"]>div {
         display: none
     }
 
-    /* only show "..." on "Hide Voice Channels" and "Show All" when not focus-within */
+    /* only show "..." on "Hide Voice Channels" and "Show All" when not active */
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton_"]:before {
         margin-left: 8px;
-        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        font-weight: 600;
         font-family: var(--font-primary);
         font-size: 14px;
         line-height: 18px;
@@ -106,7 +119,7 @@
         content: "..."
     }
 
-    /* only show channel's boost progressBar level when not focus-within */
+    /* only show channel's boost progressBar level when not active */
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="divider_"],
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="progressBarContainer_"],
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[aria-label*="Boost"] {
@@ -135,6 +148,37 @@
         font-weight: 600;
         color: var(--white-500);
         text-transform: uppercase;
+    }
+
+    /* hide category name when not active */
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) ul[aria-label="Channels"] [class*="containerDefault_"]:has([class*="arrow_"]) h3[class*="name"] [class^="overflow"] {
+        display: none
+    }
+
+    /* only show "..." on category name when not active */
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) ul[aria-label="Channels"] [class*="containerDefault_"]:has([class*="arrow_"]) h3[class*="name"]:before {
+        display: flex;
+        justify-content: center;
+        font-weight: 600;
+        font-family: var(--font-primary);
+        font-size: 14px;
+        line-height: 18px;
+        color: var(--text-normal);
+        content: "..."
+    }
+
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) *:has([class*="hasBanner"]) header {
+        transition: inherit;
+        box-shadow: var(--elevation-low);
+    }
+
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) *:has([class*="hasBanner"]) [class*="animatedContainer_"] {
+        height: 0;
+        opacity: 0 !important;
+    }
+
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) *:has([class*="hasBanner"]) ul[aria-label="Channels"] div[aria-hidden="true"]:first-child {
+        height: 0 !important;
     }
 
     /* only show Disconnect icon when joining on voice channel */
@@ -214,11 +258,13 @@
 
 
 @container style(--sidebar-channel-type: "hover") {
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) * {
+        transition: var(--sidebar-channel-transition);
+    }
 
     /* default sidebar width */
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) {
         width: var(--sidebar-channel-width);
-        transition: ease-out var(--sidebar-channel-transition);
     }
 
     /* pointer events*/
@@ -253,12 +299,12 @@
         padding-left: 4px;
     }
 
-    /* channel category to be hidden when not focus-within */
+    /* channel category to be hidden when not active */
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover)>nav>[class*="scroller_"]>ul[aria-label*="Channels"] li:has([aria-label*="(category)"]) svg[class*="arrow_"] {
         display: none
     }
 
-    /* channel link threads to be hidden when not focus-within  */
+    /* channel link threads to be hidden when not active  */
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover)>nav>[class*="scroller_"]>ul[aria-label*="Channels"] li:has(div[class*="spineBorder_"]):has(div[aria-label*="(thread)"]) {
         display: none
     }
@@ -268,15 +314,17 @@
         display: none
     }
 
-    /* hide channel's "Hide Voice Channels" and "Show All" when not focus-within */
+    /* hide channel's "Hide Voice Channels" and "Show All" when not active */
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton_"]>div {
         display: none
     }
 
-    /* only show "..." on "Hide Voice Channels" and "Show All" when not focus-within */
+    /* only show "..." on "Hide Voice Channels" and "Show All" when not active */
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton_"]:before {
         margin-left: 8px;
-        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        font-weight: 600;
         font-family: var(--font-primary);
         font-size: 14px;
         line-height: 18px;
@@ -284,7 +332,7 @@
         content: "..."
     }
 
-    /* only show channel's boost progressBar level when not focus-within */
+    /* only show channel's boost progressBar level when not active */
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="divider_"],
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="progressBarContainer_"],
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[aria-label*="Boost"] {
@@ -313,6 +361,38 @@
         font-weight: 600;
         color: var(--white-500);
         text-transform: uppercase;
+    }
+
+    /* hide category name when not active */
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) ul[aria-label="Channels"] [class*="containerDefault_"]:has([class*="arrow_"]) h3[class*="name"] [class^="overflow"] {
+        display: none
+    }
+
+    /* only show "..." on category name when not active */
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) ul[aria-label="Channels"] [class*="containerDefault_"]:has([class*="arrow_"]) h3[class*="name"]:before {
+        display: flex;
+        justify-content: center;
+        font-weight: 600;
+        font-family: var(--font-primary);
+        font-size: 14px;
+        line-height: 18px;
+        color: var(--text-normal);
+        content: "..."
+    }
+
+
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) *:has([class*="hasBanner"]) header {
+        transition: inherit;
+        box-shadow: var(--elevation-low);
+    }
+
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) *:has([class*="hasBanner"]) [class*="animatedContainer_"] {
+        height: 0;
+        opacity: 0 !important;
+    }
+
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) *:has([class*="hasBanner"]) ul[aria-label="Channels"] div[aria-hidden="true"]:first-child {
+        height: 0 !important;
     }
 
     /* only show Disconnect icon when joining on voice channel */

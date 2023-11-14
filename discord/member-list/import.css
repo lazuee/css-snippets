@@ -19,6 +19,9 @@
 /* active membersWrap width */
 [class*="membersWrap_"] [class*="members_"] {
     width: var(--member-list-active-width);
+}
+
+[class*="membersWrap_"] * {
     transition: var(--member-list-active-transition);
 }
 
