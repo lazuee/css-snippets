@@ -29,13 +29,14 @@
     display: none;
 }
 
-[class*="sidebar_"]:has([aria-label*="(server)"]) * {
+[class*="sidebar_"]:has([aria-label*="(server)"])>nav * {
     transition: var(--sidebar-channel-active-transition);
 }
 
 /* active sidebar width */
 [class*="sidebar_"]:has([aria-label*="(server)"]) {
     width: var(--sidebar-channel-active-width);
+    transition: var(--sidebar-channel-active-transition);
 }
 
 [class*="sidebar_"]:has([aria-label*="(server)"]) header [class*="headerContent"],
@@ -45,13 +46,14 @@
 }
 
 @container style(--sidebar-channel-type: "focus") {
-    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) * {
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav * {
         transition: var(--sidebar-channel-transition);
     }
 
     /* default sidebar width */
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) {
         width: var(--sidebar-channel-width);
+        transition: var(--sidebar-channel-transition);
     }
 
     /* pointer events*/
@@ -159,11 +161,9 @@
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) ul[aria-label="Channels"] [class*="containerDefault_"]:has([class*="arrow_"]) h3[class*="name"]:before {
         display: flex;
         justify-content: center;
-        font-weight: 600;
         font-family: var(--font-primary);
-        font-size: 14px;
-        line-height: 18px;
-        color: var(--text-normal);
+        line-height: 16px;
+        color: var(--channels-default);
         content: "..."
     }
 
@@ -258,13 +258,14 @@
 
 
 @container style(--sidebar-channel-type: "hover") {
-    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) * {
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover)>nav * {
         transition: var(--sidebar-channel-transition);
     }
 
     /* default sidebar width */
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) {
         width: var(--sidebar-channel-width);
+        transition: var(--sidebar-channel-transition);
     }
 
     /* pointer events*/
@@ -372,14 +373,13 @@
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) ul[aria-label="Channels"] [class*="containerDefault_"]:has([class*="arrow_"]) h3[class*="name"]:before {
         display: flex;
         justify-content: center;
-        font-weight: 600;
         font-family: var(--font-primary);
+        line-height: 16px;
         font-size: 14px;
-        line-height: 18px;
-        color: var(--text-normal);
+        font-weight: 700;
+        color: var(--channels-default);
         content: "..."
     }
-
 
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) *:has([class*="hasBanner"]) header {
         transition: inherit;
