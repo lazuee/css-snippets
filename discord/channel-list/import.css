@@ -175,12 +175,12 @@
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) [class*="animatedContainer_"] {
         height: 0;
         opacity: 0 !important;
-        transition: inherit !important;
+        transition: none !important;
     }
 
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) ul[aria-label="Channels"] div[aria-hidden="true"]:first-child {
         height: 0 !important;
-        transition: inherit !important;
+        transition: none !important;
     }
 
     /* only show Disconnect icon when joining on voice channel */
@@ -391,12 +391,12 @@
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) [class*="animatedContainer_"] {
         height: 0;
         opacity: 0 !important;
-        transition: inherit !important;
+        transition: none !important;
     }
 
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) ul[aria-label="Channels"] div[aria-hidden="true"]:first-child {
         height: 0 !important;
-        transition: inherit !important;
+        transition: none !important;
     }
 
     /* only show Disconnect icon when joining on voice channel */
