@@ -167,18 +167,20 @@
         content: "..."
     }
 
-    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) *:has([class*="hasBanner"]) header {
-        transition: inherit;
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) header {
         box-shadow: var(--elevation-low);
+        transition: inherit !important;
     }
 
-    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) *:has([class*="hasBanner"]) [class*="animatedContainer_"] {
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) [class*="animatedContainer_"] {
         height: 0;
         opacity: 0 !important;
+        transition: inherit !important;
     }
 
-    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) *:has([class*="hasBanner"]) ul[aria-label="Channels"] div[aria-hidden="true"]:first-child {
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) ul[aria-label="Channels"] div[aria-hidden="true"]:first-child {
         height: 0 !important;
+        transition: inherit !important;
     }
 
     /* only show Disconnect icon when joining on voice channel */
@@ -381,18 +383,20 @@
         content: "..."
     }
 
-    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) *:has([class*="hasBanner"]) header {
-        transition: inherit;
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) header {
         box-shadow: var(--elevation-low);
+        transition: inherit !important;
     }
 
-    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) *:has([class*="hasBanner"]) [class*="animatedContainer_"] {
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) [class*="animatedContainer_"] {
         height: 0;
         opacity: 0 !important;
+        transition: inherit !important;
     }
 
-    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) *:has([class*="hasBanner"]) ul[aria-label="Channels"] div[aria-hidden="true"]:first-child {
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) ul[aria-label="Channels"] div[aria-hidden="true"]:first-child {
         height: 0 !important;
+        transition: inherit !important;
     }
 
     /* only show Disconnect icon when joining on voice channel */
