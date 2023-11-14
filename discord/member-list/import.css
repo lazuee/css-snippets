@@ -23,9 +23,12 @@
 }
 
 @container style(--member-list-type: "focus") {
+    [class*="membersWrap_"]:not(:focus-within) * {
+        transition: var(--member-list-transition);
+    }
+
     [class*="membersWrap_"]:not(:focus-within) [class*="members_"] {
         width: var(--member-list-width);
-        transition: var(--member-list-transition);
     }
 
     /* pointer eventers */
@@ -41,7 +44,6 @@
     [class*="membersWrap_"]:not(:focus-within) [class*="membersGroup_"] {
         opacity: 0%;
         height: 0px;
-        transition: var(--member-list-transition);
     }
 
     [class*="membersWrap_"]:not(:focus-within) [class*="membersGroup_"]:first-of-type {
@@ -70,12 +72,23 @@
         width: unset;
     }
 
+    [class*="membersWrap_"]:not(:focus-within) [class*="members_"] [class*="member_"] [class*="memberInner_"] {
+        justify-content: center
+    }
+
+    [class*="membersWrap_"]:not(:focus-within) [class*="members_"] [class*="member_"] [class*="memberInner_"] [class*="content_"] {
+        visibility: hidden;
+        max-width: 0;
+    }
 }
 
 @container style(--member-list-type: "hover") {
+    [class*="membersWrap_"]:not(:hover) * {
+        transition: var(--member-list-transition);
+    }
+
     [class*="membersWrap_"]:not(:hover) [class*="members_"] {
         width: var(--member-list-width);
-        transition: var(--member-list-transition);
     }
 
     /* pointer eventers */
@@ -91,7 +104,6 @@
     [class*="membersWrap_"]:not(:hover) [class*="membersGroup_"] {
         opacity: 0%;
         height: 0px;
-        transition: var(--member-list-transition);
     }
 
     [class*="membersWrap_"]:not(:hover) [class*="membersGroup_"]:first-of-type {
@@ -120,4 +132,12 @@
         width: unset;
     }
 
+    [class*="membersWrap_"]:not(:hover) [class*="members_"] [class*="member_"] [class*="memberInner_"] {
+        justify-content: center
+    }
+
+    [class*="membersWrap_"]:not(:hover) [class*="members_"] [class*="member_"] [class*="memberInner_"] [class*="content_"] {
+        visibility: hidden;
+        max-width: 0;
+    }
 }
