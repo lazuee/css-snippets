@@ -111,7 +111,7 @@
     }
 
     /* hide channel's "Hide Voice Channels" and "Show All" when not active */
-    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton_"]>div {
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton_"]>* {
         display: none
     }
 
@@ -330,7 +330,7 @@
     }
 
     /* hide channel's "Hide Voice Channels" and "Show All" when not active */
-    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton_"]>div {
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover)>nav>[class*="scroller_"]>ul[aria-label*="Channels"]>div[class*="voiceChannelsButton_"]>* {
         display: none
     }
 
