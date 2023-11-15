@@ -190,8 +190,8 @@
         opacity: 0;
     }
 
-    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) ul[aria-label="Channels"] div[aria-hidden="true"]:first-child {
-        height: 0 !important;
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) ul[aria-label="Channels"]:has(>div[style="height: 16px;"]) div[aria-hidden="true"]:first-child {
+        position: absolute;
         transition: none !important;
     }
 
@@ -409,8 +409,8 @@
         opacity: 0;
     }
 
-    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) ul[aria-label="Channels"] div[aria-hidden="true"]:first-child {
-        height: 0 !important;
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) ul[aria-label="Channels"]:has(>div[style="height: 16px;"]) div[aria-hidden="true"]:first-child {
+        position: absolute;
         transition: none !important;
     }
 
