@@ -377,8 +377,6 @@
         justify-content: center;
         font-family: var(--font-primary);
         line-height: 16px;
-        font-size: 14px;
-        font-weight: 700;
         color: var(--channels-default);
         content: "..."
     }
