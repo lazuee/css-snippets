@@ -33,6 +33,13 @@
     transition: var(--sidebar-channel-active-transition);
 }
 
+[class*="sidebar_"]:has([aria-label*="(server)"]) [class*="animatedContainer_"] [class*="bannerImage_"],
+[class*="sidebar_"]:has([aria-label*="(server)"]) [class*="animatedContainer_"] [class*="bannerImage_"] img {
+    width: var(--member-list-active-width);
+    opacity: 1;
+    transition: opacity calc(var(--member-list-active-transition) + 1500ms);
+}
+
 /* active sidebar width */
 [class*="sidebar_"]:has([aria-label*="(server)"]) {
     width: var(--sidebar-channel-active-width);
@@ -176,6 +183,11 @@
         height: 0;
         opacity: 0 !important;
         transition: none !important;
+    }
+
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) [class*="animatedContainer_"] [class*="bannerImage_"],
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) [class*="animatedContainer_"] [class*="bannerImage_"] img {
+        opacity: 0;
     }
 
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) ul[aria-label="Channels"] div[aria-hidden="true"]:first-child {
@@ -390,6 +402,11 @@
         height: 0;
         opacity: 0 !important;
         transition: none !important;
+    }
+
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) [class*="animatedContainer_"] [class*="bannerImage_"],
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) [class*="animatedContainer_"] [class*="bannerImage_"] img {
+        opacity: 0;
     }
 
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) ul[aria-label="Channels"] div[aria-hidden="true"]:first-child {
