@@ -8,12 +8,14 @@
 
 /* unset membersWrap min-width */
 [class*="membersWrap_"] {
-    min-width: unset;
+    min-width: unset !important;
+    width: unset !important;
+    flex-basis: unset !important;
 }
 
 /* unset member container max-width */
 [class*="membersWrap_"] [class*="members_"] [class*="member_"] {
-    max-width: unset
+    max-width: unset !important;
 }
 
 /* active membersWrap width */
