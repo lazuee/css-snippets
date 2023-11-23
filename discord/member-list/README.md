@@ -4,7 +4,7 @@
 
 ### Variables
 #### Default state
-- `--member-list-type` : specifies the type of the member list, either `hover` or `focus`.
+- `--member-list-type` : specifies the type of the member list, either `hover` | `focus` | `both`.
 - `--member-list-width`: sets the default width of the member list.
 - `--member-list-transition`: defines the default transition duration for the member list.
 #### Active state
