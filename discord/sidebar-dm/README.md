@@ -4,7 +4,7 @@
 
 ### Variables
 #### Default state
-- `--sidebar-dm-type` : specifies the type of the user list, either `hover` or `focus`.
+- `--sidebar-dm-type` : specifies the type of the user list, either `hover` | `focus` | `both`.
 - `--sidebar-dm-width`: sets the default width of the user list.
 - `--sidebar-dm-transition`: defines the default transition duration for the user list.
 - `--sidebar-dm-display-header`: Set to `false` to hide the `Direct Messages +` in the user list.

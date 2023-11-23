@@ -1,34 +1,42 @@
 :root {
-    --sidebar-dm-type: "focus";
+    --sidebar-dm-type: "both";
     --sidebar-dm-width: 68px;
     --sidebar-dm-transition: 200ms;
     --sidebar-dm-active-width: 245px;
     --sidebar-dm-active-transition: 800ms;
-    --sidebar-dm-display-header: "false";
-    --sidebar-dm-display-search: "false";
+    --sidebar-dm-display-header: "true";
+    --sidebar-dm-display-search: "true";
 }
 
 
-@container style(--sidebar-dm-display-header: "false") {
-    [class*="sidebar_"]:has([aria-label*="Private"])>nav>[class*="scroller_"]>ul>[class*="privateChannelsHeaderContainer_"] {
-        display: none;
+@container style(--sidebar-dm-type: "focus") or style(--sidebar-dm-type: "hover") or style(--sidebar-dm-type: "both") {
+    @container style(--sidebar-dm-display-header: "false") {
+        [class*="sidebar_"]:has([aria-label*="Private"])>nav>[class*="scroller_"]>ul>[class*="privateChannelsHeaderContainer_"] {
+            display: none;
+        }
     }
-}
 
 
-@container style(--sidebar-dm-display-search: "false") {
-    [class*="sidebar_"]:has([aria-label*="Private"])>nav>[class*="searchBar_"] {
-        display: none;
+    @container style(--sidebar-dm-display-search: "false") {
+        [class*="sidebar_"]:has([aria-label*="Private"])>nav>[class*="searchBar_"] {
+            display: none;
+        }
     }
+
+    /* active sidebar-dim width */
+    [class*="sidebar_"]:has([aria-label*="Private"]) {
+        width: var(--sidebar-dm-active-width);
+        transition: var(--sidebar-dm-active-transition);
+    }
+
+    /* unset channel container max-width */
+    [class*="sidebar_"]:has([aria-label*="Private"]) ul>li[class*="channel_"] {
+        max-width: unset !important;
+    }
+
 }
 
-/* active sidebar-dim width */
-[class*="sidebar_"]:has([aria-label*="Private"]) {
-    width: var(--sidebar-dm-active-width);
-    transition: var(--sidebar-dm-active-transition);
-}
-
-@container style(--sidebar-dm-type: "focus") {
+@container style(--sidebar-dm-type: "focus") or style(--sidebar-dm-type: "both") {
     [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav>[class*="scroller_"]>ul>[class*="privateChannelsHeaderContainer_"] {
         display: none;
     }
@@ -53,10 +61,9 @@
     }
 
     /* don't show close dm button when hovering to avatar until it's focus-within */
-    [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav>[class*="scroller_"]>ul>li:focus-within>div>[class*="closeButton"] {
+    [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav>[class*="scroller_"]>ul>li:hover>div>[class*="closeButton"] {
         display: none;
     }
-
 
     /* only show Disconnect icon when joining on voice channel */
     [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels_"]>[class*="wrapper_"]>[class*="container_"]>div>[class*="inner_"],
@@ -131,10 +138,14 @@
     [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>[class*="panels_"]>[class*="container_"]>[class*="directionRow_"] {
         display: none;
     }
+
+    [class*="sidebar_"]:has([aria-label*="Private"])>[class*="panels_"]>[class*="container_"] {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
-
-@container style(--sidebar-dm-type: "hover") {
+@container style(--sidebar-dm-type: "hover") or style(--sidebar-dm-type: "both") {
     [class*="sidebar_"]:has([aria-label*="Private"]):not(:hover)>nav>[class*="scroller_"]>ul>[class*="privateChannelsHeaderContainer_"] {
         display: none;
     }
@@ -158,11 +169,10 @@
         pointer-events: none;
     }
 
-    /* don't show close dm button when hovering to avatar until it's focus-within */
+    /* don't show close dm button when hovering to avatar until it's hover */
     [class*="sidebar_"]:has([aria-label*="Private"]):not(:hover)>nav>[class*="scroller_"]>ul>li:hover>div>[class*="closeButton"] {
         display: none;
     }
-
 
     /* only show Disconnect icon when joining on voice channel */
     [class*="sidebar_"]:has([aria-label*="Private"]):not(:hover)>[class*="panels_"]>[class*="wrapper_"]>[class*="container_"]>div>[class*="inner_"],
@@ -236,5 +246,20 @@
 
     [class*="sidebar_"]:has([aria-label*="Private"]):not(:hover)>[class*="panels_"]>[class*="container_"]>[class*="directionRow_"] {
         display: none;
+    }
+
+    [class*="sidebar_"]:has([aria-label*="Private"])>[class*="panels_"]>[class*="container_"] {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@container style(--sidebar-dm-type: "both") {
+    *:has([class*="sidebar_"]:hover) *:has(nav[aria-label*="Private"]) {
+        --sidebar-dm-type: "hover";
+    }
+
+    *:has([class*="sidebar_"]:focus-within) *:has(nav[aria-label*="Private"]) {
+        --sidebar-dm-type: "focus";
     }
 }
