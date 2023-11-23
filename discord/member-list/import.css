@@ -29,12 +29,12 @@
         transition: width var(--member-list-active-transition), opacity var(--member-list-active-transition);
     }
 
-    div[id^="popout"]:has([class*="user"]) {
+    div[id^="popout"][style*="right:"]:has([class*="user"]) {
         right: calc(var(--member-list-active-width) + 20px) !important;
         transition: unset !important;
     }
 
-    div[id^="popout"]:has([class*="user"])>div {
+    div[id^="popout"][style*="right:"]:has([class*="user"])>div {
         transition: unset !important;
         transform: unset !important;
     }
@@ -50,7 +50,7 @@
         transition: width var(--member-list-transition), opacity var(--member-list-transition);
     }
 
-    *:has([class*="membersWrap_"]:not(:focus-within)) div[id^="popout"]:has([class*="user"]) {
+    *:has([class*="membersWrap_"]:not(:focus-within)) div[id^="popout"][style*="right:"]:has([class*="user"]) {
         right: calc(var(--member-list-width) + 20px) !important;
         transition: right var(--member-list-transition) !important;
     }
@@ -117,7 +117,7 @@
         transition: width var(--member-list-transition), opacity var(--member-list-transition);
     }
 
-    *:has([class*="membersWrap_"]:not(:hover)) div[id^="popout"]:has([class*="user"]) {
+    *:has([class*="membersWrap_"]:not(:hover)) div[id^="popout"][style*="right:"]:has([class*="user"]) {
         right: calc(var(--member-list-width) + 20px) !important;
         transition: right var(--member-list-transition) !important;
     }
