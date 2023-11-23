@@ -1,5 +1,5 @@
 :root {
-    --sidebar-channel-type: "focus";
+    --sidebar-channel-type: "both";
     --sidebar-channel-width: 68px;
     --sidebar-channel-transition: 200ms;
     --sidebar-channel-icon-size: 22px;
@@ -7,52 +7,57 @@
     --sidebar-channel-active-transition: 800ms;
 }
 
-/* channel link icon */
-[class*="sidebar_"]:has([aria-label*="(server)"])>nav>[class*="scroller_"]>ul[aria-label*="Channels"] li [class^="link"] svg[class*="icon"] {
-    width: var(--sidebar-channel-icon-size);
-    height: var(--sidebar-channel-icon-size);
+@container style(--sidebar-channel-type: "focus") or style(--sidebar-channel-type: "hover") or style(--sidebar-channel-type: "both") {
+
+    /* channel link icon */
+    [class*="sidebar_"]:has([aria-label*="(server)"])>nav>[class*="scroller_"]>ul[aria-label*="Channels"] li [class^="link"] svg[class*="icon"] {
+        width: var(--sidebar-channel-icon-size);
+        height: var(--sidebar-channel-icon-size);
+    }
+
+    /* remove left dot for unread channel */
+    [class*="unread_"] {
+        display: none;
+    }
+
+    /* changing channel icon color as replacement for dot*/
+    [class*="modeUnread"] [class*="icon_"],
+    [class*="modeSelected"] [class*="icon_"] {
+        color: var(--interactive-active);
+    }
+
+    /* remove channels icon when there's channel emoji */
+    [class*="sidebar_"]:has([aria-label*="(server)"])>nav>[class*="scroller_"]>ul[aria-label*="Channels"] li>div>div a:has(> :nth-child(n + 2))>[class*="linkTop_"]:has([class*="channelEmoji_"])>[class*="iconContainer_"] {
+        display: none;
+    }
+
+    [class*="sidebar_"]:has([aria-label*="(server)"])>nav * {
+        transition: var(--sidebar-channel-active-transition);
+    }
+
+    [class*="sidebar_"]:has([aria-label*="(server)"]) [class*="animatedContainer_"] [class*="bannerImage_"],
+    [class*="sidebar_"]:has([aria-label*="(server)"]) [class*="animatedContainer_"] [class*="bannerImage_"] img {
+        width: var(--member-list-active-width);
+        opacity: 1;
+        transition: opacity calc(var(--member-list-active-transition) + 1500ms);
+    }
+
+    /* active sidebar width */
+    [class*="sidebar_"]:has([aria-label*="(server)"]) {
+        width: var(--sidebar-channel-active-width);
+        transition: var(--sidebar-channel-active-transition);
+    }
+
+    [class*="sidebar_"]:has([aria-label*="(server)"]) header [class*="headerContent"],
+    [class*="sidebar_"]:has([aria-label*="(server)"])>nav>[class*="scroller_"]>ul[aria-label*="Channels"] li[tabindex="0"] [class^="link"]>div[class^="content_"]:has(>[class^="iconContainer_"]),
+    [class*="sidebar_"]:has([aria-label*="(server)"])>nav>[class*="scroller_"]>ul[aria-label*="Channels"] li[tabindex="-1"] [class^="link"]>div[class^="content_"]:has(>[class^="iconContainer_"]) {
+        justify-content: center
+    }
+
+
 }
 
-/* remove left dot for unread channel */
-[class*="unread_"] {
-    display: none;
-}
-
-/* changing channel icon color as replacement for dot*/
-[class*="modeUnread"] [class*="icon_"],
-[class*="modeSelected"] [class*="icon_"] {
-    color: var(--interactive-active);
-}
-
-/* remove channels icon when there's channel emoji */
-[class*="sidebar_"]:has([aria-label*="(server)"])>nav>[class*="scroller_"]>ul[aria-label*="Channels"] li>div>div a:has(> :nth-child(n + 2))>[class*="linkTop_"]:has([class*="channelEmoji_"])>[class*="iconContainer_"] {
-    display: none;
-}
-
-[class*="sidebar_"]:has([aria-label*="(server)"])>nav * {
-    transition: var(--sidebar-channel-active-transition);
-}
-
-[class*="sidebar_"]:has([aria-label*="(server)"]) [class*="animatedContainer_"] [class*="bannerImage_"],
-[class*="sidebar_"]:has([aria-label*="(server)"]) [class*="animatedContainer_"] [class*="bannerImage_"] img {
-    width: var(--member-list-active-width);
-    opacity: 1;
-    transition: opacity calc(var(--member-list-active-transition) + 1500ms);
-}
-
-/* active sidebar width */
-[class*="sidebar_"]:has([aria-label*="(server)"]) {
-    width: var(--sidebar-channel-active-width);
-    transition: var(--sidebar-channel-active-transition);
-}
-
-[class*="sidebar_"]:has([aria-label*="(server)"]) header [class*="headerContent"],
-[class*="sidebar_"]:has([aria-label*="(server)"])>nav>[class*="scroller_"]>ul[aria-label*="Channels"] li[tabindex="0"] [class^="link"]>div[class^="content_"]:has(>[class^="iconContainer_"]),
-[class*="sidebar_"]:has([aria-label*="(server)"])>nav>[class*="scroller_"]>ul[aria-label*="Channels"] li[tabindex="-1"] [class^="link"]>div[class^="content_"]:has(>[class^="iconContainer_"]) {
-    justify-content: center
-}
-
-@container style(--sidebar-channel-type: "focus") {
+@container style(--sidebar-channel-type: "focus") or style(--sidebar-channel-type: "both") {
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>nav * {
         transition: var(--sidebar-channel-transition);
     }
@@ -174,6 +179,10 @@
         content: "..."
     }
 
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) ul[aria-label="Channels"] [class*="containerDefault_"]:has([class*="arrow_"]) div[class*="children"] {
+        display: none
+    }
+
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within) header {
         box-shadow: var(--elevation-low);
         transition: inherit !important;
@@ -268,10 +277,14 @@
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:focus-within)>[class*="panels_"]>[class*="container_"]>[class*="directionRow_"] {
         display: none;
     }
+
+    [class*="sidebar_"]:has([aria-label*="(server)"])>[class*="panels_"]>[class*="container_"] {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
-
-@container style(--sidebar-channel-type: "hover") {
+@container style(--sidebar-channel-type: "hover") or style(--sidebar-channel-type: "both") {
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover)>nav * {
         transition: var(--sidebar-channel-transition);
     }
@@ -393,6 +406,10 @@
         content: "..."
     }
 
+    [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) ul[aria-label="Channels"] [class*="containerDefault_"]:has([class*="arrow_"]) div[class*="children"] {
+        display: none
+    }
+
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover) header {
         box-shadow: var(--elevation-low);
         transition: inherit !important;
@@ -486,5 +503,20 @@
 
     [class*="sidebar_"]:has([aria-label*="(server)"]):not(:hover)>[class*="panels_"]>[class*="container_"]>[class*="directionRow_"] {
         display: none;
+    }
+
+    [class*="sidebar_"]:has([aria-label*="(server)"])>[class*="panels_"]>[class*="container_"] {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@container style(--sidebar-channel-type: "both") {
+    *:has([class*="sidebar_"]:hover) {
+        --sidebar-channel-type: "hover";
+    }
+
+    *:has([class*="sidebar_"]:focus-within) {
+        --sidebar-channel-type: "focus";
     }
 }

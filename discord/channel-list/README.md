@@ -4,7 +4,7 @@
 
 ### Variables
 #### Default state
-- `--sidebar-channel-type` : specifies the type of the channel list, either `hover` or `focus`.
+- `--sidebar-channel-type` : specifies the type of the channel list, either `hover` | `focus` | `both`.
 - `--sidebar-channel-width`: sets the default width of the channel list.
 - `--sidebar-channel-transition`: defines the default transition duration for the channel list.
 - `--sidebar-channel-icon-size`: sets the default size of the channel icon.
