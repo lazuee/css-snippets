@@ -8,7 +8,6 @@
     --sidebar-dm-display-search: "true";
 }
 
-
 @container style(--sidebar-dm-type: "focus") or style(--sidebar-dm-type: "hover") or style(--sidebar-dm-type: "both") {
     @container style(--sidebar-dm-display-header: "false") {
         [class*="sidebar_"]:has([aria-label*="Private"])>nav>[class*="scroller_"]>ul>[class*="privateChannelsHeaderContainer_"] {
@@ -60,9 +59,24 @@
         pointer-events: none;
     }
 
-    /* don't show close dm button when hovering to avatar until it's focus-within */
-    [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav>[class*="scroller_"]>ul>li:hover>div>[class*="closeButton"] {
+    /* only show avatar when it's not active */
+    [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav>[class*="scroller_"]>ul>li>div>a[data-list-item-id^="private-channels-uid"]>div>div[class*="content"],
+    [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav>[class*="scroller_"]>ul>li>div>div[aria-label="Close DM"] {
         display: none;
+    }
+
+    [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav>[class*="scroller_"]>ul>li>div>a[data-list-item-id^="private-channels-uid"],
+    [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav>[class*="scroller_"]>ul>li>div>a[data-list-item-id^="private-channels-uid"]>div[class*="layout"] {
+        display: flex;
+        justify-content: center;
+    }
+
+    [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav>[class*="scroller_"]>ul>li>div>a[data-list-item-id^="private-channels-uid"]>div[class*="layout"]>div[class*="avatar"] {
+        margin-right: unset !important;
+    }
+
+    [class*="sidebar_"]:has([aria-label*="Private"]):not(:focus-within)>nav>[class*="scroller_"]>ul>li>div>a[data-list-item-id^="private-channels-uid"]>div[class*="layout"][class*="avatarWithText"] {
+        margin-left: 10px !important;
     }
 
     /* only show Disconnect icon when joining on voice channel */
@@ -169,9 +183,24 @@
         pointer-events: none;
     }
 
-    /* don't show close dm button when hovering to avatar until it's hover */
-    [class*="sidebar_"]:has([aria-label*="Private"]):not(:hover)>nav>[class*="scroller_"]>ul>li:hover>div>[class*="closeButton"] {
+    /* only show avatar when it's not active */
+    [class*="sidebar_"]:has([aria-label*="Private"]):not(:hover)>nav>[class*="scroller_"]>ul>li>div>a[data-list-item-id^="private-channels-uid"]>div>div[class*="content"],
+    [class*="sidebar_"]:has([aria-label*="Private"]):not(:hover)>nav>[class*="scroller_"]>ul>li>div>div[aria-label="Close DM"] {
         display: none;
+    }
+
+    [class*="sidebar_"]:has([aria-label*="Private"]):not(:hover)>nav>[class*="scroller_"]>ul>li>div>a[data-list-item-id^="private-channels-uid"],
+    [class*="sidebar_"]:has([aria-label*="Private"]):not(:hover)>nav>[class*="scroller_"]>ul>li>div>a[data-list-item-id^="private-channels-uid"]>div[class*="layout"] {
+        display: flex;
+        justify-content: center;
+    }
+
+    [class*="sidebar_"]:has([aria-label*="Private"]):not(:hover)>nav>[class*="scroller_"]>ul>li>div>a[data-list-item-id^="private-channels-uid"]>div[class*="layout"]>div[class*="avatar"] {
+        margin-right: unset !important;
+    }
+
+    [class*="sidebar_"]:has([aria-label*="Private"]):not(:hover)>nav>[class*="scroller_"]>ul>li>div>a[data-list-item-id^="private-channels-uid"]>div[class*="layout"][class*="avatarWithText"] {
+        margin-left: 10px !important;
     }
 
     /* only show Disconnect icon when joining on voice channel */
