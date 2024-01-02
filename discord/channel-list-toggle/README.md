@@ -4,6 +4,7 @@
 
 ### Variables
 - `--channel-list-toggle-icon`: sets the default toggle icon of the channel list.
+- `--channel-list-toggle-icon-margin`: sets the toggle icon margin, if the icon size isn't 30x30.
 
 ### Preview
 
