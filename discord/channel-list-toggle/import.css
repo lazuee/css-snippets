@@ -1,0 +1,63 @@
+*:has([aria-label*="(server)"]) {
+	--channel-list-menu-enable: true;
+}
+
+@container style(--channel-list-menu-enable: true) {
+	[class^="layerContainer"]>div[id^="popout"]:has([id="guild-header-popout"]) {
+		top: 40px !important;
+		left: 82px !important;
+	}
+
+	*:has([class*="sidebar_"]:not(:focus-within)) {
+		--channel-list-menu-close: true;
+	}
+
+	*:has([class*="sidebar_"] *>* *:hover) {
+		--channel-list-menu-close: false;
+	}
+}
+
+@container style(--channel-list-menu-close: true) {
+	div[class*="content"]>[class*="chat"] {
+		z-index: 0;
+	}
+
+	[class*="sidebar_"] {
+		z-index: 1;
+		position: absolute;
+		width: 45px;
+		overflow: hidden;
+	}
+
+	[class*="sidebar_"] nav>div[id="channels"] {
+		height: 48px;
+		overflow: hidden !important
+	}
+
+	[class*="sidebar_"] nav>div[id="channels"]:before {
+		position: fixed;
+		content: url("data:image/svg+xml,%3Csvg width='30px' height='30px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_429_11066)'%3E%3Cpath d='M3 6.00092H21M3 12.0009H21M3 18.0009H21' stroke='%23eee' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_429_11066'%3E%3Crect width='24' height='24' fill='white' transform='translate(0 0.000915527)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+		cursor: pointer;
+		color: var(--interactive-normal);
+		margin-top: 8px;
+		margin-left: 7px;
+	}
+
+	[class*="sidebar_"] nav>div:first-child,
+	[class*="sidebar_"] nav div[class^="container"]:has([class^="unreadIcon"]),
+	[class*="sidebar_"] section[class^="panels"] {
+		display: none
+	}
+
+	[class*="sidebar_"] nav>div[id="channels"]>ul {
+		opacity: 0
+	}
+
+	[class*="sidebar_"]>*>*>* {
+		pointer-events: none
+	}
+
+	section[aria-label="Channel header"]>div[class^="upperContainer"]>div[class^="children"]>div[class^="iconWrapper"]:first-child {
+		margin-left: 50px;
+	}
+}
