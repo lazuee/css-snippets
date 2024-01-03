@@ -6,7 +6,7 @@
 	--channel-list-toggle-icon-margin: 11px 0px 0px 16px;
 }
 
-*:has([aria-label*="(server)"]) {
+html:has([aria-hidden="false"][class^="layer"] nav[aria-label*="(server)"]) * {
 	--channel-list-toggle-enable: true;
 }
 
@@ -16,11 +16,11 @@
 		left: 82px !important;
 	}
 
-	*:has([class*="sidebar_"]:not(:focus-within)) {
+	html:has([class*="sidebar_"]:not(:focus-within)) * {
 		--channel-list-toggle-close: true;
 	}
 
-	*:has([class*="sidebar_"] * > * *:hover) {
+	html:has([class*="sidebar_"] * > * *:hover) * {
 		--channel-list-toggle-close: false;
 	}
 }
