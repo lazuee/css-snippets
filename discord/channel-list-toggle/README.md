@@ -8,4 +8,4 @@
 
 ### Preview
 
-![image](https://i.imgur.com/O6uI8xI.gif)
+![image](https://i.imgur.com/zZJISCf.gif)
