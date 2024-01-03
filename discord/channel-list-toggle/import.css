@@ -51,6 +51,7 @@
 	}
 
 	[class*="sidebar_"] nav>div:first-child,
+	[class*="sidebar_"] nav div[class^="container"]:has([class*="bar"]),
 	[class*="sidebar_"] nav div[class^="container"]:has([class^="unreadIcon"]),
 	[class*="sidebar_"] section[class^="panels"] {
 		display: none
