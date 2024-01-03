@@ -1,9 +1,9 @@
 :root {
 	/* icon size must be 30x30 */
-	--channel-list-toggle-icon: url("data:image/svg+xml,%3Csvg width='30px' height='30px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_429_11066)'%3E%3Cpath d='M3 6.00092H21M3 12.0009H21M3 18.0009H21' stroke='%23eee' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_429_11066'%3E%3Crect width='24' height='24' fill='white' transform='translate(0 0.000915527)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+	--channel-list-toggle-icon: url("data:image/svg+xml,%3Csvg width='25px' height='25px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_429_11066)'%3E%3Cpath d='M3 6.00092H21M3 12.0009H21M3 18.0009H21' stroke='%23eee' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_429_11066'%3E%3Crect width='24' height='24' fill='white' transform='translate(0 0.000915527)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
 	/* if the icon size isn't 30x30, you have to set the margin to make it centered */
-	--channel-list-toggle-icon-margin: 8px 0px 0px 7px;
 	/* top, right, bottom, left */
+	--channel-list-toggle-icon-margin: 11px 0px 0px 16px;
 }
 
 *:has([aria-label*="(server)"]) {
@@ -20,7 +20,7 @@
 		--channel-list-toggle-close: true;
 	}
 
-	*:has([class*="sidebar_"] *>* *:hover) {
+	*:has([class*="sidebar_"] * > * *:hover) {
 		--channel-list-toggle-close: false;
 	}
 }
@@ -28,6 +28,11 @@
 @container style(--channel-list-toggle-close: true) {
 	div[class*="content"]>[class*="chat"] {
 		z-index: 0;
+	}
+
+	[class^="sidebar"],
+	[class^="sidebar_"] nav[class^="container"] {
+		background: transparent !important;
 	}
 
 	[class*="sidebar_"] {
