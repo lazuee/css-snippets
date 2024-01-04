@@ -56,6 +56,25 @@ html:not([class*="is-mobile"]):has([aria-hidden="false"][class^="layer"] nav[ari
 		margin: var(--channel-list-toggle-icon-margin);
 	}
 
+	@media only screen and (max-width: 570px) {
+		[class*=sidebar_] {
+			margin-left: 0px;
+		}
+
+		[class*=sidebar_] nav > div[id=channels]:before {
+		    width: 50px;
+		    background: linear-gradient(94deg, var(--background-primary) 75%, rgba(0,0,0,0) 100%);
+			padding-left: 18px;
+		}
+	}
+
+	@media only screen and (max-width: 535px) {
+		[class*=sidebar_] nav > div[id=channels]:before {
+			width: 30px;
+			background: var(--background-primary);
+		}
+	}
+
 	[class*="sidebar_"] nav>div:first-child,
 	[class*="sidebar_"] nav div[class^="container"]:has([class*="bar"]),
 	[class*="sidebar_"] nav div[class^="container"]:has([class^="unreadIcon"]),
