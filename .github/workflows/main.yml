@@ -1,0 +1,33 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+     - "**.css"
+
+permissions:
+  contents: write
+
+jobs:
+  minify-and-deploy:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+    - uses: actions/checkout@v4
+    - run: |
+        find . -name "*.css" -not -path "./dist/*" | while IFS= read -r file; do
+          content=$(cat "$file")
+          result=$(curl -s -X POST --data-urlencode "input=$content" 'https://www.toptal.com/developers/cssminifier/api/raw')
+          dest_dir="dist/$(dirname "$file")"
+          mkdir -p "$dest_dir" && echo "$result" > "$dest_dir/$(basename "$file")"
+        done
+      shell: bash
+    - uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: dist
+        branch: gh-pages
+        clean: true
