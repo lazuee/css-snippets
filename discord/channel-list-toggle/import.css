@@ -49,8 +49,8 @@ html[class*="is-mobile"] {
 		color: var(--interactive-normal);
 	}
 
-	[class^="sidebar"] nav div[class^="container"]:has([class*=bar]),
-	[class^="sidebar"] nav div[class^="container"]:has([class^=unreadIcon]),
+	[class^="sidebar"] nav div[class^="container"]:has([class*="bar"]),
+	[class^="sidebar"] nav div[class^="unread"][class*="container"],
 	[class^="sidebar"] nav > div:first-child,
 	[class^="sidebar"] section[class^="panels"] {
 		display: none;
