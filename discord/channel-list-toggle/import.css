@@ -8,33 +8,25 @@
 	--channel-list-header-channel-forum: var(--home-background);
 }
 
-html:not([class*="is-mobile"]):has([aria-hidden="false"][class^="layer"] nav[aria-label*="(server)"]) * {
-	--channel-list-toggle-enable: true;
+
+html:has([class^="sidebar"]:not(:focus-within) > nav[aria-label*="(server)"]) {
+	--channel-list-toggle-close: true;
 }
 
-@container style(--channel-list-toggle-enable: true) {
-	[class^="layerContainer"]>div[id^="popout"]:has([id="guild-header-popout"]) {
-		top: 40px !important;
-		left: 82px !important;
-	}
-
-	html:has([class^="sidebar"]:not(:focus-within)) * {
-		--channel-list-toggle-close: true;
-	}
-
-	html:has([class^="sidebar"] * > * *:hover) * {
-		--channel-list-toggle-close: false;
-	}
+html:has(div[aria-hidden="true"][class^="layer"]),
+html:has([class^="sidebar"] > * > * *:hover),
+html[class*="is-mobile"] {
+	--channel-list-toggle-close: false !important;
 }
 
 @container style(--channel-list-toggle-close:true) {
 	div[class^="content"] > [class^="chat"] {
-		z-index: 0
+		z-index: 0;
 	}
 
 	[class^="sidebar"],
 	[class^="sidebar"] nav[class^="container"] {
-		background: unset
+		background: unset;
 	}
 
 	[class^="sidebar"] {
@@ -47,7 +39,7 @@ html:not([class*="is-mobile"]):has([aria-hidden="false"][class^="layer"] nav[ari
 
 	[class^="sidebar"] nav > div[id="channels"] {
 		height: 48px;
-		overflow: hidden!important
+		overflow: hidden !important;
 	}
 
 	[class^="sidebar"] nav > div[id="channels"]:before {
@@ -55,6 +47,25 @@ html:not([class*="is-mobile"]):has([aria-hidden="false"][class^="layer"] nav[ari
 		content: var(--channel-list-toggle-icon);
 		cursor: pointer;
 		color: var(--interactive-normal);
+	}
+
+	[class^="sidebar"] nav div[class^="container"]:has([class*=bar]),
+	[class^="sidebar"] nav div[class^="container"]:has([class^=unreadIcon]),
+	[class^="sidebar"] nav > div:first-child,
+	[class^="sidebar"] section[class^="panels"] {
+		display: none;
+	}
+
+	[class^="sidebar"] nav > div[id="channels"] > ul {
+		opacity: 0;
+	}
+
+	[class^="sidebar"] > * > * > * {
+		pointer-events: none;
+	}
+
+	section[aria-label="Channel header"] > div[class^="upperContainer"] > div[class^="children"] > div[class^="iconWrapper"]:first-child {
+		margin-left: 60px;
 	}
 
 	@media only screen and (max-width:570px) {
@@ -66,29 +77,9 @@ html:not([class*="is-mobile"]):has([aria-hidden="false"][class^="layer"] nav[ari
 			margin-left: -9px;
 			background: linear-gradient(94deg, var(--channel-list-header-channel-text) 75%, rgba(0, 0, 0, 0) 100%);
 		}
-		
-		
+
 		div:has([data-list-id^="forum-channel-list"]) > [class^="sidebar"] nav:before {
 			background: linear-gradient(94deg, var(--channel-list-header-channel-forum) 75%, rgba(0, 0, 0, 0) 100%);
 		}
-	}
-
-	[class^="sidebar"] nav div[class^="container"]:has([class*="bar"]),
-	[class^="sidebar"] nav div[class^="container"]:has([class^="unreadIcon"]),
-	[class^="sidebar"] nav > div:first-child,
-	[class^="sidebar"] section[class^="panels"] {
-		display: none
-	}
-
-	[class^="sidebar"] nav > div[id="channels"] > ul {
-		opacity: 0
-	}
-
-	[class^="sidebar"] > * > * > * {
-		pointer-events: none
-	}
-
-	section[aria-label="Channel header"] > div[class^="upperContainer"] > div[class^="children"] > div[class^="iconWrapper"]:first-child {
-		margin-left: 60px
 	}
 }
