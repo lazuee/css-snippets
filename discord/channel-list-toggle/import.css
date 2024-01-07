@@ -64,7 +64,7 @@ html[class*="is-mobile"] {
 		pointer-events: none;
 	}
 
-	section[aria-label="Channel header"] > div[class^="upperContainer"] > div[class^="children"] > div[class^="iconWrapper"]:first-child {
+	section > div[class^="upperContainer"] > div[class^="children"] > div[class^="iconWrapper"]:first-child {
 		margin-left: 60px;
 	}
 
@@ -80,6 +80,10 @@ html[class*="is-mobile"] {
 
 		div:has([data-list-id^="forum-channel-list"]) > [class^="sidebar"] nav:before {
 			background: linear-gradient(94deg, var(--channel-list-header-channel-forum) 75%, rgba(0, 0, 0, 0) 100%);
+		}
+
+		div:has([class^="callContainer"]) > [class^="sidebar"] nav:before {
+			background: unset
 		}
 	}
 }
