@@ -9,12 +9,12 @@
 }
 
 
-html:has([class^="sidebar"]:not(:focus-within) > nav[aria-label*="(server)"]) {
+html:has(div[class^="sidebar_"]:not(:focus-within) > nav[aria-label*="(server)"]) {
 	--channel-list-toggle-close: true;
 }
 
 html:has(div[aria-hidden="true"][class^="layer"]),
-html:has([class^="sidebar"] > * > * *:hover),
+html:has(div[class^="sidebar_"] > * > * *:hover),
 html[class*="is-mobile"] {
 	--channel-list-toggle-close: false !important;
 }
@@ -24,12 +24,12 @@ html[class*="is-mobile"] {
 		z-index: 0;
 	}
 
-	[class^="sidebar"],
-	[class^="sidebar"] nav[class^="container"] {
+	div[class^="sidebar_"],
+	div[class^="sidebar_"] nav[class^="container"] {
 		background: unset;
 	}
 
-	[class^="sidebar"] {
+	div[class^="sidebar_"] {
 		z-index: 1;
 		position: absolute;
 		width: 26px;
@@ -37,30 +37,30 @@ html[class*="is-mobile"] {
 		margin: var(--channel-list-toggle-icon-margin);
 	}
 
-	[class^="sidebar"] nav > div[id="channels"] {
+	div[class^="sidebar_"] nav > div[id="channels"] {
 		height: 48px;
 		overflow: hidden !important;
 	}
 
-	[class^="sidebar"] nav > div[id="channels"]:before {
+	div[class^="sidebar_"] nav > div[id="channels"]:before {
 		position: fixed;
 		content: var(--channel-list-toggle-icon);
 		cursor: pointer;
 		color: var(--interactive-normal);
 	}
 
-	[class^="sidebar"] nav div[class^="container"]:has([class*="bar"]),
-	[class^="sidebar"] nav div[class^="unread"][class*="container"],
-	[class^="sidebar"] nav > div:first-child,
-	[class^="sidebar"] section[class^="panels"] {
+	div[class^="sidebar_"] nav div[class^="container"]:has([class*="bar"]),
+	div[class^="sidebar_"] nav div[class^="unread"][class*="container"],
+	div[class^="sidebar_"] nav > div:first-child,
+	div[class^="sidebar_"] section[class^="panels"] {
 		display: none;
 	}
 
-	[class^="sidebar"] nav > div[id="channels"] > ul {
+	div[class^="sidebar_"] nav > div[id="channels"] > ul {
 		opacity: 0;
 	}
 
-	[class^="sidebar"] > * > * > * {
+	div[class^="sidebar_"] > * > * > * {
 		pointer-events: none;
 	}
 
@@ -69,7 +69,7 @@ html[class*="is-mobile"] {
 	}
 
 	@media only screen and (max-width:570px) {
-		[class^="sidebar"] nav:before {
+		div[class^="sidebar_"] nav:before {
 			content: "‍‍‍ㅤ";
 			position: fixed;
 			width: 50px;
@@ -78,11 +78,11 @@ html[class*="is-mobile"] {
 			background: linear-gradient(94deg, var(--channel-list-header-channel-text) 75%, rgba(0, 0, 0, 0) 100%);
 		}
 
-		div:has([data-list-id^="forum-channel-list"]) > [class^="sidebar"] nav:before {
+		div:has([data-list-id^="forum-channel-list"]) > div[class^="sidebar_"] nav:before {
 			background: linear-gradient(94deg, var(--channel-list-header-channel-forum) 75%, rgba(0, 0, 0, 0) 100%);
 		}
 
-		div:has([class^="callContainer"]) > [class^="sidebar"] nav:before {
+		div:has([class^="callContainer"]) > div[class^="sidebar_"] nav:before {
 			background: unset
 		}
 	}
