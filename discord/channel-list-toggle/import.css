@@ -68,6 +68,10 @@ html[class*="is-mobile"] {
 		margin-left: 60px;
 	}
 
+	section > div[class^="upperContainer"] > div[class^="children"] > div[class^="guildBreadcrumbContainer"]:first-child {
+		margin-left: 53px;
+	}
+	
 	@media only screen and (max-width:570px) {
 		div[class^="sidebar_"] nav:before {
 			content: "‍‍‍ㅤ";
