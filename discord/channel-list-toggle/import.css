@@ -9,7 +9,7 @@
 }
 
 
-html:has(div[class^="sidebar_"]:not(:focus-within) > nav[aria-label*="(server)"]) {
+html:has(div[class^="sidebar_"]:not(:focus-within) > nav) {
 	--channel-list-toggle-close: true;
 }
 
