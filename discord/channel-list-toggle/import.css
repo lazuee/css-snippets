@@ -1,6 +1,8 @@
 :root {
 	/* icon size must be 25x25 */
-	--channel-list-toggle-icon: url("data:image/svg+xml,%3Csvg width='25px' height='25px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_429_11066)'%3E%3Cpath d='M3 6.00092H21M3 12.0009H21M3 18.0009H21' stroke='%23eee' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_429_11066'%3E%3Crect width='24' height='24' fill='white' transform='translate(0 0.000915527)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+	--channel-list-toggle-icon-light: url("data:image/svg+xml,%3Csvg width='25px' height='25px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 6.00092H21M3 12.0009H21M3 18.0009H21' stroke='%23181818' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cdefs%3E%3CclipPath id='clip0_429_11066'%3E%3Crect width='24' height='24' transform='translate(0 0.000915527)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+	--channel-list-toggle-icon-dark: url("data:image/svg+xml,%3Csvg width='25px' height='25px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 6.00092H21M3 12.0009H21M3 18.0009H21' stroke='%23eee' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cdefs%3E%3CclipPath id='clip0_429_11066'%3E%3Crect width='24' height='24' transform='translate(0 0.000915527)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+
 	/* if the icon size isn't 25x25, you have to set the margin to make it centered */
 	/* top, right, bottom, left */
 	--channel-list-toggle-icon-margin: 11px 0px 0px 24px;
@@ -8,6 +10,13 @@
 	--channel-list-header-channel-forum: var(--home-background);
 }
 
+html {
+	--channel-list-toggle-icon: var(--channel-list-toggle-icon-light);
+}
+
+html[class*="theme-dark"] {
+	--channel-list-toggle-icon: var(--channel-list-toggle-icon-dark);
+}
 
 html:has(div[class^="sidebar_"]:not(:focus-within) > nav) {
 	--channel-list-toggle-close: true;
@@ -20,10 +29,13 @@ html[class*="is-mobile"] {
 }
 
 @container style(--channel-list-toggle-close:true) {
+	section[aria-labelledby][role="navigation"],
 	div[class^="content"] > [class^="chat"] {
 		z-index: 0;
 	}
 
+    nav[aria-label="Private channels"],
+    nav[aria-label="Private channels"] > div[data-list-id^="private-channels"],
 	div[class^="sidebar_"],
 	div[class^="sidebar_"] nav[class^="container"] {
 		background: unset;
@@ -37,12 +49,12 @@ html[class*="is-mobile"] {
 		margin: var(--channel-list-toggle-icon-margin);
 	}
 
-	div[class^="sidebar_"] nav > div[id="channels"] {
+	div[class^="sidebar_"] nav > div[class^="scroller"] {
 		height: 48px;
 		overflow: hidden !important;
 	}
 
-	div[class^="sidebar_"] nav > div[id="channels"]:before {
+	div[class^="sidebar_"] nav > div[class^="scroller"]:before {
 		position: fixed;
 		content: var(--channel-list-toggle-icon);
 		cursor: pointer;
@@ -56,7 +68,7 @@ html[class*="is-mobile"] {
 		display: none;
 	}
 
-	div[class^="sidebar_"] nav > div[id="channels"] > ul {
+	div[class^="sidebar_"] nav > div[class^="scroller"] > ul {
 		opacity: 0;
 	}
 
