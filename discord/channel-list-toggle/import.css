@@ -62,6 +62,7 @@ html[class*="is-mobile"] {
 	}
 
 	div[class^="sidebar_"] nav div[class^="container"]:has([class*="bar"]),
+	div[class^="sidebar_"] nav div[class^="container"]:has([class*="channelNotice"]),
 	div[class^="sidebar_"] nav div[class^="unread"][class*="container"],
 	div[class^="sidebar_"] nav > div:first-child,
 	div[class^="sidebar_"] section[class^="panels"] {
@@ -76,11 +77,7 @@ html[class*="is-mobile"] {
 		pointer-events: none;
 	}
 
-	section > div[class^="upperContainer"] > div[class^="children"] > div[class^="iconWrapper"]:first-child {
-		margin-left: 60px;
-	}
-
-	section > div[class^="upperContainer"] > div[class^="children"] > div[class^="guildBreadcrumbContainer"]:first-child {
+	section:not(:has([aria-label="Close"])) > div[class^=upperContainer] > div[class^=children] {
 		margin-left: 53px;
 	}
 	
