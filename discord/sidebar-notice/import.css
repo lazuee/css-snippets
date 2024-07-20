@@ -1,11 +1,16 @@
 :root {
     /* root variables */
-    --notice-height: 0px;
-    --notice-join: transparent;
-    --notice-welcome: url("https://discord.com/assets/7f809e89e310c87b2e3f.svg");
+    --notice-margin-top: 48px;
+    --notice-margin-bottom: auto;
+    --notice-margin-left: 0px;
+    --notice-margin-right: auto;
+
+    --notice-enable-height-adjust: true;
+    --notice-icon-join: transparent;
+    --notice-icon-welcome: url("https://discord.com/assets/7f809e89e310c87b2e3f.svg");
 }
 
-.base_a4d4d9:has([class*="notice_"]) {
+.base_a4d4d9:has(.notice_be03aa) {
 
     &:has(.notice_dd5a33) {
         --notice-height: 140px;
@@ -17,11 +22,12 @@
         --notice-icon: var(--notice-welcome);
     }
 
-    >div[class*="notice_"] {
+    >div.notice_be03aa {
         align-content: space-between;
         background: var(--background-secondary);
         border-bottom: 1px solid var(--background-secondary);
         border-radius: 0;
+        bottom: var(--notice-margin-bottom);
         box-shadow: none;
         box-sizing: border-box;
         display: grid;
@@ -29,11 +35,12 @@
         grid-template-columns: 80px 1fr;
         grid-template-rows: auto 32px;
         height: var(--notice-height);
-        left: 0;
+        left: var(--notice-margin-left);
         overflow: hidden;
         padding: 16px 0;
         position: absolute;
-        top: 48px;
+        right: var(--notice-margin-right);
+        top: var(--notice-margin-top);
         width: 240px;
 
         &:before {
@@ -189,7 +196,7 @@
         }
     }
 
-    [class="header_fd6364"] {
+    .header_fd6364 {
         background: var(--background-secondary);
         box-shadow: none;
     }
@@ -202,13 +209,15 @@
         width: 100%;
     }
 
-    .thin_eed6a8>ul {
-        &:has(> div[style="height: 16px;"]) {
-            margin-top: -17px;
-        }
+    @container(style(--notice-enable-height-adjust: true)) {
+        .thin_eed6a8>ul {
+            &:has(> div[style="height: 16px;"]) {
+                margin-top: -17px;
+            }
 
-        &:has(> div[style="height: 84px;"]) {
-            margin-top: -85px;
+            &:has(> div[style="height: 84px;"]) {
+                margin-top: -85px;
+            }
         }
     }
 }
