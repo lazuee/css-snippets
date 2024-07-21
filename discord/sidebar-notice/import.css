@@ -43,12 +43,12 @@ html {
 
     &:has(.notice_dd5a33) {
         --notice-height: 140px;
-        --notice-icon: var(--notice-join);
+        --notice-icon: var(--notice-icon-join);
     }
 
     &:has(.notice_a50047) {
         --notice-height: 155px;
-        --notice-icon: var(--notice-welcome);
+        --notice-icon: var(--notice-icon-welcome);
     }
 
     >div.notice_be03aa {
@@ -123,7 +123,7 @@ html {
             }
 
             &:after {
-                background: linear-gradient(158deg, transparent 0%, var(--background-secondary) 78%), var(--notice-icon-welcome);
+                background: linear-gradient(158deg, transparent 0%, var(--background-secondary) 80%), linear-gradient(74deg, transparent 0%, var(--background-secondary) 85%), var(--notice-icon);
                 background-position: top center;
                 background-repeat: no-repeat;
                 content: "";
