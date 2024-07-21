@@ -28,6 +28,9 @@ html {
     &:is([lang="es-ES"]) {
         --notice-text-heading: "Aviso"!important;
         --notice-text-join: "Unirse al servidor"!important;
+		.base_a4d4d9:has(.notice_be03aa) {
+            --notice-height: 155px!important;
+        }
     }
 
     &:is([lang="fr"]) {
