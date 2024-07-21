@@ -8,6 +8,32 @@
     --notice-enable-height-adjust: true;
     --notice-icon-join: transparent;
     --notice-icon-welcome: url("https://discord.com/assets/7f809e89e310c87b2e3f.svg");
+
+    --notice-text-heading: "";
+    --notice-text-join: "";
+}
+
+
+html {
+    &:is([lang="en-GB"]),
+    &:is([lang="en-US"]) {
+        --notice-text-heading: "Notice"!important;
+        --notice-text-join: "Join Server"!important;
+    }
+    &:is([lang="de"]) {
+        --notice-text-heading: "Hinweis"!important;
+        --notice-text-join: "Server beitreten"!important;
+    }
+
+    &:is([lang="es-ES"]) {
+        --notice-text-heading: "Aviso"!important;
+        --notice-text-join: "Unirse al servidor"!important;
+    }
+
+    &:is([lang="fr"]) {
+        --notice-text-heading: "Avis"!important;
+        --notice-text-join: "Rejoindre le serveur"!important;
+    }
 }
 
 .base_a4d4d9:has(.notice_be03aa) {
@@ -82,7 +108,7 @@
             text-align: left;
 
             &:before {
-                content: "Notice";
+                content: var(--notice-text-heading);
                 font-family: var(--font-primary);
                 font-size: 16px;
                 font-weight: 600;
@@ -136,7 +162,7 @@
 
                 &:not(:has([aria-label="Loading"])):before {
                     align-items: center;
-                    content: "Join Server";
+                    content: var(--notice-text-join);
                     display: flex;
                     font-family: var(--font-primary);
                     font-size: 14px;
