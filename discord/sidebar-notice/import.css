@@ -4,12 +4,10 @@
     --notice-margin-bottom: auto;
     --notice-margin-left: 0px;
     --notice-margin-right: auto;
-
 	--notice-background: var(--background-secondary);
     --notice-enable-height-adjust: true;
     --notice-icon-join: transparent;
     --notice-icon-welcome: url("https://discord.com/assets/7f809e89e310c87b2e3f.svg");
-
     --notice-text-heading: "";
     --notice-text-join: "";
 }
