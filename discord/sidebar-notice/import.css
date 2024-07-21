@@ -123,7 +123,7 @@ html {
             }
 
             &:after {
-                background: linear-gradient(158deg, transparent 0%, var(--background-secondary) 78%), var(--notice-icon);
+                background: linear-gradient(158deg, transparent 0%, var(--background-secondary) 78%), var(--notice-icon-welcome);
                 background-position: top center;
                 background-repeat: no-repeat;
                 content: "";
