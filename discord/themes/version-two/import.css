@@ -1,0 +1,393 @@
+@import url("https://github.com/lazuee/css-snippets/raw/main/discord/sidebar-notice/import.css");
+
+[class="container_a4d4d9"] {
+    --space: 12px;
+    --border-radius: 1.2rem;
+    --bg-tertiary: 30, 31, 34;
+    --header: 48px;
+    --header-thumbnail: calc(135px + var(--header));
+    --notice-margin-top: calc(183px + var(--space));
+    --notice-margin-left: 1px;
+    --notice-background: var(--background-tertiary);
+
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    width: 100%;
+
+    >nav {
+        height: 100%;
+        overflow-y: visible;
+        width: 72px;
+
+        >ul {
+            --server-nav-i: 1;
+            --top-margin: calc((56px + ((56px * var(--server-nav-i)) - 56px)) + var(--space));
+            --nav-height: calc(100% - ((var(--top-margin)) + ((56px * 2) + (53px + (var(--space) * 2)))));
+
+            height: var(--nav-height);
+            margin-top: var(--top-margin);
+
+            &:before,
+            &:after {
+                content: "";
+                height: 32px;
+                pointer-events: none;
+                position: absolute;
+                user-select: none;
+                width: 72px;
+                z-index: 3;
+            }
+
+            &:before {
+                background: linear-gradient(180deg, rgba(var(--bg-tertiary), 1) 1%, rgba(var(--bg-tertiary), 0.946297268907563) 13%, rgba(var(--bg-tertiary), 0.7950367647058824) 55%, rgba(var(--bg-tertiary), 0) 93%);
+                top: 0;
+            }
+
+            &:after {
+                background: linear-gradient(0deg, rgba(var(--bg-tertiary), 1) 1%, rgba(var(--bg-tertiary), 0.946297268907563) 13%, rgba(var(--bg-tertiary), 0.7950367647058824) 55%, rgba(var(--bg-tertiary), 0) 93%);
+                bottom: 0;
+            }
+
+            >.unreadMentionsIndicatorTop_fea3ef:before,
+            >.unreadMentionsIndicatorBottom_fea3ef:before {
+                background: var(--background-secondary);
+                content: "";
+                height: 1px;
+                left: 0;
+                position: absolute;
+                width: 100%;
+            }
+
+            >.unreadMentionsIndicatorTop_fea3ef:before {
+                top: 0;
+            }
+
+            >.unreadMentionsIndicatorBottom_fea3ef:before {
+                bottom: 0;
+            }
+
+            >.scroller_fea3ef {
+                padding: 0;
+                scroll-behavior: smooth;
+                scroll-padding: 32px 0;
+                scroll-snap-type: y mandatory;
+
+                &:before,
+                &:after {
+                    content: "";
+                    display: block;
+                    height: 72px;
+                    left: 0;
+                    position: relative;
+                    width: 72px;
+                }
+
+                >div:not([aria-label="Servers"], :has(> [class="guildSeparator_d0c57e"])) {
+                    background: rgba(var(--bg-tertiary), 1);
+                    background: transparent;
+                    position: fixed;
+                    z-index: 4;
+                }
+
+                >div:nth-child(1) {
+                    top: var(--space);
+                }
+
+                >div:has([aria-label="Download Apps"]) {
+                    display: none;
+                }
+
+                >div:has([aria-label="Explore Discoverable Servers"]) {
+                    bottom: calc(53px + ((var(--space) * 2)) - 8px);
+                }
+
+                >div:has([aria-label="Add a Server"]) {
+                    bottom: calc(53px + ((var(--space) * 2) - 8px) + 56px);
+                }
+
+                >div:has(> [class="guildSeparator_d0c57e"]) {
+                    >* {
+                        background: transparent;
+                        height: 0px;
+                    }
+
+                    &:nth-last-child(3):not(:has([aria-label="Download Apps"]))>* {
+                        height: 0px;
+                    }
+                }
+
+                >div[aria-label="Servers"] {
+                    position: relative;
+                    scroll-snap-align: start;
+                    scroll-snap-type: y mandatory;
+                }
+            }
+        }
+
+        >ul:has(.scroller_fea3ef > div:nth-child(2) .pill_f36a5a) {
+            --server-nav-i: 2;
+
+            >.scroller_fea3ef>div:nth-child(2) {
+                top: calc(56px + var(--space));
+            }
+        }
+
+        >ul:has(.scroller_fea3ef > div:nth-child(3) .pill_f36a5a) {
+            --server-nav-i: 3;
+
+            >.scroller_fea3ef>div:nth-child(3) {
+                top: calc((56px * 2) + var(--space));
+            }
+        }
+
+        >ul:has(.scroller_fea3ef > div:nth-child(4) .pill_f36a5a) {
+            --server-nav-i: 4;
+
+            >.scroller_fea3ef>div:nth-child(4) {
+                top: calc((56px * 3) + var(--space));
+            }
+        }
+
+        >ul:has(.scroller_fea3ef > div:nth-child(5) .pill_f36a5a) {
+            --server-nav-i: 5;
+
+            >.scroller_fea3ef>div:nth-child(5) {
+                top: calc((56px * 4) + var(--space));
+            }
+        }
+    }
+
+    >.base_a4d4d9 {
+        overflow: visible;
+        width: calc(100% - 72px);
+
+        >div.notice_be03aa {
+            border-bottom: none;
+
+            &:before {
+                box-shadow: none;
+            }
+
+            &:after {
+                left: 0px;
+                position: absolute;
+                width: 100%;
+            }
+        }
+
+        >[class="content_a4d4d9"] {
+            margin: var(--space) 0;
+            position: relative;
+
+            >* {
+                border-radius: var(--border-radius);
+                overflow: hidden;
+            }
+
+            >main,
+            >[class*="shop_"],
+            >[class*="applicationStore_"],
+            >[class="pageWrapper_a3a4ce"],
+            >[class*="chat_"] {
+                border: 1px solid var(--background-modifier-accent);
+                display: flex;
+                margin: 0 var(--space);
+                min-width: 0px;
+
+                >[class="content_a7d72e"]:before,
+                >[class="tabBody_c2739c"]:before {
+                    box-shadow: none;
+                }
+            }
+
+            >[class*="chat_"] {
+
+                :is(main, section)[class^=chatContent]>form,
+                form>div[class^=submitContainer] {
+                    padding: 0px;
+
+                    &:has([class="animation_faf5ab"]):before {
+                        align-items: center;
+                        appearance: none;
+                        background: var(--bg-overlay-3, var(--channeltextarea-background));
+                        box-sizing: border-box;
+                        color: var(--channel-text-area-placeholder);
+                        content: "You must complete a few more steps before you can talk.";
+                        cursor: not-allowed;
+                        display: flex;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        height: 52px;
+                        left: 0;
+                        line-height: 1.375rem;
+                        overflow: hidden;
+                        padding-left: 16px;
+                        pointer-events: none;
+                        position: absolute;
+                        text-overflow: ellipsis;
+                        top: 0;
+                        user-select: none;
+                        white-space: nowrap;
+                        width: 100%;
+                        z-index: 10;
+                    }
+
+                    >div>div[class^=channelTextArea] {
+                        margin: 0px !important;
+
+                        >div[class^=scrollableContainer] {
+                            border-radius: 0px;
+                            min-height: 49px;
+                            padding-top: 4px;
+                        }
+                    }
+
+                    >div {
+                        border-radius: 0px;
+                        margin-bottom: 0px;
+                    }
+
+                    >div[class^=typing] {
+                        background-color: var(--channeltextarea-background);
+                        border-radius: 8px 8px 0px 0px;
+                        margin-left: auto;
+                        padding-left: 2px;
+                        padding-right: 9px;
+                        position: absolute;
+                        right: calc(var(--custom-index-scrollbar-margin) * 2 + var(--custom-index-scrollbar-width));
+                        top: -24px;
+                        width: fit-content;
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+
+                    >div>div>div[class^=attachedBars] {
+                        min-height: unset !important;
+                        padding-bottom: 4px;
+                    }
+                }
+
+                div[class^=jumpToPresentBar] {
+                    background-color: var(--channeltextarea-background);
+                    border-radius: 0px 8px 0px 0px;
+                    left: 0;
+                    right: unset;
+
+                    >button[class^=barButtonMain] {
+                        display: none;
+                        flex: 0 0 auto;
+                    }
+                }
+            }
+
+            >.sidebar_a4d4d9 {
+                background: transparent;
+                border: 1.3px solid var(--background-modifier-accent);
+                margin: 0 0 calc(53px + var(--space)) 0;
+
+                >nav,
+                >nav>.thin_eed6a8 {
+                    background: transparent;
+                }
+
+                >nav {
+                    .thin_eed6a8 {
+                        pointer-events: none;
+
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            background-color: var(--scrollbar-thin-track);
+                            border: 2px solid var(--scrollbar-thin-track);
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            background-clip: padding-box;
+                            background-color: var(--scrollbar-thin-thumb);
+                            border: 2px solid transparent;
+                            border-radius: 4px;
+                            min-height: 40px;
+                        }
+
+                        >ul {
+                            .container_c75f85:after {
+                                left: 0px;
+                            }
+
+                            >.sectionDivider_c43953 {
+                                margin-left: 0px;
+                            }
+                        }
+                    }
+
+                    >div:has([class="animatedContainer_fd6364"]) {
+                        background: var(--background-tertiary);
+                        display: flex;
+                        flex-direction: column-reverse;
+                        height: var(--header-thumbnail);
+                        overflow: hidden;
+                        position: absolute;
+                        width: 240px;
+                        z-index: 3;
+
+                        >div {
+                            box-shadow: none;
+                            opacity: 1 !important;
+                            pointer-events: none;
+                            transform: translateY(0px) !important;
+
+                            >div {
+                                transform: translateY(0px) scale(1) !important;
+                            }
+                        }
+                    }
+
+                    >div:has([class*="channelNotice_"])>div {
+                        margin: 16px 0px 0;
+                        padding: 0 16px 16px;
+                    }
+
+                    >[class="searchBar_f0963d"] {
+                        padding: 3px 16px 4px;
+                    }
+
+                    div:not(:has([class="animatedContainer_fd6364"]))>[class="header_fd6364"] {
+                        padding: 15px 16px 16px;
+                    }
+
+                    >[class="searchBar_f0963d"],
+                    >div>[class="header_fd6364"] {
+                        border-bottom: 1.3px solid var(--background-modifier-accent);
+                        box-shadow: none;
+                    }
+                }
+
+                >section {
+                    >[class*="wrapper_"]>div {
+                        border-top: 1px solid var(--background-modifier-accent);
+                    }
+
+                    >[class*="container_"] {
+                        background: var(--background-secondary);
+                        border-radius: calc(var(--border-radius) - 4px);
+                        bottom: 0;
+                        justify-content: space-between;
+                        left: calc(-72px + var(--space));
+                        position: absolute;
+                        width: calc(296px - var(--space));
+                        z-index: 999;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.accountProfilePopoutWrapper_b2ca13 {
+    left: -6px;
+}
