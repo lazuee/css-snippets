@@ -376,6 +376,7 @@
                 >section {
                     >[class*="wrapper_"]>div {
                         border-top: 1px solid var(--background-modifier-accent);
+                        border-bottom: 0px solid transparent;
                     }
 
                     >[class*="container_"] {
