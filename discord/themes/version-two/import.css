@@ -6,7 +6,7 @@
     --bg-tertiary: 30, 31, 34;
     --header: 48px;
     --header-thumbnail: calc(135px + var(--header));
-    --notice-margin-top: calc(183px + var(--space));
+    --notice-margin-top: calc(57px + var(--space));
     --notice-margin-left: 1px;
     --notice-background: var(--background-tertiary);
 
@@ -69,29 +69,32 @@
 
             >.scroller_fea3ef {
                 padding: 0;
-                scroll-behavior: smooth;
-                scroll-padding: 32px 0;
-                scroll-snap-type: y mandatory;
 
                 &:before,
                 &:after {
                     content: "";
                     display: block;
-                    height: 72px;
                     left: 0;
                     position: relative;
                     width: 72px;
                 }
 
-                >div:not([aria-label="Servers"], :has(> [class="guildSeparator_d0c57e"])) {
-                    background: rgba(var(--bg-tertiary), 1);
-                    background: transparent;
-                    position: fixed;
-                    z-index: 4;
+                &:before {
+                    height: 24px;
+                    top: 0;
+                }
+
+                &:after {
+                    height: 42px;
+                    bottom: 0;
                 }
 
                 >div:nth-child(1) {
                     top: var(--space);
+                    background: rgba(var(--bg-tertiary), 1);
+                    background: transparent;
+                    position: fixed;
+                    z-index: 4;
                 }
 
                 >div:has([aria-label="Download Apps"]) {
@@ -100,16 +103,25 @@
 
                 >div:has([aria-label="Explore Discoverable Servers"]) {
                     bottom: calc(53px + ((var(--space) * 2)) - 8px);
+                    background: rgba(var(--bg-tertiary), 1);
+                    background: transparent;
+                    position: fixed;
+                    z-index: 4;
                 }
 
                 >div:has([aria-label="Add a Server"]) {
+                    padding-top: 58px;
                     bottom: calc(53px + ((var(--space) * 2) - 8px) + 56px);
+                    background: rgba(var(--bg-tertiary), 1);
+                    background: transparent;
+                    position: fixed;
+                    z-index: 4;
                 }
 
                 >div:has(> [class="guildSeparator_d0c57e"]) {
                     >* {
-                        background: transparent;
                         height: 0px;
+                        background: transparent;
                     }
 
                     &:nth-last-child(3):not(:has([aria-label="Download Apps"]))>* {
@@ -119,41 +131,7 @@
 
                 >div[aria-label="Servers"] {
                     position: relative;
-                    scroll-snap-align: start;
-                    scroll-snap-type: y mandatory;
                 }
-            }
-        }
-
-        >ul:has(.scroller_fea3ef > div:nth-child(2) .pill_f36a5a) {
-            --server-nav-i: 2;
-
-            >.scroller_fea3ef>div:nth-child(2) {
-                top: calc(56px + var(--space));
-            }
-        }
-
-        >ul:has(.scroller_fea3ef > div:nth-child(3) .pill_f36a5a) {
-            --server-nav-i: 3;
-
-            >.scroller_fea3ef>div:nth-child(3) {
-                top: calc((56px * 2) + var(--space));
-            }
-        }
-
-        >ul:has(.scroller_fea3ef > div:nth-child(4) .pill_f36a5a) {
-            --server-nav-i: 4;
-
-            >.scroller_fea3ef>div:nth-child(4) {
-                top: calc((56px * 3) + var(--space));
-            }
-        }
-
-        >ul:has(.scroller_fea3ef > div:nth-child(5) .pill_f36a5a) {
-            --server-nav-i: 5;
-
-            >.scroller_fea3ef>div:nth-child(5) {
-                top: calc((56px * 4) + var(--space));
             }
         }
     }
@@ -161,6 +139,10 @@
     >.base_a4d4d9 {
         overflow: visible;
         width: calc(100% - 72px);
+
+        &:has(.channelNotice_a6cd4e):has([class="animatedContainer_fd6364"]) {
+            --notice-margin-top: calc(183px + var(--space));
+        }
 
         >div.notice_be03aa {
             border-bottom: none;
@@ -203,7 +185,8 @@
 
             >[class*="chat_"] {
 
-                :is(main, section)[class^=chatContent]>form,
+                :is(main,
+                    section)[class^=chatContent]>form,
                 form>div[class^=submitContainer] {
                     padding: 0px;
 
@@ -286,7 +269,7 @@
             >.sidebar_a4d4d9 {
                 background: transparent;
                 border: 1.3px solid var(--background-modifier-accent);
-                margin: 0 0 calc(53px + var(--space)) 0;
+                margin: 0 0 calc(56px + var(--space)) 0;
 
                 >nav,
                 >nav>.thin_eed6a8 {
@@ -295,7 +278,6 @@
 
                 >nav {
                     .thin_eed6a8 {
-                        pointer-events: none;
 
                         &::-webkit-scrollbar {
                             display: none;
@@ -322,27 +304,46 @@
                             >.sectionDivider_c43953 {
                                 margin-left: 0px;
                             }
+
+                            >[style="height: 84px;"] {
+                                height: 0 !important;
+                            }
+
+
+                            >[style="height: 16px;"] {
+                                height: 0 !important;
+                            }
                         }
                     }
 
-                    >div:has([class="animatedContainer_fd6364"]) {
-                        background: var(--background-tertiary);
-                        display: flex;
-                        flex-direction: column-reverse;
-                        height: var(--header-thumbnail);
-                        overflow: hidden;
-                        position: absolute;
-                        width: 240px;
-                        z-index: 3;
-
-                        >div {
-                            box-shadow: none;
-                            opacity: 1 !important;
-                            pointer-events: none;
-                            transform: translateY(0px) !important;
+                    &:has([class="animatedContainer_fd6364"]) {
+                        >div:has([class="animatedContainer_fd6364"]) {
+                            background: var(--background-tertiary);
+                            display: flex;
+                            flex-direction: column-reverse;
+                            height: var(--header-thumbnail);
+                            overflow: hidden;
+                            position: absolute;
+                            width: 240px;
+                            z-index: 3;
 
                             >div {
-                                transform: translateY(0px) scale(1) !important;
+                                box-shadow: none;
+                                opacity: 1 !important;
+                                pointer-events: none;
+                                transform: translateY(0px) !important;
+
+                                >div {
+                                    transform: translateY(0px) scale(1) !important;
+                                }
+                            }
+                        }
+
+                        >.thin_eed6a8>ul {
+
+                            >[style="height: 84px;"],
+                            >[style="height: 16px;"] {
+                                height: calc(183px - 12px) !important;
                             }
                         }
                     }
