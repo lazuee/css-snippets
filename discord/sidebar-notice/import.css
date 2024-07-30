@@ -88,6 +88,7 @@ html:not(:has(.artwork_d8215a)) {
         &:not(:has(.colorPremium_be03aa)) {
             >div.notice_be03aa {
                 align-content: space-between;
+                align-items: start;
                 background: var(--notice-background);
                 border-bottom: 1px solid var(--background-secondary);
                 border-radius: 0;
