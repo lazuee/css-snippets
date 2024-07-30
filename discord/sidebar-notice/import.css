@@ -14,6 +14,7 @@
     --notice-height-join: 145px;
     --notice-height-welcome: 155px;
     --notice-height-premium: 150px;
+    --notice-height-add: 0px;
     --notice-text-heading: "";
     --notice-text-join: "";
 }
@@ -57,7 +58,7 @@ html:not(:has(.artwork_d8215a)) {
             .container_fa295b:before {
                 content: "";
                 display: flex;
-                height: var(--notice-height);
+                height: calc(var(--notice-height) + var(--notice-height-add));
                 position: relative;
                 width: 100%;
             }
