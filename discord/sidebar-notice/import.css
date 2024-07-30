@@ -7,8 +7,10 @@
     --notice-background: var(--background-secondary);
     --notice-enable-height-adjust: true;
     --notice-icon-join: transparent;
-    --notice-icon-welcome: url("https://discord.com/assets/7f809e89e310c87b2e3f.svg");
-    /* --notice-icon-premium: url("https://cdn.discordapp.com/emojis/1256447329901481984.webp"); */
+    --notice-icon-welcome: "";
+    /* url("https://discord.com/assets/7f809e89e310c87b2e3f.svg") */
+    --notice-icon-premium: "";
+    /* url("https://cdn.discordapp.com/emojis/1256447329901481984.webp") */
     --notice-text-heading: "";
     --notice-text-join: "";
 }
