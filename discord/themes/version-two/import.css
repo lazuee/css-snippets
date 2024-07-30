@@ -90,7 +90,7 @@ html {
 
             >.unreadMentionsIndicatorTop_fea3ef:before,
             >.unreadMentionsIndicatorBottom_fea3ef:before {
-                background: var(--background-modifier-accent);
+                background: color-mix(in oklab, var(--background-modifier-accent) 100%, transparent 70%);
                 content: "";
                 height: 1px;
                 left: 0;
