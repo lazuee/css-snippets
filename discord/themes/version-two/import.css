@@ -1,15 +1,47 @@
-@import url("https://github.com/lazuee/css-snippets/raw/main/discord/sidebar-notice/import.css");
+@import url("https://lazuee.github.io/css-snippets/discord/sidebar-notice/import.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap');
+@import url("https://catppuccin.github.io/discord/dist/catppuccin-macchiato.theme.css");
 
-[class="container_a4d4d9"] {
+:root {
+    --font: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    --font-primary: var(--font);
+    --font-display: var(--font);
+    --font-headline: var(--font);
+    --font-code: 'JetBrains Mono', monospace;
+    --text-link: #5865F2;
+}
+
+:root {
     --space: 12px;
     --border-radius: 1.2rem;
-    --bg-tertiary: 30, 31, 34;
     --header: 48px;
     --header-thumbnail: calc(135px + var(--header));
+}
+
+:root {
     --notice-margin-top: calc(57px + var(--space));
     --notice-margin-left: 1px;
     --notice-background: var(--background-tertiary);
+    --notice-height-join: 160px;
+    --notice-height-welcome: 155px;
+    --notice-height-premium: 150px;
+}
 
+
+body,
+html {
+    font-size: 14px;
+    tab-size: 4;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class="container_a4d4d9"] {
     display: flex;
     height: 100%;
     justify-content: space-between;
@@ -40,18 +72,26 @@
             }
 
             &:before {
-                background: linear-gradient(180deg, rgba(var(--bg-tertiary), 1) 1%, rgba(var(--bg-tertiary), 0.946297268907563) 13%, rgba(var(--bg-tertiary), 0.7950367647058824) 55%, rgba(var(--bg-tertiary), 0) 93%);
+                background: linear-gradient(180deg,
+                        color-mix(in oklab, var(--background-tertiary) 100%, transparent 0%) 1%,
+                        color-mix(in oklab, var(--background-tertiary) 94.6%, transparent 5.4%) 13%,
+                        color-mix(in oklab, var(--background-tertiary) 79.5%, transparent 20.5%) 55%,
+                        color-mix(in oklab, var(--background-tertiary) 0%, transparent 100%) 93%);
                 top: 0;
             }
 
             &:after {
-                background: linear-gradient(0deg, rgba(var(--bg-tertiary), 1) 1%, rgba(var(--bg-tertiary), 0.946297268907563) 13%, rgba(var(--bg-tertiary), 0.7950367647058824) 55%, rgba(var(--bg-tertiary), 0) 93%);
+                background: linear-gradient(0deg,
+                        color-mix(in oklab, var(--background-tertiary) 100%, transparent 0%) 1%,
+                        color-mix(in oklab, var(--background-tertiary) 94.6%, transparent 5.4%) 13%,
+                        color-mix(in oklab, var(--background-tertiary) 79.5%, transparent 20.5%) 55%,
+                        color-mix(in oklab, var(--background-tertiary) 0%, transparent 100%) 93%);
                 bottom: 0;
             }
 
             >.unreadMentionsIndicatorTop_fea3ef:before,
             >.unreadMentionsIndicatorBottom_fea3ef:before {
-                background: var(--background-secondary);
+                background: var(--background-modifier-accent);
                 content: "";
                 height: 1px;
                 left: 0;
@@ -91,8 +131,7 @@
 
                 >div:nth-child(1) {
                     top: var(--space);
-                    background: rgba(var(--bg-tertiary), 1);
-                    background: transparent;
+                    background: var(--background-tertiary);
                     position: fixed;
                     z-index: 4;
                 }
@@ -103,7 +142,7 @@
 
                 >div:has([aria-label="Explore Discoverable Servers"]) {
                     bottom: calc(53px + ((var(--space) * 2)) - 8px);
-                    background: rgba(var(--bg-tertiary), 1);
+                    background: var(--background-tertiary);
                     background: transparent;
                     position: fixed;
                     z-index: 4;
@@ -112,7 +151,7 @@
                 >div:has([aria-label="Add a Server"]) {
                     padding-top: 58px;
                     bottom: calc(53px + ((var(--space) * 2) - 8px) + 56px);
-                    background: rgba(var(--bg-tertiary), 1);
+                    background: var(--background-tertiary);
                     background: transparent;
                     position: fixed;
                     z-index: 4;
@@ -139,24 +178,6 @@
     >.base_a4d4d9 {
         overflow: visible;
         width: calc(100% - 72px);
-
-        &:has(.channelNotice_a6cd4e):has([class="animatedContainer_fd6364"]) {
-            --notice-margin-top: calc(183px + var(--space));
-        }
-
-        >div.notice_be03aa {
-            border-bottom: none;
-
-            &:before {
-                box-shadow: none;
-            }
-
-            &:after {
-                left: 0px;
-                position: absolute;
-                width: 100%;
-            }
-        }
 
         >[class="content_a4d4d9"] {
             margin: var(--space) 0;
@@ -266,6 +287,13 @@
                 }
             }
 
+            >main>section.container_fc4f04,
+            >[class*="chat_"]>[class*="subtitleContainer_"]>[class*="title_"] {
+                padding: 0 8px;
+                min-height: 56px;
+                border-bottom: 1px solid var(--background-modifier-accent);
+            }
+
             >.sidebar_a4d4d9 {
                 background: transparent;
                 border: 1.3px solid var(--background-modifier-accent);
@@ -277,7 +305,7 @@
                 }
 
                 >nav {
-                    .thin_eed6a8 {
+                    >.thin_eed6a8 {
 
                         &::-webkit-scrollbar {
                             display: none;
@@ -305,19 +333,9 @@
                                 margin-left: 0px;
                             }
 
-                            >[style="height: 84px;"] {
-                                height: 0 !important;
-                            }
-
-
-                            >[style="height: 16px;"] {
-                                height: 0 !important;
-                            }
-
-                            >li .wrapper_d8bfb3 {
+                            >li:not(:has(.typeThread_d8bfb3)) .wrapper_d8bfb3 {
                                 margin: 0 8px;
                             }
-
                         }
                     }
 
@@ -348,7 +366,7 @@
 
                             >[style="height: 84px;"],
                             >[style="height: 16px;"] {
-                                height: calc(183px - 12px) !important;
+                                height: 183px !important;
                             }
                         }
                     }
@@ -388,6 +406,40 @@
                         position: absolute;
                         width: calc(296px - var(--space));
                         z-index: 999;
+                    }
+                }
+            }
+        }
+
+        >div.notice_be03aa {
+            border-bottom: none !important;
+
+            &:before {
+                box-shadow: none !important;
+            }
+
+            &:after {
+                left: 0px !important;
+                position: absolute;
+                width: 100% !important;
+            }
+        }
+
+        &:has([class="animatedContainer_fd6364"]) {
+            --notice-margin-top: calc(183px + var(--space));
+
+            &:has(.notice_dd5a33) {
+                --notice-height-add: 183px;
+
+                .container_fa295b:before {
+                    height: calc(var(--notice-height) + var(--notice-height-add));
+                }
+
+                .sidebar_a4d4d9>nav>.thin_eed6a8>ul {
+
+                    >[style="height: 84px;"],
+                    >[style="height: 16px;"] {
+                        height: calc(183px - var(--notice-height)) !important;
                     }
                 }
             }
