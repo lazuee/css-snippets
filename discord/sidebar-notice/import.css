@@ -11,6 +11,9 @@
     /* url("https://discord.com/assets/7f809e89e310c87b2e3f.svg") */
     --notice-icon-premium: "";
     /* url("https://cdn.discordapp.com/emojis/1256447329901481984.webp") */
+    --notice-height-join: 145px;
+    --notice-height-welcome: 155px;
+    --notice-height-premium: 150px;
     --notice-text-heading: "";
     --notice-text-join: "";
 }
@@ -20,41 +23,69 @@ html:not(:has(.artwork_d8215a)) {
 
     &:is([lang="en-GB"]),
     &:is([lang="en-US"]) {
-        --notice-text-heading: "Notice" !important;
-        --notice-text-join: "Join Server" !important;
+        --notice-text-heading: "Notice";
+        --notice-text-join: "Join Server";
     }
 
     &:is([lang="de"]) {
-        --notice-text-heading: "Hinweis" !important;
-        --notice-text-join: "Server beitreten" !important;
+        --notice-text-heading: "Hinweis";
+        --notice-text-join: "Server beitreten";
     }
 
     &:is([lang="es-ES"]) {
-        --notice-text-heading: "Aviso" !important;
-        --notice-text-join: "Unirse al servidor" !important;
-
-        .base_a4d4d9:has(.notice_be03aa) {
-            --notice-height: 155px !important;
-        }
+        --notice-text-heading: "Aviso";
+        --notice-text-join: "Unirse al servidor";
     }
 
     &:is([lang="fr"]) {
-        --notice-text-heading: "Avis" !important;
-        --notice-text-join: "Rejoindre le serveur" !important;
+        --notice-text-heading: "Avis";
+        --notice-text-join: "Rejoindre le serveur";
     }
 
     .base_a4d4d9:has(.notice_be03aa) {
+        @container style(--notice-enable-height-adjust: true) {
+            .thin_eed6a8>ul {
+                &:has(> div[style="height: 16px;"]) {
+                    margin-top: -17px;
+                }
+
+                &:has(> div[style="height: 84px;"]) {
+                    margin-top: -85px;
+                }
+            }
+
+            .container_fa295b:before {
+                content: "";
+                display: flex;
+                height: var(--notice-height);
+                position: relative;
+                width: 100%;
+            }
+
+            .header_fd6364 {
+                background: var(--background-secondary);
+                box-shadow: none;
+            }
+        }
+
         &:not(:has(.colorPremium_be03aa)) {
             &:has(.notice_dd5a33) {
-                --notice-height: 140px;
+                --notice-height: var(--notice-height-join);
                 --notice-icon: var(--notice-icon-join);
             }
 
             &:has(.notice_a50047) {
-                --notice-height: 155px;
+                --notice-height: var(--notice-height-welcome);
                 --notice-icon: var(--notice-icon-welcome);
             }
+        }
 
+        &:has(.colorPremium_be03aa) {
+            --notice-height: var(--notice-height-premium);
+            --notice-icon: var(--notice-icon-premium);
+        }
+
+        &:not(:has(.colorPremium_be03aa)) {
             >div.notice_be03aa {
                 align-content: space-between;
                 background: var(--notice-background);
@@ -234,40 +265,7 @@ html:not(:has(.artwork_d8215a)) {
             }
         }
 
-        @container style(--notice-enable-height-adjust: true) {
-            .thin_eed6a8>ul {
-                &:has(> div[style="height: 16px;"]) {
-                    margin-top: -17px;
-                }
-
-                &:has(> div[style="height: 84px;"]) {
-                    margin-top: -85px;
-                }
-            }
-
-            .container_fa295b:before {
-                content: "";
-                display: flex;
-                height: var(--notice-height);
-                position: relative;
-                width: 100%;
-            }
-
-            .header_fd6364 {
-                background: var(--background-secondary);
-                box-shadow: none;
-            }
-        }
-
         &:has(.colorPremium_be03aa) {
-            --notice-icon: var(--notice-icon-premium);
-
-            @container style(--notice-enable-height-adjust: true) {
-                .container_fa295b:before {
-                    height: 142px;
-                }
-            }
-
             >div.notice_be03aa {
                 background: var(--notice-background);
                 border-radius: 0;
@@ -287,7 +285,6 @@ html:not(:has(.artwork_d8215a)) {
                 font-size: 14px;
                 line-height: 1.2857142857142858;
                 font-weight: 400;
-
                 color: var(--white-500);
                 text-align: left;
                 align-items: start;
@@ -330,14 +327,12 @@ html:not(:has(.artwork_d8215a)) {
                     &:before {
                         display: flex;
                         align-items: center;
-
                         content: "Nitro";
                         position: relative;
                         top: 0;
                         width: 100%;
                         height: 100%;
                         z-index: 10;
-
                         text-indent: 0;
                         font-family: var(--font-primary);
                         font-size: 12px;
