@@ -20,28 +20,36 @@ jobs:
     - uses: actions/checkout@v4
     - run: |
         find . -name "*.css" -not -path "./dist/*" | while IFS= read -r file; do
-          content=$(cat "$file")
-          content=$(jq -Rs . <<< "$content")
-          response=$(curl -s -X POST --data-urlencode "json=$content" 'https://minifycss.io/ajax/minify_text')
-          if jq -e . >/dev/null 2>&1 <<<"$response"; then
-            result=$(echo "$response" | jq -r '.data.minified')
-            if [ "$result" != "null" ] && [ -n "$result" ]; then
-              dest_dir="dist/$(dirname "$file")"
-              mkdir -p "$dest_dir"
-              echo "$result" > "$dest_dir/$(basename "$file")"
-              echo "Successfully minified $file"
-            else
-              echo "Error: Minification failed for $file. Using original content."
-              mkdir -p "dist/$(dirname "$file")"
-              cp "$file" "dist/$file"
-            fi
-          else
-            echo "Error: Invalid JSON response for $file. Using original content."
-            mkdir -p "dist/$(dirname "$file")"
-            cp "$file" "dist/$file"
-          fi
+          dest_dir="dist/$(dirname "$file")"
+          mkdir -p "$dest_dir"
+          cp "$file" "$dest_dir/$(basename "$file")"
+          echo "Copied $file to $dest_dir/$(basename "$file")"
         done
       shell: bash
+    # - run: |
+    #     find . -name "*.css" -not -path "./dist/*" | while IFS= read -r file; do
+    #       content=$(cat "$file")
+    #       content=$(jq -Rs . <<< "$content")
+    #       response=$(curl -s -X POST --data-urlencode "json=$content" 'https://minifycss.io/ajax/minify_text')
+    #       if jq -e . >/dev/null 2>&1 <<<"$response"; then
+    #         result=$(echo "$response" | jq -r '.data.minified')
+    #         if [ "$result" != "null" ] && [ -n "$result" ]; then
+    #           dest_dir="dist/$(dirname "$file")"
+    #           mkdir -p "$dest_dir"
+    #           echo "$result" > "$dest_dir/$(basename "$file")"
+    #           echo "Successfully minified $file"
+    #         else
+    #           echo "Error: Minification failed for $file. Using original content."
+    #           mkdir -p "dist/$(dirname "$file")"
+    #           cp "$file" "dist/$file"
+    #         fi
+    #       else
+    #         echo "Error: Invalid JSON response for $file. Using original content."
+    #         mkdir -p "dist/$(dirname "$file")"
+    #         cp "$file" "dist/$file"
+    #       fi
+    #     done
+    #   shell: bash
     - uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: dist
