@@ -200,6 +200,89 @@ html {
                 --chat-resize-handle-width: var(--space);
             }
 
+            [class*="chat_"] {
+
+                [class^=chatContent]>form,
+                div[class^=submitContainer] {
+                    padding: 0;
+
+                    &:has([class="animation_faf5ab"]):before {
+                        align-items: center;
+                        appearance: none;
+                        background: var(--bg-overlay-3, var(--channeltextarea-background));
+                        box-sizing: border-box;
+                        color: var(--channel-text-area-placeholder);
+                        content: "You must complete a few more steps before you can talk.";
+                        cursor: not-allowed;
+                        display: flex;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        height: 52px;
+                        left: 0;
+                        line-height: 1.375rem;
+                        overflow: hidden;
+                        padding-left: 16px;
+                        pointer-events: none;
+                        position: absolute;
+                        text-overflow: ellipsis;
+                        top: 0;
+                        user-select: none;
+                        white-space: nowrap;
+                        width: 100%;
+                        z-index: 10;
+                    }
+
+                    div[class*="channelTextArea_"] {
+                        margin: 0 !important;
+                        width: 100%;
+
+                        div[class*="scrollableContainer_"] {
+                            border-radius: 0;
+                            min-height: 49px;
+                            padding-top: 4px;
+                        }
+                    }
+
+                    >div {
+                        border-radius: 0;
+                        margin-bottom: 0;
+                    }
+
+                    >div[class^=typing] {
+                        background-color: var(--channeltextarea-background);
+                        border-radius: 8px 8px 0 0;
+                        margin-left: auto;
+                        padding-left: 2px;
+                        padding-right: 9px;
+                        position: absolute;
+                        right: calc(var(--custom-index-scrollbar-margin) * 2+var(--custom-index-scrollbar-width));
+                        top: -24px;
+                        width: fit-content;
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+
+                    >div>div>div[class^=attachedBars] {
+                        min-height: unset !important;
+                        padding-bottom: 4px;
+                    }
+                }
+
+                div[class^=jumpToPresentBar] {
+                    background-color: var(--channeltextarea-background);
+                    border-radius: 0 8px 0 0;
+                    left: 0;
+                    right: unset;
+
+                    >button[class^=barButtonMain] {
+                        display: none;
+                        flex: 0 0 auto;
+                    }
+                }
+            }
+
             >main,
             >[class*="shop_"],
             >[class*="applicationStore_"],
@@ -320,89 +403,6 @@ html {
                             border: 0;
                             z-index: 5;
                         }
-                    }
-                }
-            }
-
-            >.container_d1c246,
-            >[class*="chat_"] {
-
-                :is(main, section)[class^=chatContent]>form,
-                form>div[class^=submitContainer] {
-                    padding: 0;
-
-                    &:has([class="animation_faf5ab"]):before {
-                        align-items: center;
-                        appearance: none;
-                        background: var(--bg-overlay-3, var(--channeltextarea-background));
-                        box-sizing: border-box;
-                        color: var(--channel-text-area-placeholder);
-                        content: "You must complete a few more steps before you can talk.";
-                        cursor: not-allowed;
-                        display: flex;
-                        font-size: 1rem;
-                        font-weight: 400;
-                        height: 52px;
-                        left: 0;
-                        line-height: 1.375rem;
-                        overflow: hidden;
-                        padding-left: 16px;
-                        pointer-events: none;
-                        position: absolute;
-                        text-overflow: ellipsis;
-                        top: 0;
-                        user-select: none;
-                        white-space: nowrap;
-                        width: 100%;
-                        z-index: 10;
-                    }
-
-                    >div>div[class^=channelTextArea] {
-                        margin: 0 !important;
-
-                        >div[class^=scrollableContainer] {
-                            border-radius: 0;
-                            min-height: 49px;
-                            padding-top: 4px;
-                        }
-                    }
-
-                    >div {
-                        border-radius: 0;
-                        margin-bottom: 0;
-                    }
-
-                    >div[class^=typing] {
-                        background-color: var(--channeltextarea-background);
-                        border-radius: 8px 8px 0 0;
-                        margin-left: auto;
-                        padding-left: 2px;
-                        padding-right: 9px;
-                        position: absolute;
-                        right: calc(var(--custom-index-scrollbar-margin) * 2+var(--custom-index-scrollbar-width));
-                        top: -24px;
-                        width: fit-content;
-                    }
-
-                    &::after {
-                        display: none;
-                    }
-
-                    >div>div>div[class^=attachedBars] {
-                        min-height: unset !important;
-                        padding-bottom: 4px;
-                    }
-                }
-
-                div[class^=jumpToPresentBar] {
-                    background-color: var(--channeltextarea-background);
-                    border-radius: 0 8px 0 0;
-                    left: 0;
-                    right: unset;
-
-                    >button[class^=barButtonMain] {
-                        display: none;
-                        flex: 0 0 auto;
                     }
                 }
             }
