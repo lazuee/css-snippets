@@ -745,3 +745,20 @@ html:is(.is-mobile) {
         }
     }
 }
+
+[id="vc-spotify-player"] {
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: none !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+
+    &:before {
+        content: "";
+        position: relative;
+        display: block;
+        height: 8px;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+}
