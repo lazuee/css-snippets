@@ -610,9 +610,31 @@ html {
                 }
 
                 >section {
-                    >[class*="wrapper_"]>div {
-                        border-top: 1px solid var(--border-subtle);
-                        border-bottom: 0 solid transparent;
+                    &:has(> :nth-child(3):last-child) {
+                        display: grid;
+                        grid-template-areas: "c2" "c1" "c3";
+                        grid-auto-flow: row;
+
+                        > :nth-child(1) {
+                            grid-area: c1;
+                        }
+
+                        > :nth-child(2) {
+                            grid-area: c2;
+                        }
+
+                        > :nth-child(3) {
+                            grid-area: c3;
+                        }
+                    }
+
+                    >[class*="wrapper_"] {
+                        width: 240px;
+
+                        >div {
+                            border-top: 1px solid var(--border-subtle);
+                            border-bottom: 0 solid transparent;
+                        }
                     }
 
                     >[class*="container_"] {
@@ -625,6 +647,23 @@ html {
                         position: absolute;
                         width: calc(296px - var(--space));
                         z-index: 999;
+                    }
+
+                    >[id="vc-spotify-player"] {
+                        border-top: 1px solid var(--border-subtle);
+                        border-bottom: none !important;
+                        padding-left: 12px !important;
+                        padding-right: 12px !important;
+
+                        &:before {
+                            content: "";
+                            position: relative;
+                            display: block;
+                            height: 10px;
+                            width: 100%;
+                            top: 0;
+                            left: 0;
+                        }
                     }
                 }
             }
@@ -743,22 +782,5 @@ html:is(.is-mobile) {
                 }
             }
         }
-    }
-}
-
-[id="vc-spotify-player"] {
-    border-top: 1px solid var(--border-subtle);
-    border-bottom: none !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-
-    &:before {
-        content: "";
-        position: relative;
-        display: block;
-        height: 8px;
-        width: 100%;
-        top: 0;
-        left: 0;
     }
 }
