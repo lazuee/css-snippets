@@ -600,6 +600,12 @@ html {
 
                     >[class="searchBar_f0963d"] {
                         padding: 3px 16px 4px;
+
+                        >button {
+                            height: 32px;
+                            padding-left: 12px;
+                            border-radius: 6px;
+                        }
                     }
 
                     div:not(:has([class="animatedContainer_fd6364"]))>[class="header_fd6364"] {
@@ -793,6 +799,17 @@ html {
 
 ol[aria-label*="Messages in"]>.divider_c2654d {
     display: none;
+}
+
+.searchBar_a46bef {
+    height: 30px;
+    display: flex;
+    align-items: center;
+
+    >.DraftEditor-root {
+        margin-top: 6px;
+        margin-left: 4px;
+    }
 }
 
 html:is(.is-mobile) {
