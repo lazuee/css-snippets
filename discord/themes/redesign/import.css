@@ -239,27 +239,13 @@ html {
                         grid-template-columns: 1fr auto;
 
                         >div[class*="channelAppLauncher_"] {
-                            background: var(--bg-overlay-3, var(--channeltextarea-background));
-                            margin: 0;
-                            height: 53px;
-                            display: flex;
-                            flex: 1 1 auto;
-
-                            >div {
-                                margin: 0;
-                                margin-right: 16px;
-
-                                >button {
-                                    height: 100%;
-                                    display: flex;
-                                    width: 32px;
-                                    justify-content: start;
-                                    border-radius: 0;
-                                }
-                            }
+                            position: absolute;
+                            top: -50px;
+                            right: 16px;
                         }
 
                         >div[class*="channelTextArea_"] {
+                            position: relative;
                             margin: 0 !important;
                             width: 100%;
 
