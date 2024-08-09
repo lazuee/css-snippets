@@ -241,6 +241,10 @@ html {
                 --chat-resize-handle-width: var(--space);
             }
 
+            >section>[class^="container_"]>[class^="headerBar_"] {
+                height: 57px;
+            }
+
             [class*="chat_"] {
 
                 [class^=chatContent]>form,
@@ -606,6 +610,43 @@ html {
                     >div>[class="header_fd6364"] {
                         border-bottom: 1px solid var(--border-subtle);
                         box-shadow: none;
+                    }
+                }
+
+                >div[class^="container_"] {
+                    gap: 8px;
+
+                    [class^="header_"] {
+                        box-shadow: none;
+                        border-bottom: 1px solid var(--border-subtle);
+                        min-height: 55px;
+                        padding: 0 16px;
+                        display: flex;
+                        align-items: center;
+
+                        >h2 {
+                            font-size: 18px;
+                            line-height: 1.25;
+                            font-weight: 600;
+                        }
+                    }
+
+                    >[class^="nav_"] {
+                        padding: 0 8px;
+
+                        >div {
+                            height: 42px;
+                            padding: 0 8px;
+                            border-radius: calc(var(--border-radius) - 4px) !important;
+                            overflow: hidden;
+                            gap: 12px;
+
+                            >[class^="navItemIcon_"] {
+                                width: 32px;
+                                display: flex;
+                                justify-content: center;
+                            }
+                        }
                     }
                 }
 
