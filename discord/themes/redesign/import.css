@@ -78,6 +78,10 @@ html {
             margin-top: var(--top-margin);
             position: relative;
 
+            &:has(> .scroller_fea3ef > button:nth-child(2)) {
+                --top-margin: calc((56px + ((56px * var(--server-nav-i)) - 56px)) + (var(--space) + 20px));
+            }
+
             &:before,
             &:after {
                 content: "";
@@ -147,6 +151,32 @@ html {
                     position: fixed;
                     z-index: 4;
                 }
+
+                >button:nth-child(2) {
+                    top: calc(56px + var(--space));
+                    width: 72px;
+                    height: 20px;
+                    left: 0;
+                    font-size: 12px;
+                    position: fixed;
+                    z-index: 10;
+                    background: var(--background-tertiary);
+                    padding: 0;
+                    margin: 0;
+
+                    &:before {
+                        position: absolute;
+                        content: "";
+                        border: 1px solid var(--border-subtle);
+                        width: calc(72px - 12px);
+                        height: 20px;
+                        z-index: -2;
+                        border-radius: 4px;
+                        top: 0;
+                        left: 5px;
+                    }
+                }
+
 
                 >div:has([aria-label="Download Apps"]) {
                     display: none;
