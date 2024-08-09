@@ -485,47 +485,6 @@ html {
                 }
             }
 
-            >[class*="chat_"] {
-                [aria-label="Channel header"] {
-                    [class*="toolbar_"] {
-                        display: grid;
-                        grid-template-areas: "c1 c3 c2 c4 c5 c6 c7 c8";
-
-                        > :nth-child(1) {
-                            grid-area: c1
-                        }
-
-                        > :nth-child(2) {
-                            grid-area: c2
-                        }
-
-                        > :nth-child(3) {
-                            grid-area: c3
-                        }
-
-                        > :nth-child(4) {
-                            grid-area: c4
-                        }
-
-                        > :nth-child(5) {
-                            grid-area: c5
-                        }
-
-                        > :nth-child(6) {
-                            grid-area: c6
-                        }
-
-                        > :nth-child(7) {
-                            grid-area: c7
-                        }
-
-                        > :nth-child(8) {
-                            grid-area: c8
-                        }
-                    }
-                }
-            }
-
             >.sidebar_a4d4d9 {
                 background: transparent;
                 background: var(--background-secondary);
