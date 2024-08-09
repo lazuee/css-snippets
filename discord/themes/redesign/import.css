@@ -20,7 +20,7 @@
 }
 
 :root {
-    --space: 12px;
+    --space: 10px;
     --border-radius: 1rem;
     --header: 48px;
     --header-thumbnail: calc(135px + var(--header));
@@ -172,7 +172,7 @@ html {
                         height: 20px;
                         z-index: -2;
                         border-radius: 4px;
-                        top: 0;
+                        top: -1px;
                         left: 5px;
                     }
                 }
@@ -183,7 +183,7 @@ html {
                 }
 
                 >div:has([aria-label="Explore Discoverable Servers"]) {
-                    bottom: calc(53px + ((var(--space) * 2)) - 8px);
+                    bottom: calc(53px + ((var(--space) * 2)) - 6px);
                     position: fixed;
                     z-index: 4;
                 }
