@@ -647,6 +647,14 @@ html {
                         position: absolute;
                         width: calc(296px - var(--space));
                         z-index: 999;
+
+                        >[class^="avatarWrapper_"] {
+                            width: 100%;
+
+                            >div:first-child {
+                                margin-left: 4px;
+                            }
+                        }
                     }
 
                     >[id="vc-spotify-player"] {
