@@ -119,6 +119,17 @@ html {
                 bottom: 0;
             }
 
+            >.footer_aa1bff {
+                bottom: calc(53px + ((var(--space) * 2)) - 6px);
+                position: fixed;
+                z-index: 4;
+                padding: 0;
+
+                >[class*="gradient_"] {
+                    display: none;
+                }
+            }
+
             >.scroller_fea3ef {
                 padding: 0;
                 position: relative;
