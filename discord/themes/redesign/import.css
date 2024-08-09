@@ -681,11 +681,6 @@ html {
     .layer_cd0de5:not(:has(.accountProfilePopoutWrapper_b2ca13)) {
         z-index: 10;
 
-        * {
-            box-shadow: none !important;
-            border: 0;
-        }
-
         &:has(.statusItem_ad5fac, [id*="account-switch-account--"]) {
             margin-left: calc(12px + var(--space));
             margin-top: -10px;
