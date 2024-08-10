@@ -14,7 +14,7 @@ html {
 	--channel-list-toggle-icon: var(--channel-list-toggle-icon-light);
 }
 
-html[class*="theme-dark"] {
+html[class^="theme-dark"] {
 	--channel-list-toggle-icon: var(--channel-list-toggle-icon-dark);
 }
 
@@ -24,18 +24,19 @@ html:has(div[class^="sidebar_"]:not(:focus-within) > nav) {
 
 html:has(div[aria-hidden="true"][class^="layer"]),
 html:has(div[class^="sidebar_"] > * > * *:hover),
-html[class*="is-mobile"] {
+html[class^="is-mobile"] {
 	--channel-list-toggle-close: false !important;
 }
 
 @container style(--channel-list-toggle-close:true) {
+
 	section[aria-labelledby][role="navigation"],
-	div[class^="content"] > [class^="chat"] {
+	div[class^="content"]>[class^="chat"] {
 		z-index: 0;
 	}
 
-    nav[aria-label="Private channels"],
-    nav[aria-label="Private channels"] > div[data-list-id^="private-channels"],
+	nav[aria-label="Private channels"],
+	nav[aria-label="Private channels"]>div[data-list-id^="private-channels"],
 	div[class^="sidebar_"],
 	div[class^="sidebar_"] nav[class^="container"] {
 		background: unset;
@@ -49,38 +50,38 @@ html[class*="is-mobile"] {
 		margin: var(--channel-list-toggle-icon-margin);
 	}
 
-	div[class^="sidebar_"] nav > div[class^="scroller"] {
+	div[class^="sidebar_"] nav>div[class^="scroller"] {
 		height: 48px;
 		overflow: hidden !important;
 	}
 
-	div[class^="sidebar_"] nav > div[class^="scroller"]:before {
+	div[class^="sidebar_"] nav>div[class^="scroller"]:before {
 		position: fixed;
 		content: var(--channel-list-toggle-icon);
 		cursor: pointer;
 		color: var(--interactive-normal);
 	}
 
-	div[class^="sidebar_"] nav div[class^="container"]:has([class*="bar"]),
-	div[class^="sidebar_"] nav div[class^="container"]:has([class*="channelNotice"]),
-	div[class^="sidebar_"] nav div[class^="unread"][class*="container"],
-	div[class^="sidebar_"] nav > div:first-child,
+	div[class^="sidebar_"] nav div[class^="container"]:has([class^="bar"]),
+	div[class^="sidebar_"] nav div[class^="container"]:has([class^="channelNotice"]),
+	div[class^="sidebar_"] nav div[class^="unread"][class^="container"],
+	div[class^="sidebar_"] nav>div:first-child,
 	div[class^="sidebar_"] section[class^="panels"] {
 		display: none;
 	}
 
-	div[class^="sidebar_"] nav > div[class^="scroller"] > ul {
+	div[class^="sidebar_"] nav>div[class^="scroller"]>ul {
 		opacity: 0;
 	}
 
-	div[class^="sidebar_"] > * > * > * {
+	div[class^="sidebar_"]>*>*>* {
 		pointer-events: none;
 	}
 
-	section:not(:has([aria-label="Close"])) > div[class^=upperContainer] > div[class^=children] {
+	section:not(:has([aria-label="Close"]))>div[class^=upperContainer]>div[class^=children] {
 		margin-left: 53px;
 	}
-	
+
 	@media only screen and (max-width:570px) {
 		div[class^="sidebar_"] nav:before {
 			content: "‍‍‍ㅤ";
@@ -91,11 +92,11 @@ html[class*="is-mobile"] {
 			background: linear-gradient(94deg, var(--channel-list-header-channel-text) 75%, rgba(0, 0, 0, 0) 100%);
 		}
 
-		div:has([data-list-id^="forum-channel-list"]) > div[class^="sidebar_"] nav:before {
+		div:has([data-list-id^="forum-channel-list"])>div[class^="sidebar_"] nav:before {
 			background: linear-gradient(94deg, var(--channel-list-header-channel-forum) 75%, rgba(0, 0, 0, 0) 100%);
 		}
 
-		div:has([class^="callContainer"]) > div[class^="sidebar_"] nav:before {
+		div:has([class^="callContainer"])>div[class^="sidebar_"] nav:before {
 			background: unset
 		}
 	}
