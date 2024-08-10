@@ -1,22 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap');
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url("https://lazuee.github.io/css-snippets/discord/sidebar-notice/import.css");
 
 :root {
     --notice-margin-top: calc(57px + var(--space));
     --notice-margin-left: 1px;
-    --notice-background: var(--background-secondary);
+    --notice-background: var(--background-tertiary);
     --notice-height-join: 160px;
     --notice-height-welcome: 155px;
     --notice-height-premium: 150px;
 }
 
 :root {
-    --font: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    --font: "Inter", sans-serif;
     --font-primary: var(--font);
     --font-display: var(--font);
     --font-headline: var(--font);
-    --font-code: 'JetBrains Mono', monospace;
+    /* --font-code: unset; */
 }
 
 :root {
@@ -28,7 +27,7 @@
 
 body,
 html {
-    font-size: 14px;
+    font-size: 11px;
     tab-size: 4;
     text-rendering: optimizeLegibility;
     -webkit-text-size-adjust: 100%;
@@ -36,6 +35,7 @@ html {
     text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-optical-sizing: auto;
 }
 
 [class="container_a4d4d9"] {
@@ -117,6 +117,10 @@ html {
 
             >.unreadMentionsIndicatorBottom_fea3ef:before {
                 bottom: 0;
+            }
+
+            .circleIconButton_db6521 {
+                color: var(--green-360);
             }
 
             >.footer_aa1bff {
@@ -274,6 +278,7 @@ html {
             }
 
             [class^="chat_"] {
+                --channeltextarea-background: var(--background-primary);
 
                 [class^=chatContent]>form,
                 div[class^=submitContainer] {
@@ -647,6 +652,7 @@ html {
                     >[class="searchBar_f0963d"],
                     >div>[class="header_fd6364"] {
                         border-bottom: 1px solid var(--border-subtle);
+                        background: var(--background-secondary) !important;
                         box-shadow: none;
                     }
                 }
@@ -654,6 +660,7 @@ html {
                 &:has([class*="discoverHeader_"]) {
                     .sidebarContainer_a3a4ce {
                         scrollbar-width: none;
+                        background-color: var(--background-secondary);
 
                         >h2 {
                             margin: 0;
