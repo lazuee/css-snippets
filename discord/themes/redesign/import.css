@@ -256,6 +256,10 @@ html {
                     >[class^="container_"] {
                         border: 1px solid var(--border-subtle);
                         border-radius: var(--border-radius);
+
+                        >[class*="chat_"]:before {
+                            box-shadow: none !important;
+                        }
                     }
                 }
             }
@@ -268,7 +272,7 @@ html {
                 height: 57px;
             }
 
-            [class*="chat_"] {
+            [class^="chat_"] {
 
                 [class^=chatContent]>form,
                 div[class^=submitContainer] {
