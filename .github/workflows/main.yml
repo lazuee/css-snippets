@@ -20,7 +20,7 @@ jobs:
     - uses: actions/checkout@v4
     - run: |
         npm install postcss-cli @csstools/postcss-nesting-experimental @csstools/postcss-minify --save-dev
-        npx postcss **/**/*.css --base . @csstools/postcss-nesting-experimental @csstools/postcss-minify --no-map --dir dist
+        npx postcss **/**/**/*.css --base . @csstools/postcss-nesting-experimental @csstools/postcss-minify --no-map --dir dist
       shell: bash
     # - run: |
     #     find . -name "*.css" -not -path "./dist/*" | while IFS= read -r file; do
