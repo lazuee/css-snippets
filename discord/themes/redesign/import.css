@@ -121,6 +121,10 @@ html {
 
             .circleIconButton_db6521 {
                 color: var(--green-360);
+
+                &:hover {
+                    color: var(--interactive-active);
+                }
             }
 
             >.footer_aa1bff {
@@ -247,7 +251,7 @@ html {
                 grid-auto-rows: 1fr;
                 grid-auto-flow: column;
 
-                >div:nth-last-child(3):not(.chatLayerWrapper_d1c246, :has([class*="scroll_detection_"])),
+                >div:nth-last-child(3):not(.chat_a7d72e, .chatLayerWrapper_d1c246, :has(> [class*="scroll_detection_"])),
                 >div:nth-last-child(2):not(.chatLayerWrapper_d1c246) {
                     display: none;
                 }
@@ -657,7 +661,7 @@ html {
                     }
                 }
 
-                &:has([class*="discoverHeader_"]) {
+                &:has([class^="discoverHeader_"]) {
                     .sidebarContainer_a3a4ce {
                         scrollbar-width: none;
                         background-color: var(--background-secondary);
