@@ -122,7 +122,8 @@ html {
             .circleIconButton_db6521 {
                 color: var(--green-360);
 
-                &:hover {
+                &:hover,
+                &.selected_db6521 {
                     color: var(--interactive-active);
                 }
             }
@@ -661,7 +662,7 @@ html {
                     }
                 }
 
-                &:has([class^="discoverHeader_"]) {
+                &:has([class*="discoverHeader_"]) {
                     .sidebarContainer_a3a4ce {
                         scrollbar-width: none;
                         background-color: var(--background-secondary);
