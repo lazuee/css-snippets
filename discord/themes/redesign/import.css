@@ -125,7 +125,7 @@ html {
                 z-index: 4;
                 padding: 0;
 
-                >[class*="gradient_"] {
+                >[class^="gradient_"] {
                     display: none;
                 }
             }
@@ -257,7 +257,7 @@ html {
                         border: 1px solid var(--border-subtle);
                         border-radius: var(--border-radius);
 
-                        >[class*="chat_"]:before {
+                        >[class^="chat_"]:before {
                             box-shadow: none !important;
                         }
                     }
@@ -304,27 +304,31 @@ html {
                         z-index: 10;
                     }
 
-                    div[class*="channelBottomBarArea_"] {
+                    div[class^="channelBottomBarArea_"] {
                         background: var(--bg-overlay-3, var(--channeltextarea-background));
                         display: grid;
                         grid-template-rows: 1fr;
                         grid-template-columns: 1fr auto;
 
-                        >div[class*="channelAppLauncher_"] {
+                        >div[class^="channelAppLauncher_"] {
                             position: absolute;
                             top: -50px;
                             right: 16px;
                         }
 
-                        >div[class*="channelTextArea_"] {
+                        >div[class^="channelTextArea_"] {
                             position: relative;
                             margin: 0 !important;
                             width: 100%;
 
-                            div[class*="scrollableContainer_"] {
+                            div[class^="scrollableContainer_"] {
                                 border-radius: 0;
                                 min-height: 49px;
                                 padding-top: 4px;
+
+                                &:has(button[aria-label="Send Message"]) {
+                                    padding-right: 8px;
+                                }
                             }
                         }
                     }
@@ -370,10 +374,10 @@ html {
             }
 
             >main,
-            >[class*="shop_"],
-            >[class*="applicationStore_"],
+            >[class^="shop_"],
+            >[class^="applicationStore_"],
             >[class="pageWrapper_a3a4ce"],
-            >[class*="chat_"]:not(:has(.video_d880dc)),
+            >[class^="chat_"]:not(:has(.video_d880dc)),
             >.container_d1c246 {
                 border: 1px solid var(--border-subtle);
 
@@ -383,7 +387,7 @@ html {
                 }
             }
 
-            >[class*="chat_"]:has(.video_d880dc)>.wrapper_d880dc {
+            >[class^="chat_"]:has(.video_d880dc)>.wrapper_d880dc {
 
                 >*:first-child,
                 >*>.container_d1c246 {
@@ -399,7 +403,7 @@ html {
             }
 
             >main,
-            >[class*="chat_"] {
+            >[class^="chat_"] {
                 .peopleList_e0840f {
                     >div:first-child {
                         display: flex;
@@ -418,7 +422,7 @@ html {
                 }
 
                 [aria-label="Message Requests"] {
-                    [data-list-item-id*="message-requests-spam-list_"] {
+                    [data-list-item-id^="message-requests-spam-list_"] {
                         border: 1px solid var(--border-subtle);
                         border-radius: calc(var(--border-radius) - 4px);
                         padding: 16px 10px;
@@ -445,14 +449,14 @@ html {
                     }
                 }
 
-                >[class*="content_"] {
+                >[class^="content_"] {
                     .wrapper_a3747e {
                         max-width: 320px;
                     }
                 }
             }
 
-            >[class*="chat_"] {
+            >[class^="chat_"] {
 
                 .searchResultsWrap_c2b47d,
                 .membersWrap_cbd271,
@@ -493,9 +497,9 @@ html {
                 }
             }
 
-            >.container_d1c246>[class*="chat_"],
+            >.container_d1c246>[class^="chat_"],
             >* section.container_fc4f04,
-            >[class*="chat_"]>[class*="subtitleContainer_"]>[class*="title_"] {
+            >[class^="chat_"]>[class^="subtitleContainer_"]>[class^="title_"] {
                 padding: 0 8px;
                 min-height: 56px;
                 border-bottom: 1px solid var(--border-subtle);
@@ -508,8 +512,8 @@ html {
                     padding: 0;
                 }
 
-                [class*="tabBar_"]>*,
-                [class*="toolbar_"] button {
+                [class^="tabBar_"]>*,
+                [class^="toolbar_"] button {
                     height: 32px;
                     border-radius: calc(var(--border-radius) - 8px) !important;
                     overflow: hidden
@@ -620,7 +624,7 @@ html {
                         }
                     }
 
-                    >div:has([class*="channelNotice_"])>div {
+                    >div:has([class^="channelNotice_"])>div {
                         margin: 16px 0 0;
                         padding: 0 16px 16px;
                     }
@@ -643,6 +647,32 @@ html {
                     >div>[class="header_fd6364"] {
                         border-bottom: 1px solid var(--border-subtle);
                         box-shadow: none;
+                    }
+                }
+
+                &:has([class*="discoverHeader_"]) {
+                    .sidebarContainer_a3a4ce {
+                        scrollbar-width: none;
+
+                        >h2 {
+                            margin: 0;
+                            min-height: 55px;
+                            padding: 0 16px;
+                            border-bottom: 1px solid var(--border-subtle);
+                            display: flex;
+                            align-items: center;
+                            font-size: 18px;
+                            line-height: 1.25;
+                            font-weight: 600;
+                            margin-bottom: 8px;
+                        }
+
+                        >div {
+                            height: 42px;
+                            margin: 1.5px 8px;
+                            border-radius: calc(var(--border-radius) - 4px) !important;
+                            overflow: hidden;
+                        }
                     }
                 }
 
@@ -702,7 +732,7 @@ html {
                         }
                     }
 
-                    >[class*="wrapper_"] {
+                    >[class^="wrapper_"] {
                         width: 240px;
 
                         >div {
@@ -711,7 +741,7 @@ html {
                         }
                     }
 
-                    >[class*="container_"] {
+                    >[class^="container_"] {
                         background: var(--background-secondary);
                         border-radius: calc(var(--border-radius) - 4px);
                         border: 1px solid var(--border-subtle);
@@ -802,7 +832,7 @@ html {
     .layer_cd0de5:not(:has(.accountProfilePopoutWrapper_b2ca13)) {
         z-index: 10;
 
-        &:has(.statusItem_ad5fac, [id*="account-switch-account--"]) {
+        &:has(.statusItem_ad5fac, [id^="account-switch-account--"]) {
             margin-left: calc(12px + var(--space));
             margin-top: -10px;
         }
@@ -824,7 +854,7 @@ html {
     }
 }
 
-ol[aria-label*="Messages in"]>.divider_c2654d {
+ol[aria-label^="Messages in"]>.divider_c2654d {
     display: none;
 }
 
@@ -850,14 +880,14 @@ html:is(.is-mobile) {
 
                     >.sidebar_a4d4d9 {
                         >section {
-                            >[class*="container_"] {
+                            >[class^="container_"] {
                                 width: calc(100% + (55px - var(--space)));
                             }
                         }
                     }
                 }
 
-                >[class*="chat_"] {
+                >[class^="chat_"] {
 
                     .searchResultsWrap_c2b47d,
                     .membersWrap_cbd271,
