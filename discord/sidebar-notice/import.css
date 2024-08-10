@@ -254,12 +254,12 @@ html:not(:has(.artwork_d8215a)) {
                             background-color: var(--brand-560);
                         }
 
-                        &:has([class*="spinner"]) {
+                        &:has([class^="spinner"]) {
                             background: var(--brand-560);
                         }
                     }
 
-                    &:has([class*="spinner"]) {
+                    &:has([class^="spinner"]) {
                         display: block;
                     }
                 }
