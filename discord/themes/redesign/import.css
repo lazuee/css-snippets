@@ -515,6 +515,7 @@ html {
 
                 [class^="tabBar_"]>*,
                 [class^="toolbar_"] button,
+				[class^="followButton_"],
                 [aria-label="Message Requests"]>* {
                     height: 32px;
                     border-radius: calc(var(--border-radius) - 8px) !important;
