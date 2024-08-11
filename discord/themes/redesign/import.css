@@ -73,7 +73,6 @@ html {
             --server-nav-i: 1;
             --top-margin: calc((56px + ((56px * var(--server-nav-i)) - 56px)) + var(--space));
             --nav-height: calc(100% - ((var(--top-margin)) + ((56px * 2) + (53px + (var(--space) * 2)))));
-
             height: var(--nav-height);
             margin-top: var(--top-margin);
             position: relative;
@@ -94,20 +93,12 @@ html {
             }
 
             &:before {
-                background: linear-gradient(180deg,
-                        color-mix(in oklab, var(--background-tertiary) 100%, transparent 0%) 1%,
-                        color-mix(in oklab, var(--background-tertiary) 94.6%, transparent 5.4%) 13%,
-                        color-mix(in oklab, var(--background-tertiary) 79.5%, transparent 20.5%) 55%,
-                        color-mix(in oklab, var(--background-tertiary) 1%, transparent 100%) 93%);
+                background: linear-gradient(180deg, color-mix(in oklab, var(--background-tertiary) 100%, transparent 0%) 1%, color-mix(in oklab, var(--background-tertiary) 94.6%, transparent 5.4%) 13%, color-mix(in oklab, var(--background-tertiary) 79.5%, transparent 20.5%) 55%, color-mix(in oklab, var(--background-tertiary) 1%, transparent 100%) 93%);
                 top: 0;
             }
 
             &:after {
-                background: linear-gradient(0deg,
-                        color-mix(in oklab, var(--background-tertiary) 100%, transparent 0%) 1%,
-                        color-mix(in oklab, var(--background-tertiary) 94.6%, transparent 5.4%) 13%,
-                        color-mix(in oklab, var(--background-tertiary) 79.5%, transparent 20.5%) 55%,
-                        color-mix(in oklab, var(--background-tertiary) 1%, transparent 100%) 93%);
+                background: linear-gradient(0deg, color-mix(in oklab, var(--background-tertiary) 100%, transparent 0%) 1%, color-mix(in oklab, var(--background-tertiary) 94.6%, transparent 5.4%) 13%, color-mix(in oklab, var(--background-tertiary) 79.5%, transparent 20.5%) 55%, color-mix(in oklab, var(--background-tertiary) 1%, transparent 100%) 93%);
                 bottom: 0;
             }
 
@@ -196,7 +187,6 @@ html {
                         left: 5px;
                     }
                 }
-
 
                 >div:has([aria-label="Download Apps"]) {
                     display: none;
@@ -356,7 +346,7 @@ html {
                         padding-left: 2px;
                         padding-right: 9px;
                         position: absolute;
-                        right: calc(var(--custom-index-scrollbar-margin) * 2+var(--custom-index-scrollbar-width));
+                        right: calc(var(--custom-index-scrollbar-margin) * 2 + var(--custom-index-scrollbar-width));
                         top: -24px;
                         width: fit-content;
                     }
@@ -524,10 +514,13 @@ html {
                 }
 
                 [class^="tabBar_"]>*,
-                [class^="toolbar_"] button {
+                [class^="toolbar_"] button,
+                [aria-label="Message Requests"]>* {
                     height: 32px;
                     border-radius: calc(var(--border-radius) - 8px) !important;
-                    overflow: hidden
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
                 }
             }
 
@@ -834,11 +827,13 @@ html {
             border-bottom: 1px solid var(--border-subtle);
         }
 
-        .rootWithShadow_f9a4c9 {
-            box-shadow: none !important;
-            border-radius: calc(var(--border-radius) - 4px);
-            border: 1px solid var(--border-subtle);
-            overflow: hidden;
+        &:not(:has([aria-label="Image"])) {
+            .rootWithShadow_f9a4c9 {
+                box-shadow: none !important;
+                border-radius: calc(var(--border-radius) - 4px);
+                border: 1px solid var(--border-subtle);
+                overflow: hidden;
+            }
         }
     }
 
