@@ -515,7 +515,7 @@ html {
 
                 [class^="tabBar_"]>*,
                 [class^="toolbar_"] button,
-				[class^="followButton_"],
+                [class^="followButton_"],
                 [aria-label="Message Requests"]>* {
                     height: 32px;
                     border-radius: calc(var(--border-radius) - 8px) !important;
@@ -743,20 +743,21 @@ html {
                         width: 240px;
 
                         >div {
+                            padding: 12px;
                             border-top: 1px solid var(--border-subtle);
-                            border-bottom: 0 solid transparent;
+                            border-bottom-width: 0;
                         }
                     }
 
                     >[class^="container_"] {
+                        width: calc(296px - var(--space));
                         background: var(--background-secondary);
                         border-radius: calc(var(--border-radius) - 4px);
                         border: 1px solid var(--border-subtle);
-                        bottom: 0;
-                        justify-content: space-between;
-                        left: calc(-72px + var(--space));
                         position: absolute;
-                        width: calc(296px - var(--space));
+                        bottom: 0;
+                        left: calc(-72px + var(--space)) !important;
+                        justify-content: space-between;
                         z-index: 999;
 
                         >[class^="avatarWrapper_"] {
@@ -782,6 +783,14 @@ html {
                             width: 100%;
                             top: 0;
                             left: 0;
+                        }
+
+                        >[id="vc-spotify-info-wrapper"] {
+                            >[id="vc-spotify-titles"] {
+                                > :nth-last-child(1) {
+                                    display: none;
+                                }
+                            }
                         }
                     }
                 }
