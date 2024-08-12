@@ -145,6 +145,8 @@ html:not(:has(.artwork_d8215a)) {
                     margin: 0;
                     padding: 0 16px;
                     text-align: left;
+					font-weight: 400;
+					font-size: small;
 
                     &:before {
                         content: var(--notice-text-heading);
