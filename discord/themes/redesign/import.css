@@ -4,7 +4,7 @@
 :root {
     --notice-margin-top: calc(57px + var(--space));
     --notice-margin-left: 1px;
-    --notice-background: var(--background-tertiary);
+    --notice-background: var(--background-secondary);
     --notice-height-join: 160px;
     --notice-height-welcome: 155px;
     --notice-height-premium: 150px;
