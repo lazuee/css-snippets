@@ -566,5 +566,10 @@ html:not(:has(.artwork_d8215a)) {
                 }
             }
         }
+
+        .sidebar_a4d4d9.hasNotice_a4d4d9>*:has(.discoverHeader_b992d4)>h2,
+        .header_f1c462 {
+            margin-bottom: var(--notice-height);
+        }
     }
 }
