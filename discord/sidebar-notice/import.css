@@ -572,3 +572,11 @@ html:not(:has(.artwork_d8215a)) {
         }
     }
 }
+
+html:has(.artwork_d8215a) {
+    .base_a4d4d9:has(.notice_be03aa) {
+        >.notice_be03aa {
+            display: none;
+        }
+    }
+}
