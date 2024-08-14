@@ -619,6 +619,14 @@ html {
                                 }
                             }
                         }
+
+                        >.thin_eed6a8>ul {
+
+                            >[style="height: 84px;"],
+                            >[style="height: 16px;"] {
+                                height: 183px !important;
+                            }
+                        }
                     }
 
                     >div:has([class^="channelNotice_"])>div {
