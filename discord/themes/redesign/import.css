@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://lazuee.github.io/css-snippets/discord/sidebar-notice/import.css");
 
 :root {
     --notice-margin-top: calc(57px + var(--space));
@@ -77,11 +78,12 @@ html {
             margin-top: var(--top-margin);
             position: relative;
 
-            &:has(> .scroller_fea3ef > button:nth-child(2)) {
-                --top-margin: calc((56px + ((56px * var(--server-nav-i)) - 56px)) + (var(--space) + 20px));
+            &:has(> .scroller_fea3ef > button.vc-ranb-button),
+            &:has(> .scroller_fea3ef > div[style="margin-bottom: 4px;"]):not(:has(> .scroller_fea3ef > button.vc-ranb-button)) {
+                --top-margin: calc((56px + ((56px * var(--server-nav-i)) - 56px)) + (var(--space) + 24px));
             }
 
-            &:has(> .scroller_fea3ef > div[style="margin-bottom: 4px;"]:nth-child(2)) {
+            &:has(> .scroller_fea3ef > div[style="margin-bottom: 4px;"]) {
                 --top-margin: calc((56px + ((56px * var(--server-nav-i)) - 56px)) + (var(--space) + 48px));
             }
 
@@ -168,7 +170,7 @@ html {
                 }
 
 
-                >div[style="margin-bottom: 4px;"]:nth-child(2) {
+                >div[style="margin-bottom: 4px;"] {
                     top: calc(56px + var(--space) + 21px);
                     width: 72px;
                     height: 20px;
@@ -196,7 +198,19 @@ html {
                     }
                 }
 
-                >button:nth-child(2) {
+                &:not(:has(> button.vc-ranb-button)) {
+                    >div[style="margin-bottom: 4px;"] {
+                        top: calc(56px + var(--space));
+                        padding-top: 4px;
+
+                        &:before {
+                            height: 20px;
+                            border: 1px solid var(--border-subtle);
+                        }
+                    }
+                }
+
+                >button.vc-ranb-button {
                     top: calc(56px + var(--space));
                     width: 72px;
                     height: 20px;
