@@ -301,10 +301,16 @@ html {
                 grid-auto-flow: column;
 
                 &:has(> :nth-last-child(5)) {
-                    grid-auto-columns: auto 0px 1fr auto;
+                    &:has(> .chat_a7d72e:nth-child(2)) {
+                        grid-auto-columns: auto 1fr 0px auto;
+                    }
+
+                    &:has(> .chat_a7d72e:nth-child(3)) {
+                        grid-auto-columns: auto 0px 1fr auto;
+                    }
                 }
 
-                >div:nth-last-child(3):not(.chat_a7d72e, .chatLayerWrapper_d1c246, :has(> [class*="scroll_detection_"])),
+                >div:nth-last-child(3):not(.chat_a7d72e, .chatLayerWrapper_d1c246, :has(> .erd_scroll_detection_container)),
                 >div:nth-last-child(2):not(.chatLayerWrapper_d1c246) {
                     display: none;
                 }
