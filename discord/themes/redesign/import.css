@@ -970,6 +970,10 @@ ol[aria-label^="Messages in"]>.divider_c2654d {
     }
 }
 
+[id^="message-accessories-"]>[role="button"] {
+    max-width: 312px;
+}
+
 html:is(.is-mobile) {
     [class="container_a4d4d9"] {
         >.base_a4d4d9 {
