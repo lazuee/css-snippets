@@ -703,7 +703,7 @@ html {
                     }
 
                     >[class="searchBar_f0963d"] {
-                        padding: 3px 16px 4px;
+                        padding: 3px 12px 4px;
 
                         >button {
                             height: 32px;
@@ -922,6 +922,8 @@ html {
 
         &:not(:has([aria-label="Image"])) {
             .rootWithShadow_f9a4c9 {
+                display: flex;
+                flex: 2;
                 box-shadow: none !important;
                 border-radius: calc(var(--border-radius) - 4px);
                 border: 1px solid var(--border-subtle);
