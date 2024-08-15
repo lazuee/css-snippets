@@ -80,7 +80,7 @@ html {
 
             &:has(> .scroller_fea3ef > button.vc-ranb-button),
             &:has(> .scroller_fea3ef > div[style="margin-bottom: 4px;"]):not(:has(> .scroller_fea3ef > button.vc-ranb-button)) {
-                --top-margin: calc((56px + ((56px * var(--server-nav-i)) - 56px)) + (var(--space) + 24px));
+                --top-margin: calc((56px + ((56px * var(--server-nav-i)) - 56px)) + (var(--space) + 20px));
             }
 
             &:has(> .scroller_fea3ef > div[style="margin-bottom: 4px;"]) {
@@ -171,12 +171,13 @@ html {
 
 
                 >div[style="margin-bottom: 4px;"] {
-                    top: calc(56px + var(--space) + 21px);
+                    top: calc(56px + var(--space) + 20px);
                     width: 72px;
                     height: 20px;
                     left: 0;
                     position: fixed;
-                    z-index: 11;
+                    z-index: 10;
+                    background: var(--background-tertiary) !important;
                     padding: 0;
                     margin: 0 !important;
                     padding-top: 8px;
@@ -188,12 +189,11 @@ html {
                     &:before {
                         position: absolute;
                         content: "";
-                        background: var(--background-tertiary) !important;
                         width: calc(72px - 12px);
-                        height: 24px;
+                        height: 20px;
                         z-index: -2;
                         border-radius: 4px;
-                        top: 0;
+                        top: -1px;
                         left: 5px;
                     }
                 }
@@ -217,32 +217,8 @@ html {
                     left: 0;
                     font-size: 12px;
                     position: fixed;
-                    z-index: 10;
-                    background: var(--background-tertiary);
-                    padding: 0;
-                    margin: 0;
-
-                    &:before {
-                        position: absolute;
-                        content: "";
-                        border: 1px solid var(--border-subtle);
-                        width: calc(72px - 12px);
-                        height: 20px;
-                        z-index: -2;
-                        border-radius: 4px;
-                        top: -1px;
-                        left: 5px;
-                    }
-                }
-
-                >button:nth-child(3) {
-                    top: calc(56px + var(--space));
-                    width: 72px;
-                    height: 20px;
-                    left: 0;
-                    font-size: 12px;
-                    position: fixed;
-                    z-index: 10;
+                    z-index: 11;
+                    border-radius: 0;
                     background: var(--background-tertiary);
                     padding: 0;
                     margin: 0;
