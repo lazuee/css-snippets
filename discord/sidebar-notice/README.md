@@ -13,5 +13,5 @@
 - `--notice-icon-welcome: url("https://discord.com/assets/7f809e89e310c87b2e3f.svg");` : sets the welcome icon.
 
 ### Preview
-![圖片](https://github.com/user-attachments/assets/be28f656-584a-4015-8793-61bd1957b033)
-![圖片](https://github.com/user-attachments/assets/53b907e4-74c1-443b-b6b8-ccd2e6bb5a43)
+![_](https://github.com/user-attachments/assets/be28f656-584a-4015-8793-61bd1957b033)
+![_](https://github.com/user-attachments/assets/53b907e4-74c1-443b-b6b8-ccd2e6bb5a43)
