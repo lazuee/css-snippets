@@ -282,6 +282,10 @@ html {
             >* {
                 border-radius: var(--border-radius);
                 overflow: hidden;
+
+                &.sidebar_a4d4d9 {
+                    overflow: visible;
+                }
             }
 
             &:has([class^="chatLayerWrapper_"] > .resizeHandle_d1c246) {
@@ -813,7 +817,7 @@ html {
                         border-radius: calc(var(--border-radius) - 4px);
                         border: 1px solid var(--border-subtle);
                         position: absolute;
-                        bottom: 0;
+                        bottom: calc((55px + var(--space)) * -1);
                         left: calc(-72px + var(--space)) !important;
                         justify-content: space-between;
                         z-index: 999;
