@@ -14,7 +14,7 @@ html {
 	--channel-list-toggle-icon: var(--channel-list-toggle-icon-light);
 }
 
-html[class^="theme-dark"] {
+html[class*="theme-dark"] {
 	--channel-list-toggle-icon: var(--channel-list-toggle-icon-dark);
 }
 
